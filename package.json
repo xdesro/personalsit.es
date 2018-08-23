@@ -1,0 +1,25 @@
+{
+  "name": "personalsit.es",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
+  "scripts": {
+    "serve": "npx eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hankchizljaw/personalsit.es.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hankchizljaw/personalsit.es/issues"
+  },
+  "homepage": "https://github.com/hankchizljaw/personalsit.es#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.5.2",
+    "@11ty/eleventy-plugin-rss": "^1.0.2",
+    "html-minifier": "^3.5.20"
+  }
+}
