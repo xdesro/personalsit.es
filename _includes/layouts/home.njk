@@ -1,4 +1,31 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-    <h1>Personal sites are awesome</h1>
+    
+    <header role="banner" class="site-head">
+        <h1>{{ title }}</h1>
+        <article>
+            {{ content | safe }}
+        </article>
+    </header>
+    <main>
+        <h2>The sites</h2>
+        <ul class="items">
+            {% for item in collections.sites | shuffle %}
+                <li class="item">
+                        <h3>{{ item.data.title }}</h3>
+                        <dl>
+                            <dt>Has RSS Feed</dt>
+                            <dd>{{ 'Yes' if item.data.rss else 'No' }}</dd>
+                            <dt>Tags</dt>
+                            {% for tag in item.data.tags %}
+                                {% if tag !== 'sites' %}
+                                    <dd>{{ tag }}</dd>
+                                {% endif %}
+                            {% endfor %}
+                        </dl>
+                    <a href="{{ item.data.url }}" rel="external" class="block-link" aria-label="Go to this personal site"></a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
 {% endblock %}
