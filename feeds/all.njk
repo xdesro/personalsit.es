@@ -1,0 +1,41 @@
+---
+permalink: feed/all.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Personal sites are awesome!</title>
+	<subtitle>All sites from personalsit.es</subtitle>
+	<link href="https://personalsit.es/feed/all.xml" rel="self"/>
+	<link href="https://personalsit.es/"/>
+	<updated>{{ collections.sites | rssLastUpdatedDate }}</updated>
+	<id>https://personalsit.es</id>
+	<author>
+		<name>Andy Bell</name>
+		<email>andy@hankchizljaw.io</email>
+	</author>
+	{%- for post in collections.sites %}
+        {% if not post.data.external %}
+            {% set absolutePostUrl %}https://hankchizljaw.io{{ post.url | url }}{% endset %}
+            <entry>
+                <title>{{ post.data.title }}</title>
+                <link href="{{ absolutePostUrl }}"/>
+                <updated>{{ post.date | rssDate }}</updated>
+                <id>{{ absolutePostUrl }}</id>
+                <content type="html"><![CDATA[
+                    <h3>{{ post.data.title }}</h3>
+                    <dl>
+                        <dt>Has RSS Feed</dt>
+                        <dd>{{ 'Yes' if post.data.rss else 'No' }}</dd>
+                        <dt>Tags</dt>
+                        {% for tag in post.data.tags %}
+                            {% if tag !== 'sites' %}
+                                <dd>{{ tag }}</dd>
+                            {% endif %}
+                        {% endfor %}
+                    </dl>
+                    <p><a href="{{ post.data.url }}" rel="external">Visit site</a></p>
+             ]]></content>
+            </entry>
+        {% endif %}
+	{%- endfor %}
+</feed>
