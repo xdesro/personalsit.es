@@ -20,6 +20,8 @@ For example: `hankchizljaw.io.md`.
 
 Fill out the details. Here's a template.
 
+⚠️ **Please note**: Make sure you keep a 'sites' tag so it shows up in the feed!
+
 ```yaml
 ---
 title: 'hankchizljaw.io'
