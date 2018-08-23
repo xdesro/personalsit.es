@@ -1,5 +1,5 @@
 ---
-title: 'benbriognell.com'
+title: 'benbrignell.com'
 url: 'https://benbrignell.com'
 tags: ['sites', 'designer', 'developer']
 nsfw: false
