@@ -36,7 +36,7 @@ body {
                     "Fira Sans", "Droid Sans", "Helvetica Neue", 
                     sans-serif;
     line-height: 1.5;
-    color: hsl(0, 0%, 93%);
+    color: hsl(0, 0%, 94%);
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
 }
@@ -68,6 +68,11 @@ header[role="banner"] {
     margin: 0 0 3rem 0;
     max-width: 60ch;
 }
+    header[role="banner"] article {
+        font-size: 1.1rem;
+        font-weight: 300;
+    }
+
     header[role="banner"] article > * + *  {
         margin-top: 1.5rem;
     }
