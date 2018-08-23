@@ -3,6 +3,9 @@ const htmlmin = require('html-minifier');
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 
 module.exports = function(eleventyConfig) {
+    // Pass through
+    eleventyConfig.addPassthroughCopy('assets');
+
     // Plugins
     eleventyConfig.addPlugin(rssPlugin);
 
