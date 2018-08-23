@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal sites are awesome</title>
     <style>{% include "assets/css/global.css" %}</style>
     {% for feed in feeds.items %}
         <link rel="alternate" type="application/rss+xml" title="{{ feed.text }}" href="{{ feed.url }}" />
     {% endfor %}
 </head>
 <body>
-    {% block content %}{% endblock %}
+    <div class="wrapper">
+        {% block content %}{% endblock %}
+    </div>
 </body> 
 </html>
