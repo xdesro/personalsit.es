@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>{% include "assets/css/global.css" %}</style>
+    {% for feed in feeds.items %}
+        <link rel="alternate" type="application/rss+xml" title="{{ feed.text }}" href="{{ feed.url }}" />
+    {% endfor %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body> 
+</html>
