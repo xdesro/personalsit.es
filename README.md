@@ -8,7 +8,7 @@ Want to add your site? Follow these steps
 
 ### Step one
 
-Fork this repository
+Fork this repository.
 
 ### Step two
 
@@ -18,7 +18,7 @@ For example: `hankchizljaw.io.md`.
 
 ### Step three
 
-Fill out the details. Here's a template
+Fill out the details. Here's a template.
 
 ```yaml
 ---
