@@ -1,6 +1,6 @@
 # Personal sites are awesome!
 
-Personal sites are awesome, so this site was built so we can all discover each other's.
+Personal sites are awesome, so this site was built so we can all discover each others.
 
 ## Add your site
 
