@@ -1,7 +1,7 @@
 ---
 title: 'alexmuraro.me'
 url: 'https://alexmuraro.me'
-tags: ['sites', 'developer']
+tags: ['sites', 'front-end developer', 'developer']
 nsfw: false
-rss: true
+rss: false
 ---
