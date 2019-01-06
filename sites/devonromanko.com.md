@@ -1,7 +1,7 @@
 ---
 title: 'devonromanko.com'
 url: 'https://devonromanko.com'
-tags: ['sites', 'developer']
+tags: ['developer']
 nsfw: false
 rss: false
 ---

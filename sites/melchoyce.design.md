@@ -1,7 +1,7 @@
 ---
 title: 'melchoyce.design'
 url: 'http://melchoyce.design'
-tags: ['sites', 'designer']
+tags: ['designer']
 nsfw: false
 rss: true
 ---
