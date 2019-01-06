@@ -1,7 +1,7 @@
 ---
 title: 'alexcarpenter.me'
 url: 'https://alexcarpenter.me'
-tags: ['sites', 'developer']
+tags: ['developer']
 nsfw: false
 rss: true
 ---

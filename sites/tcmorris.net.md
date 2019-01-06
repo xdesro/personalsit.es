@@ -1,7 +1,7 @@
 ---
 title: 'tcmorris.net'
 url: 'https://tcmorris.net'
-tags: ['sites', 'developer', 'umbraco', 'dotnet']
+tags: ['developer', 'umbraco', 'dotnet']
 nsfw: false
 rss: true
 ---

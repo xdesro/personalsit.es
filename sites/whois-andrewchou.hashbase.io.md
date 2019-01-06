@@ -1,7 +1,7 @@
 ---
 title: 'whois-andrewchou.hashbase.io'
 url: 'https://whois-andrewchou.hashbase.io'
-tags: ['sites', 'developer', 'web']
+tags: ['developer', 'web']
 nsfw: false
 rss: false
 ---

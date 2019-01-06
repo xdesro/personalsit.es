@@ -1,7 +1,7 @@
 ---
 title: 'chrisburnell.com'
 url: 'https://chrisburnell.com'
-tags: ['sites', 'developer']
+tags: ['developer']
 nsfw: false
 rss: true
 ---

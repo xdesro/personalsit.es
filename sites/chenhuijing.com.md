@@ -1,7 +1,7 @@
 ---
 title: 'chenhuijing.com'
 url: 'https://chenhuijing.com'
-tags: ['sites', 'designer', 'developer']
+tags: ['designer', 'developer']
 nsfw: false
 rss: true
 ---
