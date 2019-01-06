@@ -1,7 +1,7 @@
 ---
 title: 'hans.gerwitz.com'
 url: 'https://hans.gerwitz.com/'
-tags: ['sites', 'geek']
+tags: ['geek']
 nsfw: false
 rss: true
 ---
