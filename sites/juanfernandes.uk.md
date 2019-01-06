@@ -1,7 +1,7 @@
 ---
 title: 'juanfernandes.uk'
 url: 'https://juanfernandes.uk'
-tags: ['sites', 'designer', 'developer']
+tags: ['designer', 'developer']
 nsfw: false
 rss: true
 ---

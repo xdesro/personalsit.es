@@ -1,7 +1,7 @@
 ---
 title: 'Jasper Kinoti'
 url: 'https://jasper.now.sh'
-tags: ['sites', 'Designer', 'developer']
+tags: ['Designer', 'developer']
 nsfw: false
 rss: false
 ---

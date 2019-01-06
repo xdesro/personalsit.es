@@ -1,7 +1,7 @@
 ---
 title: 'samkapila.com'
 url: 'https://samkapila.com'
-tags: ['sites', 'designer', 'developer', 'education']
+tags: ['designer', 'developer', 'education']
 nsfw: false
 rss: true
 ---

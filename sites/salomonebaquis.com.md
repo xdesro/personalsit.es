@@ -1,7 +1,7 @@
 ---
 title: 'salomonebaquis.com'
 url: 'http://salomonebaquis.com'
-tags: ['sites', 'developer']
+tags: ['developer']
 nsfw: false
 rss: false
 ---

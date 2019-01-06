@@ -18,15 +18,13 @@ For example: `hankchizljaw.io.md`.
 
 ### Step three
 
-Fill out the details. Here's a template.
-
-⚠️ **Please note**: Make sure you keep a 'sites' tag so it shows up in the feed!
+Fill out the details. Here's the template:
 
 ```yaml
 ---
 title: 'hankchizljaw.io'
 url: 'https://hankchizljaw.io'
-tags: ['sites', 'designer', 'developer']
+tags: ['designer', 'developer']
 nsfw: false
 rss: true
 ---

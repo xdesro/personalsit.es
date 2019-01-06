@@ -1,7 +1,7 @@
 ---
 title: 'hiddedevries.nl'
 url: 'https://hiddedevries.nl/en'
-tags: ['sites', 'designer', 'developer']
+tags: ['designer', 'developer']
 nsfw: false
 rss: true
 ---
