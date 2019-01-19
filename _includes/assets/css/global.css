@@ -137,6 +137,12 @@ h2 {
     padding: 0.2rem 0 0 0.5rem;
 }
 
+.item dd a {
+    position: relative;
+    z-index: 2;
+    color: currentColor;
+}
+
 .item dt {
     font-weight: 600;
 }
