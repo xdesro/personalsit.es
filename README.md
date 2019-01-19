@@ -22,9 +22,10 @@ Fill out the details. Here's the template:
 
 ```yaml
 ---
-title: 'hankchizljaw.io'
-url: 'https://hankchizljaw.io'
-tags: ['designer', 'developer']
+title: 'andy-bell.design'
+url: 'https://andy-bell.design'
+tags: ['web designer', 'writer']
+updatesFeed: 'https://andy-bell.design/feed/page/0/'
 nsfw: false
 rss: true
 ---
