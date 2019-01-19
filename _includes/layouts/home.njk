@@ -11,7 +11,7 @@
         <h2>The sites</h2>
         <ul class="items">
             {% for item in collections.sites | shuffle %}
-                <li class="item">
+                <li class="item" id="{{ item.data.url }}">
                         <h3>{{ item.data.title }}</h3>
                         <dl>
                             <dt>Has RSS Feed</dt>
