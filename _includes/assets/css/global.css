@@ -141,6 +141,7 @@ h2 {
     position: relative;
     z-index: 2;
     color: currentColor;
+    text-transform: none;
 }
 
 .item dt {
