@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal sites are awesome</title>
+    <meta name="description" content="Personal sites are awesome, so this site was built so we can all discover each others. This directory of links are by folks that want to share their site with the world.">
+    <meta property="og:url" content="https://personalsit.es/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Personal sites are awesome">
+    <meta property="og:description" content="Personal sites are awesome, so this site was built so we can all discover each others. This directory of links are by folks that want to share their site with the world.">
+    <meta property="og:image" content="/assets/images/apple-touch-icon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Personal sites are awesome">
+    <meta name="twitter:description" content="Personal sites are awesome, so this site was built so we can all discover each others. This directory of links are by folks that want to share their site with the world.">
+    <meta name="twitter:image" content="/assets/images/apple-touch-icon.png">
     <style>{% include "assets/css/global.css" %}</style>
     {% for feed in feeds.items %}
         <link rel="alternate" type="application/rss+xml" title="{{ feed.text }}" href="{{ feed.url }}" />
