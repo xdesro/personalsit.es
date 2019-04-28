@@ -142,6 +142,7 @@ h2 {
     z-index: 2;
     color: currentColor;
     text-transform: none;
+    word-break: break-all;
 }
 
 .item dt {
