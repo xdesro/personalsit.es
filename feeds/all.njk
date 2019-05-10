@@ -24,9 +24,9 @@ permalink: feed/all.xml
                 <content type="html"><![CDATA[
                     <h3>{{ post.data.title }}</h3>
                     <dl>
-                        <dt>Has RSS Feed</dt>
+                        <dt><b>Has RSS Feed?</b></dt>
                         <dd>{{ 'Yes' if post.data.rss else 'No' }}</dd>
-                        <dt>Tags</dt>
+                        <dt><b>Tags</b></dt>
                         {% for tag in post.data.tags %}
                             {% if tag !== 'sites' %}
                                 <dd>{{ tag }}</dd>

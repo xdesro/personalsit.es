@@ -11,11 +11,15 @@
         <h2>The sites</h2>
         <ul class="items">
             {% for item in collections.sites | shuffle %}
-                <li class="item">
+                <li class="item" id="{{ item.data.url }}">
                         <h3>{{ item.data.title }}</h3>
                         <dl>
                             <dt>Has RSS Feed</dt>
                             <dd>{{ 'Yes' if item.data.rss else 'No' }}</dd>
+                            {% if item.data.updatesFeed %}
+                            <dt>Updates feed</dt>
+                            <dd><a href="{{ item.data.updatesFeed }}">{{ item.data.updatesFeed }}</a></dd>
+                            {% endif %}
                             <dt>Tags</dt>
                             {% for tag in item.data.tags %}
                                 {% if tag !== 'sites' %}
