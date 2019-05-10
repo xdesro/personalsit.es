@@ -1,6 +1,6 @@
 # Personal sites are awesome!
 
-Personal sites are awesome, so this site was built so we can all discover each other's.
+Personal sites are awesome, so this site was built so we can all discover each others.
 
 ## Add your site
 
@@ -18,15 +18,14 @@ For example: `hankchizljaw.io.md`.
 
 ### Step three
 
-Fill out the details. Here's a template.
-
-⚠️ **Please note**: Make sure you keep a 'sites' tag so it shows up in the feed!
+Fill out the details. Here's the template:
 
 ```yaml
 ---
-title: 'hankchizljaw.io'
-url: 'https://hankchizljaw.io'
-tags: ['sites', 'designer', 'developer']
+title: 'andy-bell.design'
+url: 'https://andy-bell.design'
+tags: ['web designer', 'writer']
+updatesFeed: 'https://andy-bell.design/feed/page/0/'
 nsfw: false
 rss: true
 ---

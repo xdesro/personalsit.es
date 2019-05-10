@@ -1,7 +1,8 @@
 ---
 title: 'alexcarpenter.me'
 url: 'https://alexcarpenter.me'
-tags: ['sites', 'developer']
+tags: ['developer']
+updatesFeed: 'https://alexcarpenter.me/notes'
 nsfw: false
 rss: true
 ---

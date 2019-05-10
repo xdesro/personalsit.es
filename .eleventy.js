@@ -6,6 +6,11 @@ module.exports = function(eleventyConfig) {
     // Pass through
     eleventyConfig.addPassthroughCopy('assets');
 
+    // Collections
+    eleventyConfig.addCollection('sites', collection => {
+      return collection.getFilteredByGlob('sites/*.md');
+    });
+
     // Plugins
     eleventyConfig.addPlugin(rssPlugin);
 

@@ -26,7 +26,7 @@ ul, ol {
 
 /* Core, global styles */
 html {
-    background: hsl(224, 46%, 35%);
+    background: hsl(0, 0%, 96%);
 }
 
 body {
@@ -36,13 +36,13 @@ body {
                     "Fira Sans", "Droid Sans", "Helvetica Neue", 
                     sans-serif;
     line-height: 1.5;
-    color: hsl(0, 0%, 94%);
+    color: hsl(224, 46%, 35%);
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
 }
 
 a:not([class]) {
-    color: hsl(0, 0%, 90%);
+    color: currentColor;
     text-decoration-skip-ink: auto;
 }
 
@@ -81,7 +81,6 @@ h1 {
     font-size: 2.7rem;
     line-height: 1.01;
     font-weight: 300;
-    color: hsl(0, 0%, 95%);
     margin: 0 0 2rem 0;
 }
 
@@ -110,10 +109,19 @@ h2 {
 /* Item cell */
 .item {
     padding: 1rem;
-    border: 1px dotted hsl(0, 0%, 75%);
-    background: hsla(0, 0%, 100%, 0.05);
+    background: hsl(224, 40%, 46%);
+    color: hsl(0, 0%, 96%);
     position: relative;
-    color: hsl(0, 0%, 100%);
+    transition: all 200ms ease;
+}
+
+    .item:hover,
+    .item:focus-within {
+        background: hsl(224, 46%, 40%);
+    }
+
+.item a:focus {
+    outline: 2px dashed hsl(224, 46%, 30%);
 }
 
 .item h3 {
@@ -123,21 +131,30 @@ h2 {
     margin: 0 0 1rem 0;
 }
 
-.item dl {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.2rem;
-}
-
 .item dd {
-    grid-column: 2/2;
-    font-weight: 300;
     text-transform: capitalize;
     font-size: 0.9rem;
+    padding: 0.2rem 0 0 0.5rem;
+}
+
+.item dd a {
+    position: relative;
+    z-index: 2;
+    color: currentColor;
+    text-transform: none;
+    word-break: break-all;
 }
 
 .item dt {
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.item dt + dd {
+    margin-top: 0.1rem;
+}
+
+.item dd + dt {
+    margin-top: 1rem;
 }
 
 /* Block link */
