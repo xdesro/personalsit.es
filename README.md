@@ -14,7 +14,7 @@ Fork this repository.
 
 Add a new `.md` file in `sites` that is `{yourDomain}.md`.
 
-For example: `hankchizljaw.io.md`.
+For example: `andy-bell.design.md`.
 
 ### Step three
 
