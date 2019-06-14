@@ -1,0 +1,19 @@
+---
+permalink: feed/opml.opml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<opml version="1.0">
+  <head>
+    <dateCreated>{{ collections.sites | rssLastUpdatedDate }}</dateCreated>
+    <title>Personal sites are awesome!</title>
+  </head>
+  <body>
+    <outline text="personalsit.es">
+    {%-for item in collections.sites | shuffle %}
+        {%-if item.data.updatesFeed %}
+            <outline type="rss" text="{{ item.data.title }}" xmlUrl="{{ item.data.updatesFeed }}" htmlUrl="{{ item.data.url }}"/>
+        {%-endif %}
+    {%-endfor %}
+    </outline>
+  </body>
+</opml>
