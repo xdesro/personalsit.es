@@ -1,5 +1,5 @@
 ---
-title: 'Jamie's Notes'
+title: 'jamiesnotes.com'
 url: 'https://jamiesnotes.com'
 tags: ['life','misc']
 updatesFeed: 'https://jamiesnotes.com/index.xml'
