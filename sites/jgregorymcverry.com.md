@@ -1,3 +1,4 @@
+---
 title: 'jgregorymcverry.con'
 url: 'https://jgregorymcverry.com'
 tags: ['literacies', 'open pedagogy', 'IndieWeb',]
