@@ -11,7 +11,7 @@ permalink: feed/opml.opml
     <outline text="personalsit.es">
     {%-for item in collections.sites | shuffle %}
         {%-if item.data.updatesFeed %}
-            <outline type="rss" text="{{ item.data.title }}" xmlUrl="{{ item.data.updatesFeed[0] }}" htmlUrl="{{ item.data.url }}"/>
+            <outline type="rss" text="{{ item.data.title }}" xmlUrl="{{ item.data.updatesFeed }}" htmlUrl="{{ item.data.url }}"/>
         {%-endif %}
     {%-endfor %}
     </outline>
