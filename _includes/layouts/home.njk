@@ -17,8 +17,10 @@
                             <dt>Has RSS Feed</dt>
                             <dd>{{ 'Yes' if item.data.rss else 'No' }}</dd>
                             {% if item.data.updatesFeed %}
-                            <dt>Updates feed</dt>
-                            <dd><a href="{{ item.data.updatesFeed }}">{{ item.data.updatesFeed }}</a></dd>
+                                <dt>Updates feed</dt>
+                                {% for feed in item.data.updatesFeed %}
+                                    <dd><a href="{{ feed }}">{{ feed }}</a></dd>
+                                {% endfor %}
                             {% endif %}
                             <dt>Tags</dt>
                             {% for tag in item.data.tags %}
