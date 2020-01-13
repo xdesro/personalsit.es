@@ -1,36 +1,36 @@
-# Personal sites are awesome!
+# 💻 PersonalSit.es
 
-Personal sites are awesome, so this site was built so we can all discover each others.
+Personal sites are rad, so this project was built so we can all discover each other's, gain inspiration, and rally around the cause of the mighty personal site!
 
-## Add your site
+## 📇 Adding your own site
 
-Want to add your site? Follow these steps
+Want to add your site? We'd love your contribution. Go ahead and follow these steps, and [reach out](https://twitter.com/messages/compose?recipient_id=2509306208) if you have any trouble with this! 
 
-### Step one
+1. 🍴Fork this repository.
 
-Fork this repository.
+2. 📝 Add a new `.md` file in `sites` that is `{yourDomain}.md`.
 
-### Step two
+    > For example: `andy-bell.design.md`.
 
-Add a new `.md` file in `sites` that is `{yourDomain}.md`.
+3. 🖋Fill out the details. Here's the template:
 
-For example: `andy-bell.design.md`.
+    ```yaml
+    ---
+    title: 'andy-bell.design'
+    url: 'https://andy-bell.design'
+    tags: ['web designer', 'writer']
+    updatesFeed: 'https://andy-bell.design/feed/page/0/'
+    nsfw: false
+    rss: true
+    ---
+    ```
 
-### Step three
+4. 🖥 Create a pull request and after your site has been approved by an admin, it'll appear on [personalsit.es](https://personalsit.es)!
 
-Fill out the details. Here's the template:
+## 📄 Contributions
 
-```yaml
----
-title: 'andy-bell.design'
-url: 'https://andy-bell.design'
-tags: ['web designer', 'writer']
-updatesFeed: 'https://andy-bell.design/feed/page/0/'
-nsfw: false
-rss: true
----
-```
+Got an idea for an enhancement? Awesome — don't be shy about [creating an issue](https://github.com/xdesro/personalsit.es/issues/new), or even [opening a pull request](https://github.com/xdesro/personalsit.es/pulls), if you're feeling ambitious. I'd welcome the assist! 
 
-### Step four
+## 🗣 Colophon
 
-Create a pull request and after your site has been approved by an admin, it'll appear on [personalsit.es](https://personalsit.es)!
+This project was originally created by the GOAT [Andy Bell](https://hankchizljaw.com/), and is lately maintained by Henry Desroches.
