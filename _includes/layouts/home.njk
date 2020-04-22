@@ -1,17 +1,29 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-    
     <header role="banner" class="site-head">
-        <h1>{{ title }}</h1>
-        <article>
+        <h1 class="header">
+            <img class="header__logo" src="/assets/images/logo.svg" />
+            <span class="header__text">{{ title }}</span>
+        </h1>
+        <article class="content">
+            <ul class="social-links"> 
+                {% for name, link in social %}
+                    <li class="social-link">
+                        <a class="social-link__icon" href="{{ link }}">
+                            {# <img src="/assets/icons/{{name}}.svg"> #}
+                            {% include 'icons/' + name + '.svg' %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
             {{ content | safe }}
         </article>
     </header>
     <main>
-        <h2>The sites</h2>
         <ul class="items">
             {% for item in collections.sites | shuffle %}
                 <li class="item" id="{{ item.data.url }}">
+                    <img class="item__image" src="/assets/screenshots/{{ item.data.title }}.png" />
                         <h3>{{ item.data.title }}</h3>
                         <dl>
                             <dt>Has RSS Feed</dt>

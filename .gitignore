@@ -2,3 +2,6 @@
 *.swp
 node_modules
 _site
+
+# Local Netlify folder
+.netlify
