@@ -1,10 +1,15 @@
 const fs = require('fs');
+const http = require('http');
+const cloudinary = require('cloudinary').v2;
 const frontMatter = require('front-matter');
 const captureWebsite = require('capture-website');
+const filenamifyUrl = require('filenamify-url');
+
+const rssPlugin = require('@11ty/eleventy-plugin-rss');
+const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 
 const shuffle = require('./filters/shuffle.js');
 const htmlmin = require('html-minifier');
-const rssPlugin = require('@11ty/eleventy-plugin-rss');
 
 const getSites = () => {
   const files = fs.readdirSync('sites').map((file) => {
@@ -13,8 +18,8 @@ const getSites = () => {
   const urls = files
     .map((file) => {
       const parsedFile = frontMatter(file);
-      const { title, url } = parsedFile.attributes;
-      return { title, url };
+      const { url } = parsedFile.attributes;
+      return { title: filenamifyUrl(url, { replacement: '' }), url };
     })
     .filter((site) => {
       const { title, url } = site;
@@ -24,44 +29,40 @@ const getSites = () => {
   return urls;
 };
 
+cloudinary.config({
+  cloud_name: 'personalsites',
+  api_key: '267283442759537',
+  api_secret: 'jmyJewlQeGwVPzFGTUXs64uILeE',
+});
+
+const getScreenshot = async (site) => {
+  //  TODO — Check if screenshot exists in Cloudinary space before running Puppeteer
+  //  TODO — Statically render URLs in template files
+  const doesntExist = await new Promise((resolve, reject) => {
+    http.get(cloudinary.url(site.title), (response) => {
+      resolve(response.statusCode === 404);
+    });
+  });
+  if (doesntExist) {
+    try {
+      const screenshot = await captureWebsite.buffer(site.url, { timeout: 15 });
+      cloudinary.uploader
+        .upload_stream({ resource_type: 'image', public_id: site.title })
+        .end(screenshot);
+    } catch (error) {
+      console.log(site.title, error);
+    }
+  }
+};
+
 module.exports = (eleventyConfig) => {
-  // const urls = getScreenshots().then((val) => {
-  //   console.log(val);
-  // });
-  const dir = `_site/assets/screenshots`;
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir);
   const sites = getSites();
   (async () => {
-    await Promise.all(
-      sites
-        .filter((site) => {
-          if (fs.existsSync(`${dir}/${title}.png`)) return false;
-          return true;
-        })
-        .map(({ title, url }) => {
-          return captureWebsite.file(url, `${dir}/${title}.png`, {
-            width: 1440,
-            height: 900,
-          });
-        })
-    );
+    for (const site of sites) {
+      await getScreenshot(site);
+    }
   })();
-  // sites.forEach((site) => {
-  //   captureWebsite.file(
-  //     site.url,
-  //     `_site/assets/screenshots/${site.title}.png`,
-  //     {
-  //       width: 600,
-  //       height: 375,
-  //     }
-  //   );
-  // });
-  // sites.forEach(async (site) => {
-  //   await captureWebsite.file(site.url, `screenshots/${site.title}.png`, {
-  //     width: 600,
-  //     height: 375,
-  //   });
-  // });
+
   // Pass through
   eleventyConfig.addPassthroughCopy('assets');
 
