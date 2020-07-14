@@ -1,5 +1,5 @@
 ---
-title: 'Ngzhio\'s Blog'
+title: 'Ngzhio Blog'
 url: 'https://ngzhio.github.io'
 tags: ['programmer', 'writer', 'blogger']
 updatesFeed: 'https://ngzhio.github.io/feed.xml'
