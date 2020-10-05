@@ -5,7 +5,7 @@
   "main": ".eleventy.js",
   "scripts": {
     "serve": "npx @11ty/eleventy --serve --quiet",
-    "build": "npx @11ty/eleventy"
+    "build": "node buildSites.js && npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
@@ -26,12 +26,9 @@
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "capture-website": "^0.8.1",
     "cloudinary": "^1.21.0",
+    "dotenv": "^8.2.0",
     "filenamify-url": "^2.1.1",
     "front-matter": "^3.1.0",
-    "html-minifier": "^3.5.20",
-    "xml2js": "^0.4.23"
-  },
-  "devDependencies": {
-    "eleventy-plugin-lazyimages": "^1.1.1"
+    "html-minifier": "^3.5.20"
   }
 }
