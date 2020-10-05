@@ -23,23 +23,28 @@
         <ul class="items">
             {% for item in collections.sites | shuffle %}
                 <li class="item" id="{{ item.data.url }}">
-                    <img class="item__image" src="/assets/screenshots/{{ item.data.title }}.png" />
-                        <h3>{{ item.data.title }}</h3>
-                        <dl>
-                            <dt>Has RSS Feed</dt>
-                            <dd>{{ 'Yes' if item.data.rss else 'No' }}</dd>
-                            {% if item.data.updatesFeed %}
-                            <dt>Updates feed</dt>
-                            <dd><a href="{{ item.data.updatesFeed }}">{{ item.data.updatesFeed }}</a></dd>
+                    <img class="item__image" data-src="{% cloudinaryUrl item.data.url, 'w_600' %}" height="400" width="640" />
+                    <h3 class="item__title">{{ item.data.title }}</h3>
+                    <span class="item__url">{{ item.data.url | cleanUrl }}</span>
+                    {# <button class="item__toggle" aria-label="View personal site information"></button>
+                    <div class="item-tray">
+
+                    </div> #}
+                    {# <dl>
+                        <dt>Has RSS Feed</dt>
+                        <dd>{{ 'Yes' if item.data.rss else 'No' }}</dd>
+                        {% if item.data.updatesFeed %}
+                        <dt>Updates feed</dt>
+                        <dd><a href="{{ item.data.updatesFeed }}">{{ item.data.updatesFeed }}</a></dd>
+                        {% endif %}
+                        <dt>Tags</dt>
+                        {% for tag in item.data.tags %}
+                            {% if tag !== 'sites' %}
+                                <dd>{{ tag }}</dd>
                             {% endif %}
-                            <dt>Tags</dt>
-                            {% for tag in item.data.tags %}
-                                {% if tag !== 'sites' %}
-                                    <dd>{{ tag }}</dd>
-                                {% endif %}
-                            {% endfor %}
-                        </dl>
-                    <a href="{{ item.data.url }}" rel="external" class="block-link" aria-label="Go to this personal site"></a>
+                        {% endfor %}
+                    </dl> #}
+                    {# <a href="{{ item.data.url }}" rel="external" class="item__link" aria-label="Go to this personal site"></a> #}
                 </li>
             {% endfor %}
         </ul>
