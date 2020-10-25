@@ -1,7 +1,7 @@
 ---
-title: 'MH's Portfolio'
-url: 'http://www.mhsdevelopers.com.br/'
-tags: ['web designer']
+title: 'mhsdevelopers'
+url: 'http://www.mhsdevelopers.com.br'
+tags: ['web designer', 'software engineer']
 nsfw: false
-rss: true
+rss: false
 ---
