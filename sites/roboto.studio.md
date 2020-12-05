@@ -1,5 +1,5 @@
 ---
-title: "roboto.studio"
+title: "Roboto Studio"
 url: "https://roboto.studio"
 tags:
   ["web designer", "web developer", "gatsby.js", "UI/UX design", "blazing fast"]
