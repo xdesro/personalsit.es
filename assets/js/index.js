@@ -28,6 +28,17 @@ const lazyLoader = new IntersectionObserver((entries, observer) => {
     }
   });
 });
+const headerToggle = new IntersectionObserver((entries) => {
+  entries.forEach(({ isIntersecting }) => {
+    const fixedNav = document.querySelector('.fixed-nav');
+    if (!isIntersecting) {
+      fixedNav.classList.add('fixed-nav--active');
+    } else {
+      fixedNav.classList.remove('fixed-nav--active');
+    }
+  });
+});
+headerToggle.observe(document.querySelector('.site-head'));
 
 document.addEventListener('DOMContentLoaded', () => {
   [
