@@ -199,6 +199,7 @@ a {
   border-bottom: 2px solid #dddddd;
   top: 100%;
   left: 0;
+  z-index: 2;
 }
 .item:nth-of-type(3n - 1) .item-tray {
   left: calc(-100% - 2rem);
@@ -297,9 +298,8 @@ a {
     padding: 2rem;
     background-color: transparent;
   }
-  .item__image {
-    max-width: 20rem;
-  }
+}
+@media (min-width: 42rem) {
   .item__title {
     font-size: 1rem;
   }
@@ -317,12 +317,13 @@ a {
   .item--active .item-tray {
     display: block;
   }
-  .item-tray__inner {
-    grid-template-columns: repeat(4, 1fr);
-  }
   .item-tray__image {
     display: block;
   }
+  .item-tray__inner {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .item-tray__site-title {
     display: block;
   }
