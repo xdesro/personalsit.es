@@ -1,7 +1,7 @@
 const filenamifyUrl = require('filenamify-url');
 
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
-const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
+// const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 
 const shuffle = require('./filters/shuffle.js');
 const htmlmin = require('html-minifier');
