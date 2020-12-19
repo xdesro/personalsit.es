@@ -1,8 +1,13 @@
 ---
 title: 'Personal sites are awesome!'
 layout: 'layouts/home.njk'
+social:
+  {
+    twitter: 'https://twitter.com/xdesro',
+    github: 'https://github.com/xdesro/personalsit.es',
+  }
 ---
 
-Personal sites are awesome, so this site was built so we can all discover each others. All the links are by folks that want to share their site with the world.
+This site was built to share and revel in each others’ personal sites. Witness these in wonderment and awe. Immaculate. Stunning. How did they do that? Yes, you should definitely get around to redesigning yours soon.
 
-If you want your site to appear on here, go ahead and [submit it on GitHub](https://github.com/hankchizljaw/personalsit.es#add-your-site).
+[Open-source](https://github.com/xdesro/personalsit.es), originally built by [Andy Bell](https://hankchizljaw.com/), currently maintained by [Henry Desroches](https://henry.codes/). [Open a pull request](https://github.com/xdesro/personalsit.es/compare), why don’cha?
