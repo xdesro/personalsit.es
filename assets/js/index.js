@@ -44,3 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
 [...document.querySelectorAll('.item__toggle')].forEach((button) =>
   button.addEventListener('click', toggleActiveTray)
 );
+
+console.log(` ▄▄▄       ▄████▄   ▄▄▄       ▄▄▄▄   
+▒████▄    ▒██▀ ▀█  ▒████▄    ▓█████▄ 
+▒██  ▀█▄  ▒▓█    ▄ ▒██  ▀█▄  ▒██▒ ▄██
+░██▄▄▄▄██ ▒▓▓▄ ▄██▒░██▄▄▄▄██ ▒██░█▀  
+ ▓█   ▓██▒▒ ▓███▀ ░ ▓█   ▓██▒░▓█  ▀█▓
+ ▒▒   ▓▒█░░ ░▒ ▒  ░ ▒▒   ▓▒█░░▒▓███▀▒
+  ▒   ▒▒ ░  ░  ▒     ▒   ▒▒ ░▒░▒   ░ 
+  ░   ▒   ░          ░   ▒    ░    ░ 
+      ░  ░░ ░            ░  ░ ░      
+          ░                        ░ `);
