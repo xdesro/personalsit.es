@@ -4,6 +4,7 @@ const toggleActiveTray = (e) => {
   const items = [...document.querySelectorAll('.item')];
   const parentContainer = e.target.closest('.items');
   const parentItem = e.target.closest('.item');
+  const containerStyle = window.getComputedStyle(parentContainer);
   const isActive = parentItem.classList.contains('item--active');
   const tray = parentItem.querySelector('.item-tray');
 
@@ -11,12 +12,6 @@ const toggleActiveTray = (e) => {
   isActive
     ? parentItem.classList.remove('item--active')
     : parentItem.classList.add('item--active');
-  // parentItem.style.marginBottom = window.getComputedStyle(tray).height;
-  // parentItem.style.marginBottom = `100%`;
-  const containerStyle = window.getComputedStyle(parentContainer);
-
-  // tray.style.top = `${parentItem.getBoundingClientRect().bottom}px`;
-
   tray.style.width = `calc(${containerStyle.width} - (2 * ${containerStyle.paddingLeft}))`;
 };
 
