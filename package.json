@@ -4,14 +4,18 @@
   "description": "",
   "main": ".eleventy.js",
   "scripts": {
-    "serve": "npx @11ty/eleventy --serve"
+    "serve": "npx @11ty/eleventy --serve --quiet",
+    "build": "node buildSites.js && npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hankchizljaw/personalsit.es.git"
+    "url": "git+https://github.com/xdesro/personalsit.es.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Henry Desroches <yo@henry.codes> (https://henry.codes/)",
+  "contributors": [
+    "Andy Bell <me@andy-bell.design> (https://hankchizljaw.com/)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hankchizljaw/personalsit.es/issues"
@@ -20,6 +24,11 @@
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "capture-website": "^0.8.1",
+    "cloudinary": "^1.21.0",
+    "dotenv": "^8.2.0",
+    "filenamify-url": "^2.1.1",
+    "front-matter": "^3.1.0",
     "html-minifier": "^3.5.20"
   }
 }
