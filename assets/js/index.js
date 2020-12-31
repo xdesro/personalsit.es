@@ -1,5 +1,8 @@
 // @ts-check
 
+const toggleTheme = (e) => {
+  document.documentElement.toggleAttribute('dark');
+};
 const toggleActiveTray = (e) => {
   const items = [...document.querySelectorAll('.item')];
   const parentContainer = e.target.closest('.items');
@@ -40,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ...document.querySelectorAll('.item__image, .item-tray__image'),
   ].forEach((img) => lazyLoader.observe(img));
 });
-
+document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
 [...document.querySelectorAll('.item__toggle')].forEach((button) =>
   button.addEventListener('click', toggleActiveTray)
 );
