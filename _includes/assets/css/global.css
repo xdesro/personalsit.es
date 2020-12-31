@@ -48,10 +48,18 @@ ol {
 /* end mini reset */
 
 :root {
-  --color__site--background: #f7f7f7;
-  --color__text--primary: #030303;
-  --color__text--secondary: #6a6a6a;
-  --color__text--tertiary: #898989;
+  --color__site--background: hsl(0, 0%, 97%);
+  --color__text--primary: hsl(0, 0%, 1%);
+  --color__text--secondary: hsl(0, 0%, 42%);
+  --color__text--tertiary: hsl(0, 0%, 54%);
+  --color__border: hsl(0, 0%, 87%);
+}
+[dark] {
+  --color__site--background: hsl(220, 5%, 13%);
+  --color__text--primary: hsl(0, 0%, 97%);
+  --color__text--secondary: hsl(0, 0%, 80%);
+  --color__text--tertiary: hsl(0, 0%, 70%);
+  --color__border: hsl(220, 5%, 8%);
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
@@ -78,11 +86,34 @@ a {
   height: 5rem;
   margin-bottom: 6rem;
 }
-
 .header .header__logo {
   align-self: center;
   width: 100%;
   max-width: 18rem;
+}
+[dark] .header {
+  filter: invert(1);
+}
+.theme-toggle {
+  display: inline-block;
+  justify-self: start;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color__text--secondary);
+  border: none;
+  background: transparent;
+}
+.theme-toggle svg {
+  width: 1rem;
+}
+[dark] .theme-toggle--to-dark {
+  display: none;
+}
+.theme-toggle--to-light {
+  display: none;
+}
+[dark] .theme-toggle--to-light {
+  display: block;
 }
 .header__text {
   position: absolute;
@@ -237,7 +268,7 @@ a {
   top: calc(100% + 1rem);
   left: 0;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #dddddd;
+  border-bottom: 2px solid var(--color__border);
 }
 
 .item-tray__inner {
@@ -299,9 +330,6 @@ a {
 }
 
 @media (min-width: 32rem) {
-  body {
-    background-image: linear-gradient(to bottom, transparent, #e2e2e2);
-  }
   .site-head {
     padding-top: 6rem;
   }
@@ -347,7 +375,7 @@ a {
     position: absolute;
     display: none;
     padding-top: 1rem;
-    border-top: 2px solid #dddddd;
+    border-top: 2px solid var(--color__border);
   }
   .item--active {
     margin-bottom: 13rem;
