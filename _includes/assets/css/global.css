@@ -173,7 +173,7 @@ a {
 }
 .item {
   position: relative;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .item__image {
   width: 100%;
@@ -181,30 +181,60 @@ a {
   min-height: 12.5rem;
   background-color: #e2e2e2;
 }
+.item__details {
+  position: relative;
+}
 .item__title {
   font-size: 1.5rem;
 }
 .item__url {
   font-size: 0.75rem;
   display: block;
-  margin-bottom: 1rem;
   color: var(--color__text--secondary);
 }
 .item__toggle {
+  font-size: 0.75rem;
   position: absolute;
-  top: 0;
+  top: calc(100% - 1rem);
   right: 0;
-  bottom: 0;
-  left: 0;
   display: none;
-  width: 100%;
   cursor: pointer;
+  text-transform: uppercase;
+  color: var(--color__text--secondary);
   border: none;
   background: transparent;
 }
+.item__toggle:before {
+  content: 'View ';
+}
+.item__toggle:after {
+  display: block;
+  width: 100%;
+  height: 1px;
+  content: '';
+  transition: all 0.2s ease;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  background-color: currentColor;
+}
+.item__toggle:hover:after {
+  transform: scaleX(1);
+}
+.item--active .item__toggle:before {
+  content: 'Close ';
+}
+.item__toggle svg {
+  height: 0.6rem;
+  transition: all 0.2s ease;
+  transform: rotate(90deg);
+}
+.item--active .item__toggle svg {
+  transform: rotate(0deg);
+}
+
 .item-tray {
   z-index: 2;
-  top: 100%;
+  top: calc(100% + 1rem);
   left: 0;
   padding-bottom: 1rem;
   border-bottom: 2px solid #dddddd;
