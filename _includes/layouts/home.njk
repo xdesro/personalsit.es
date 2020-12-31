@@ -5,6 +5,14 @@
             <img class="header__logo" src="/assets/images/logo.svg" alt="PersonalSit.es" />
         </h1>
         <article class="content">
+            <button class="theme-toggle" aria-label="Toggle color theme">
+                <svg class="theme-toggle--to-dark" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                    <path d="M25 48A22.92 22.92 0 012 26.04a1 1 0 01.81-1.02 1 1 0 011.14.65A17.02 17.02 0 1025.68 3.94 1 1 0 0126.03 2 23.02 23.02 0 0125 48z"/>
+                </svg>
+                <svg class="theme-toggle--to-light" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                    <path d="M24.9 3.97l-.12.03A1 1 0 0024 5v6c0 .36.18.7.5.88a1 1 0 001 0A1 1 0 0026 11V5a1 1 0 00-1.1-1.03zM10.67 9.84a1 1 0 00-.5 1.72l4.25 4.25a1 1 0 001.75-.4 1 1 0 00-.35-1l-4.25-4.25a1 1 0 00-.81-.32h-.1zm28.37 0a1 1 0 00-.6.32L34.2 14.4a1 1 0 00.4 1.75 1 1 0 001-.35l4.25-4.25a1 1 0 00-.8-1.72zM25 15a10 10 0 000 20 10 10 0 000-20zM4.72 24A1.01 1.01 0 005 26h6a1 1 0 00.88-.5 1 1 0 000-1A1 1 0 0011 24H4.71zm34 0a1.01 1.01 0 00.28 2h6a1 1 0 00.88-.5 1 1 0 000-1A1 1 0 0045 24H38.71zM15 33.88a1 1 0 00-.6.3l-4.24 4.26a1 1 0 00.4 1.75 1 1 0 001-.35l4.25-4.25a1 1 0 00-.72-1.72H15zm19.69 0a1 1 0 00-.5 1.72l4.25 4.24a1 1 0 001.75-.4 1 1 0 00-.35-1l-4.25-4.25a1 1 0 00-.72-.31h-.19zm-9.78 4.09c-.05 0-.09.02-.13.03a1 1 0 00-.78 1v6c0 .36.18.7.5.88a1 1 0 001 0A1 1 0 0026 45v-6a1 1 0 00-1.1-1.03z"/>
+                </svg>
+            </button>
             <ul class="social-links"> 
                 {% for name, link in social %}
                     <li class="social-link">
