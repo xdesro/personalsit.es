@@ -1,6 +1,6 @@
 ---
-title: 'catdrout.gatsbyjs.org'
-url: 'https://catdrout.gatsbyjs.org'
+title: 'catdrout.gatsbyjs.io'
+url: 'https://catdrout.gatsbyjs.io'
 tags: ['web developer', 'writer']
 updatesFeed: 'https://thatcatdrout.medium.com/feed'
 nsfw: false
