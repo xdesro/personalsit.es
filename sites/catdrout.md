@@ -1,7 +1,7 @@
 ---
-title: 'catdrout.gatsbyjs.io'
-url: 'https://catdrout.gatsbyjs.io'
-tags: ['web developer', 'writer']
+title: 'catdrout.vercel.app'
+url: 'https://catdrout.vercel.app/'
+tags: ['web developer', 'writer', 'meme poster']
 updatesFeed: 'https://thatcatdrout.medium.com/feed'
 nsfw: false
 rss: true
