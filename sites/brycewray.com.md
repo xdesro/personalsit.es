@@ -1,8 +1,8 @@
 ---
 title: 'brycewray.com'
-url: 'https://brycewray.com'
+url: 'https://www.brycewray.com'
 tags: ['web designer', 'web developer', 'writer', 'nerd']
-updatesFeed: 'https://brycewray.com/feed.xml'
+updatesFeed: 'https://www.brycewray.com/index.xml'
 nsfw: false
 rss: true
 ---
