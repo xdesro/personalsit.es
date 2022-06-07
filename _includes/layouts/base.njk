@@ -1,37 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal sites are awesome</title>
-    <meta name="description" content="Personal sites are awesome, so this site was built so we can all discover each others. This directory of links are by folks that want to share their site with the world.">
-    <meta property="og:url" content="https://personalsit.es/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Personal sites are awesome">
-    <meta property="og:description" content="Personal sites are awesome, so this site was built so we can all discover each others. This directory of links are by folks that want to share their site with the world.">
-    <meta property="og:image" content="https://personalsit.es/assets/images/apple-touch-icon.png">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Personal sites are awesome">
-    <meta name="twitter:description" content="Personal sites are awesome, so this site was built so we can all discover each others. This directory of links are by folks that want to share their site with the world.">
-    <meta name="twitter:image" content="https://personalsit.es/assets/images/apple-touch-icon.png">
+    {% include 'partials/meta.njk' %}
     <style>{% include "assets/css/global.css" %}</style>
-    {% for feed in feeds.items %}
-        <link rel="alternate" type="application/rss+xml" title="{{ feed.text }}" href="{{ feed.url }}" />
-    {% endfor %}
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
-    <link rel="manifest" href="/assets/images/site.webmanifest" />
-    <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#304682" />
-    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
-    <meta name="msapplication-TileColor" content="#304682" />
-    <meta name="msapplication-config" content="/assets/images/browserconfig.xml" />
-    <meta name="theme-color" content="#304682" />
-    <meta name="monetization" content="$coil.xrptipbot.com/c1f8f05d-8d8c-4f37-b1ad-25677ae129da" />
 </head>
 <body>
     <div class="wrapper">
         {% block content %}{% endblock %}
     </div>
+    <script src="/assets/js/index.js"></script>
 </body> 
 </html>

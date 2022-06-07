@@ -1,8 +1,8 @@
 ---
 title: 'Stephen Ajulu'
 url: 'https://stephenajulu.com'
-tags: ['web designer', 'blogger', 'web developer', 'graphic designer', 'resaercher']
-updatesFeed: 'https://stephenajulu.com/feed/'
+tags: ['consultant', 'web developer', 'designer', 'writer', 'creator', 'entrepreneur']
+updatesFeed: 'https://stephenajulu.com/feed.xml/'
 nsfw: false
 rss: true
 ---

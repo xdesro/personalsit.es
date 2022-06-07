@@ -1,0 +1,46 @@
+
+
+<li class="item" id="{{ item.data.url }}">
+    <a href="{{ item.data.url  }}">
+        <img class="item__image" data-src="{% cloudinaryUrl item.data.url, 'w_600' %}" height="375" width="600" alt="" />
+    </a>
+    <div class="item__details">
+    <div class="item__title">{{ item.data.title }}</div>
+    <span class="item__url">{{ item.data.url | cleanUrl }}</span>
+    <button class="item__toggle">
+        Details
+        <svg viewBox="0 0 13 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path id="arrow-up-right" fill-rule="evenodd" clip-rule="evenodd" d="M9.58586 2H1.00008V0H13.0001V12H11.0001V3.41421L1.70718 12.7071L0.292969 11.2929L9.58586 2Z"/>
+        </svg>
+    </button>
+    </div>
+    <div class="item-tray">
+        <div class="item-tray__inner">
+            <img class="item-tray__image" data-src="{% cloudinaryUrl item.data.url, 'w_600' %}" height="375" width="600" />
+            <div class="item-tray__column">
+                <div class="item-tray__site-title">{{ item.data.title }}</div>
+                <a class="item-tray__url" href="{{ item.data.url }}">{{ item.data.url }}</a>
+            </div>
+            <div class="item-tray__column item-tray__column--tags">
+            <div class="item-tray__meta-title">Tags</div>
+            <div class="item-tray__tags">{{ item.data.tags | join(', ')}}</div>
+            </div>
+            <div class="item-tray__column item-tray__column--links">
+                {% if item.data.updatesFeed %}
+                    <a class="item-tray__link item-tray__link--feed" href="{{ item.data.updatesFeed }}">
+                    <svg viewBox="0 0 13 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path id="arrow-up-right" fill-rule="evenodd" clip-rule="evenodd" d="M9.58586 2H1.00008V0H13.0001V12H11.0001V3.41421L1.70718 12.7071L0.292969 11.2929L9.58586 2Z"/>
+                    </svg>
+                    Go to feed
+                </a>
+                {% endif %}
+                <a class="item-tray__link item-tray__link--site" href="{{ item.data.url }}">
+                    <svg viewBox="0 0 13 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path id="arrow-up-right" fill-rule="evenodd" clip-rule="evenodd" d="M9.58586 2H1.00008V0H13.0001V12H11.0001V3.41421L1.70718 12.7071L0.292969 11.2929L9.58586 2Z"/>
+                    </svg>
+                    Go to site
+                </a>
+            </div>
+        </div>
+    </div>
+</li>
