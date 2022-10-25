@@ -2,6 +2,7 @@
 
 <li class="item" id="{{ item.data.url }}">
     <a href="{{ item.data.url  }}">
+        <p class="visually-hidden">View site</p>
         <img class="item__image" data-src="{% cloudinaryUrl item.data.url, 'w_600' %}" height="375" width="600" alt="" />
     </a>
     <div class="item__details">
