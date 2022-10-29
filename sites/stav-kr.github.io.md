@@ -1,7 +1,7 @@
 ---
 title: 'stav-kr'
-url: 'https://stav-kr.github.io/MyWebsite/'
-tags: ['physicist', 'python', 'hobbyist', 'programer']
+url: 'https://stavros-wb.netlify.app'
+tags: ['physicist', 'python', 'Data Scientist', 'programmer']
 nsfw: false
 rss: false
 ---
