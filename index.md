@@ -3,7 +3,7 @@ title: 'Personal sites are awesome!'
 layout: 'layouts/home.njk'
 social:
   {
-    twitter: 'https://twitter.com/xdesro',
+    twitter: 'https://twitter.com/404boyfriend',
     github: 'https://github.com/xdesro/personalsit.es',
   }
 ---
