@@ -1,4 +1,3 @@
-
 ---
 title: 'Coder Spirit'
 url: 'https://blog.coderspirit.xyz'
