@@ -49,7 +49,7 @@
     </div>
     <main>
         <ul class="items">
-            {% for item in collections.sites | shuffle %}
+            {% for item in collections.sitesAlphabetized %}
                 {% include 'partials/list-item.njk' %} 
             {% endfor %}
         </ul>
