@@ -1,5 +1,5 @@
 ---
-title: 'jasonrbriggs.com'
+title: 'Jason R Briggs'
 url: 'https://jasonrbriggs.com'
 tags: ['programmer', 'author']
 updatesFeed: 'https://jasonrbriggs.com/journal/feed.json'
