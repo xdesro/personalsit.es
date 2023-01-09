@@ -1,5 +1,5 @@
 ---
-title: 'vonExplaino (Colin)'
+title: 'Professor vonExplaino (Colin)'
 url: 'https://vonexplaino.com/'
 tags: ['steampulp', 'steampunk', 'coding']
 updatesFeed: 'https://vonexplaino.com/blog/rss.xml'
