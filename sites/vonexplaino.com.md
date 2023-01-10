@@ -1,6 +1,6 @@
 ---
 title: 'Professor vonExplaino'
-url: 'https://vonexplaino.com/index.html'
+url: 'https://vonexplaino.com/'
 tags: ['steampulp', 'steampunk', 'coding']
 updatesFeed: 'https://vonexplaino.com/blog/rss.xml'
 nsfw: false
