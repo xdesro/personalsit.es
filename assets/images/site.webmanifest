@@ -1,19 +1,19 @@
 {
-    "name": "Personal sites are awesome",
-    "short_name": "Personal sites are awesome",
-    "icons": [
-        {
-            "src": "/assets/images/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/assets/images/android-chrome-384x384.png",
-            "sizes": "384x384",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#304682",
-    "background_color": "#304682",
-    "display": "standalone"
+  "name": "Personal sites are awesome",
+  "short_name": "PersonalSit.es",
+  "icons": [
+    {
+      "src": "/assets/images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#fefefe",
+  "background_color": "#fefefe",
+  "display": "standalone"
 }
