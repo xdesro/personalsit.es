@@ -1,5 +1,3 @@
-const filenamifyUrl = require('filenamify-url');
-
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 // const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 
@@ -50,13 +48,9 @@ module.exports = (eleventyConfig) => {
 
   // Shortcodes
   eleventyConfig.addShortcode(
-    'cloudinaryUrl',
-    (path, transforms) =>
-      `https://res.cloudinary.com/${
-        process.env.CLOUDINARY_CLOUD_NAME
-      }/image/upload/${transforms}/${filenamifyUrl(path, {
-        replacement: '',
-      })}.png`
+    'screenshotUrl',
+    (path, date) =>
+      `https://personalsites-screenshots.netlify.app/${encodeURIComponent(path)}/card/_${new Date(date).getTime()}`
   );
 
   // Return config settings
