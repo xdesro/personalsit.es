@@ -16,7 +16,14 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addCollection('sites', (collection) => {
     return collection.getFilteredByGlob('sites/*.md');
   });
-
+  eleventyConfig.addCollection('sitesWithFeeds', (collection) => {
+    return collection
+      .getFilteredByGlob('sites/*.md')
+      .filter((item) => item.data.rss);
+  });
+  eleventyConfig.addCollection('sitesAlphabetized', (collection) => {
+    return collection.getFilteredByGlob('sites/*.md');
+  });
   // Plugins
   eleventyConfig.addPlugin(rssPlugin);
 
