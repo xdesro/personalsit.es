@@ -7,3 +7,4 @@ tags: ['developer', 'gestiondeprojet', 'numerique', 'ui', 'management', 'fronten
 updatesFeed: 'https://teotimepacreau.fr/feed/feed.xml'
 nsfw: false
 rss: true
+---
