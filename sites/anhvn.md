@@ -12,4 +12,5 @@ tags:
   ]
 nsfw: false
 rss: true
+updatesFeed: 'https://anhvn.com/feed.xml'
 ---
