@@ -1,8 +1,8 @@
 ---
 title: 'Joe Crawford ^ ArtLung'
-url: 'http://artlung.com'
-tags: ['web developer', 'blogger', 'wordpress', 'drawing', 'toy robots']
-updatesFeed: 'http://artlung.com/feed'
+url: 'https://artlung.com'
+tags: ['blogger', 'wordpress', 'drawing', 'toy robots', 'indieweb']
+updatesFeed: 'https://artlung.com/feed'
 nsfw: false
 rss: true
 ---
