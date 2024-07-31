@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/hankchizljaw/personalsit.es#readme",
   "dependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
     "capture-website": "^0.8.1",
     "cloudinary": "^1.21.0",
     "dotenv": "^8.2.0",
