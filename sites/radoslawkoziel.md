@@ -1,7 +1,7 @@
 ---
 title: 'radoslawkoziel.pl'
 url: 'https://radoslawkoziel.pl'
-tags: ['software designer', 'front-end developer']
+tags: ['designer', 'developer']
 nsfw: false
-rss: false
+rss: true
 ---
