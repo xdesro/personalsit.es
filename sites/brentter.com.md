@@ -1,7 +1,7 @@
 ---
-title: 'Everything's Better With Brentter'
+title: 'Everythings Better With Brentter'
 url: 'https://brentter.com'
-tags: ['developer', 'blogger', 'linux'] 
+tags: ['developer', 'blogger', 'self-hosting'] 
 updatesFeed: 'https://brentter.com/index.xml'
 nsfw: false
 rss: true
