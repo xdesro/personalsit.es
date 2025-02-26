@@ -1,8 +1,8 @@
 ---
 title: 'diamant3'
-url: 'https://diamant3.github.io/'
-tags: ['html', 'css', 'student']
+url: 'https://diamondrivero.me'
+tags: ['html', 'css', 'javascript', 'reactjs', 'nodejs']
 updatesFeed: ''
 nsfw: false
-rss: true
+rss: false
 ---
