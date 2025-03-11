@@ -1,6 +1,6 @@
 ---
 title: 'Kjell Reigstad'
-url: 'https://www.kjellr.com'
+url: 'https://kjellr.com'
 tags: ['designer', 'front-end developer']
 updatesFeed: 'https://kjellr.com/feed'
 nsfw: false
