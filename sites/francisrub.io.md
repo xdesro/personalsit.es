@@ -1,8 +1,8 @@
 ---
 title: "Francis Rubio"
-url: "https://francisrubio.antaresph.dev"
+url: "https://francisrub.io"
 tags: ['web developer', 'web designer', 'educator']
-updatesFeed: "https://francisrubio.antaresph.dev/feed.xml"
+updatesFeed: "https://francisrub.io/blog.xml"
 nsfw: false
 rss: true
 ---
