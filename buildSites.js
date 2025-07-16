@@ -51,8 +51,8 @@ const getScreenshot = async (site) => {
       const screenshot = await captureWebsite.default.buffer(site.url, {
         timeout: 5,
         width: 1280,
-        height: 720,
-        scaleFactor: 0.46875, // 600/1280 = 0.46875 to get 600x375 output
+        height: 800,
+        scaleFactor: 0.46875,
         isJavaScriptEnabled: true,
         waitForElement: 'body',
       });
