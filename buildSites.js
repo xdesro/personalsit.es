@@ -48,7 +48,13 @@ const getScreenshot = async (site) => {
   });
   if (doesntExist) {
     try {
-      const screenshot = await captureWebsite.buffer(site.url, { timeout: 5 });
+      const screenshot = await captureWebsite.default.buffer(site.url, {
+        timeout: 5,
+        width: 1280,
+        height: 720,
+        isJavaScriptEnabled: true,
+        waitForElement: 'body',
+      });
       cloudinary.uploader
         .upload_stream({ resource_type: 'image', public_id: site.title })
         .end(screenshot);
