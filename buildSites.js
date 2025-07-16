@@ -2,7 +2,6 @@ const fs = require('fs');
 const http = require('http');
 const cloudinary = require('cloudinary').v2;
 const frontMatter = require('front-matter');
-const captureWebsite = require('capture-website');
 const filenamifyUrl = require('filenamify-url');
 const { resolve } = require('path');
 
@@ -48,6 +47,7 @@ const getScreenshot = async (site) => {
   });
   if (doesntExist) {
     try {
+      const captureWebsite = await import('capture-website');
       const screenshot = await captureWebsite.default.buffer(site.url, {
         timeout: 5,
         width: 1280,
