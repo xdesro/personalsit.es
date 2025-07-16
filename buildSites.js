@@ -52,6 +52,7 @@ const getScreenshot = async (site) => {
         timeout: 5,
         width: 1280,
         height: 720,
+        scaleFactor: 0.46875, // 600/1280 = 0.46875 to get 600x375 output
         isJavaScriptEnabled: true,
         waitForElement: 'body',
       });
