@@ -1,8 +1,7 @@
 ---
-title: 'diamant3'
+title: 'Diamond Rivero'
 url: 'https://diamondrivero.me'
 tags: ['html', 'css', 'javascript', 'reactjs', 'nodejs']
-updatesFeed: ''
 nsfw: false
 rss: false
 ---
