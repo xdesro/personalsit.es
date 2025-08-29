@@ -1,7 +1,8 @@
 ---
 title: 'Vale.Rocks'
 url: 'https://vale.rocks'
-tags: ['web designer', 'designer', 'frontend developer', 'developer', 'blog']
+tags: ['designer', 'developer', 'frontend developer', 'digital garden', 'blog']
+updatesFeed: 'https://vale.rocks/posts/feed.xml'
 nsfw: false
-rss: false
+rss: true
 ---
