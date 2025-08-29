@@ -2,7 +2,6 @@ const fs = require('fs');
 const http = require('http');
 const cloudinary = require('cloudinary').v2;
 const frontMatter = require('front-matter');
-const captureWebsite = require('capture-website');
 const filenamifyUrl = require('filenamify-url');
 const { resolve } = require('path');
 
@@ -48,7 +47,15 @@ const getScreenshot = async (site) => {
   });
   if (doesntExist) {
     try {
-      const screenshot = await captureWebsite.buffer(site.url, { timeout: 5 });
+      const captureWebsite = await import('capture-website');
+      const screenshot = await captureWebsite.default.buffer(site.url, {
+        timeout: 5,
+        width: 1280,
+        height: 800,
+        scaleFactor: 0.46875,
+        isJavaScriptEnabled: true,
+        waitForElement: 'body',
+      });
       cloudinary.uploader
         .upload_stream({ resource_type: 'image', public_id: site.title })
         .end(screenshot);

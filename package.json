@@ -24,7 +24,7 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "capture-website": "^0.8.1",
+    "capture-website": "^4.2.0",
     "cloudinary": "^1.21.0",
     "dotenv": "^8.2.0",
     "filenamify-url": "^2.1.1",
