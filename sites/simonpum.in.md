@@ -1,7 +1,7 @@
 ---
-title: 'Simon Phumin Schweikert — Product Designer'
+title: 'Simon Phumin Schweikert'
 url: 'https://simonphum.in'
 tags: ['product designer', 'digital accessibility', 'inclusive design']
 nsfw: false
-rss: true
+rss: false
 ---
