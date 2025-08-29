@@ -4,29 +4,28 @@ Personal sites are rad, so this project was built so we can all discover each ot
 
 ## 📇 Adding your own site
 
-Want to add your site? We'd love your contribution. Go ahead and follow these steps, and [reach out](https://twitter.com/messages/compose?recipient_id=2509306208) if you have any trouble with this!
+Want to add your site? We'd love your contribution. Go ahead and follow these steps, and [reach out](https://bsky.app/profile/strange.website) if you have any trouble with this!
 
 1. 🍴 Fork this repository.
 
 2. 📝 Add a new `.md` file in `sites` that is `{yourDomain}.md`.
 
-   > For example: `sites/andy-bell.design.md`.
+   > For example: `sites/bell.bz.md`.
 
 3. 🖋 Fill out the details. Here's the template:
 
    ```yaml
    ---
-   title: 'andy-bell.design'
-   url: 'https://andy-bell.design'
-   tags: ['web designer', 'writer']
-   updatesFeed: 'https://andy-bell.design/feed/page/0/'
+   title: "Andy Bell"
+   url: "https://bell.bz"
+   tags: ["web designer", "writer"]
+   updatesFeed: "https://bell.bz/feed.xml"
    nsfw: false
    rss: true
    ---
-
    ```
 
-4. 🖥 Create a pull request and after your site has been approved by an admin, it'll appear on [personalsit.es](https://personalsit.es)!
+4. 🖥 Create a pull request, and after your site has been approved by an admin, it'll appear on [personalsit.es](https://personalsit.es)!
 
 ## 📄 Contributions
 
@@ -34,4 +33,4 @@ Got an idea for an enhancement? Awesome — don't be shy about [creating an issu
 
 ## 🗣 Colophon
 
-This project was originally created by the GOAT [Andy Bell](https://hankchizljaw.com/), and is lately maintained by Henry Desroches.
+This project was originally created by the GOAT [Andy Bell](https://bell.bz) and is lately maintained by [Henry Desroches](https://henry.codes) and [Declan Chidlow](https://vale.rocks).
