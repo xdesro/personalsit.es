@@ -27,6 +27,10 @@ Want to add your site? We'd love your contribution. Go ahead and follow these st
 
 4. 🖥 Create a pull request, and after your site has been approved by an admin, it'll appear on [personalsit.es](https://personalsit.es)!
 
+> [!NOTE]
+> I close AI PRs.
+
+
 ## 📄 Contributions
 
 Got an idea for an enhancement? Awesome — don't be shy about [creating an issue](https://github.com/xdesro/personalsit.es/issues/new), or even [opening a pull request](https://github.com/xdesro/personalsit.es/pulls), if you're feeling ambitious. I'd welcome the assist!
