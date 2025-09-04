@@ -1,5 +1,5 @@
 ---
-title: 'Yordi Verkroost'
+title: 'Yordi'
 url: 'https://yordi.me'
 tags: ['teacher', 'developer', 'writer']
 updatesFeed: 'https://yordi.me/feed/'

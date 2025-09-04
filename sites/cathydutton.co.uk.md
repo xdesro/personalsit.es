@@ -1,5 +1,5 @@
 ---
-title: 'cathydutton.co.uk'
+title: 'Cathy Dutton'
 url: 'https://cathydutton.co.uk'
 tags: ['designer', 'UX', 'Interactio design']
 nsfw: false

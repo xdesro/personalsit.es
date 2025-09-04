@@ -1,8 +1,8 @@
 ---
 title: 'Manny Becerra'
-url: 'https://mannybecerra.com'
+url: 'https://www.mannybecerra.com'
 tags: ['A11Y', 'Frontend (UI)', 'User Experience (UX)', 'Product & Design', 'Education & Culture Shifts', 'Speaker & Community Organizer']
-updatesFeed: null
+updatesFeed: 'https://mannybecerra.com/rss/feed.xml'
 nsfw: false
-rss: false
+rss: true
 ---

@@ -1,7 +1,8 @@
 ---
-title: 'brainbaking.com'
-url: 'https://brainbaking.com/'
+title: 'Brain Baking'
+url: 'https://brainbaking.com'
 tags: []
+updatesFeed: 'https://brainbaking.com/index.xml'
 nsfw: false
-rss: false
+rss: true
 ---

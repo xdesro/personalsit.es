@@ -1,8 +1,7 @@
 ---
-title: 'Hip-Hop Quoted - Hip-Hop Quotes brought to life with Web Typography'
+title: 'Hip-Hop Quoted'
 url: 'https://hiphopquoted.com'
 tags: ['art direction', 'experimentation', 'blog']
-updatesFeed: ''
 nsfw: false
 rss: false
 ---

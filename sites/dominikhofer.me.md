@@ -1,5 +1,5 @@
 ---
-title: 'dominikhofer.me'
+title: 'Dominik Hofer'
 url: 'https://dominikhofer.me'
 tags: ['coder', 'web designer', 'writer', 'indie hacker']
 updatesFeed: 'https://dominikhofer.me/rss.xml'

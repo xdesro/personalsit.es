@@ -1,5 +1,5 @@
 ---
-title: 'bnijenhuis.nl'
+title: 'Bernard Nijenhuis'
 url: 'https://bnijenhuis.nl'
 tags: ['front-end developer']
 updatesFeed: 'https://bnijenhuis.nl/feed.xml'

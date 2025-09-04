@@ -1,5 +1,5 @@
 ---
-title: 'robertjelenic.com'
+title: 'Robert Jelenic'
 url: 'https://www.robertjelenic.com'
 tags: ['marketing', 'blogger','podcasts']
 updatesFeed: 'https://www.robertjelenic.com/blog/index.xml'

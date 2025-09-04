@@ -1,5 +1,5 @@
 ---
-title: 'hamatti.org'
+title: 'Juha-Matti Santal'
 url: 'https://hamatti.org'
 tags: ['developer advocate', 'developer']
 updatesFeed: 'https://hamatti.org/feed/feed.xml'

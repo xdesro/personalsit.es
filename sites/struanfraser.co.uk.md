@@ -1,5 +1,5 @@
 ---
-title: 'StruanFraser'
+title: "Struan's blog"
 url: 'https://struanfraser.co.uk'
 tags: ['designer', 'prototyper','creative-coder','blogger']
 updatesFeed: 'https://struanfraser.co.uk/feed.xml'

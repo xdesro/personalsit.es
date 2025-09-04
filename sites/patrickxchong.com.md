@@ -1,5 +1,5 @@
 ---
-title: 'patrickxchong.com'
+title: 'Patrick Chong'
 url: 'https://www.patrickxchong.com'
 tags: ['tech', 'music', 'food', 'sustainability']
 updatesFeed: 'https://www.patrickxchong.com/feed.xml'

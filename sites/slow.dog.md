@@ -1,8 +1,8 @@
 ---
-title: 'This is the internet homepage of Bix Frankonis.'
+title: 'Sluggish Canine Enterprises'
 url: 'https://slow.dog'
 tags: ['autistic', 'mediocre', 'portland']
-updatesFeed: 'https://that.slow.dog/slowdog.xml'
+updatesFeed: 'https://bixfrankonis.status.lol/feed/rss'
 nsfw: false
 rss: true
 ---

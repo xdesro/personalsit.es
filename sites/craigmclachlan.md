@@ -1,8 +1,7 @@
 ---
 title: 'Craig McLachlan'
-url: 'https://craigmclachlan.co.uk'
-tags: ['Designer', 'UX designer', 'Digital product designer', 'Photographer', 'Photoblog', 'Glasgow', 'Scotland', 'Blog', Jekyll, 'Tailwind']
-updatesFeed: ''
+url: 'https://www.craigmclachlan.co.uk'
+tags: ['Designer', 'UX designer', 'Digital product designer', 'Photographer', 'Photoblog', 'Glasgow', 'Scotland', 'Blog', 'Jekyll', 'Tailwind']
 nsfw: false
 rss: false
 ---

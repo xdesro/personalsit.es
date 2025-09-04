@@ -1,8 +1,7 @@
 ---
-title: 'gautampk.com'
-url: 'https://www.gautampk.com'
+title: '~gautampk'
+url: 'https://22wlp.org/~gautampk/'
 tags: ['writer', 'physicist', 'sailor', 'self-hosting enthusiast']
-updatesFeed: 'https://www.gautampk.com/feed.rss'
 nsfw: false
-rss: true
+rss: false
 ---

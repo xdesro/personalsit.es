@@ -1,8 +1,7 @@
 ---
 title: 'Ayoub Sousali'
-url: 'https://sousali.com'
+url: 'https://www.sousali.com'
 tags: ['Software Developer']
-updatesFeed: ''
 nsfw: false
 rss: false
 ---

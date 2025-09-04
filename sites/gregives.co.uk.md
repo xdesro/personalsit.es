@@ -1,8 +1,7 @@
 ---
-title: 'gregives.co.uk'
-url: 'https://gregives.co.uk'
+title: 'Greg Ives'
+url: 'https://www.gregives.co.uk'
 tags: ['software engineer', 'blog', 'nuxt', 'markdown', 'fonts']
-updatesFeed: 'https://gregives.co.uk/blog/'
 nsfw: false
 rss: false
 ---
