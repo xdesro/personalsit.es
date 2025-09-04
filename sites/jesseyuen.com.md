@@ -1,7 +1,8 @@
 ---
-title: 'jesseyuen.com'
+title: 'Jesse Yuen'
 url: 'https://jesseyuen.com'
 tags: ['designer', 'developer']
+updatesFeed: 'https://portfolio.jesseyuen.com/feed.xml'
 nsfw: false
-rss: false
+rss: true
 ---

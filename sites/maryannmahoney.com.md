@@ -1,8 +1,8 @@
 ---
-title: 'maryannmahoney.com'
-url: 'https://www.maryannmahoney.com'
+title: 'Mary Ann Mahoney'
+url: 'https://maryannmahoney.com'
 tags: ['writer', 'editor', 'composer']
-updatesFeed: 'https://www.maryannmahoney.com/feed'
+updatesFeed: 'https://maryannmahoney.com/feed'
 nsfw: false
 rss: true
 ---

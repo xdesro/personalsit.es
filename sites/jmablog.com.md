@@ -1,5 +1,5 @@
 ---
-title: 'jmablog.com'
+title: 'jmablog'
 url: 'https://jmablog.com'
 tags: ['blog', 'data science', 'r programming', 'sports science', 'parkour']
 updatesFeed: 'https://jmablog.com/index.xml'

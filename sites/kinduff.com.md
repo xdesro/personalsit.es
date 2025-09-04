@@ -1,5 +1,5 @@
 ---
-title: 'kinduff'
+title: 'Casa'
 url: 'https://kinduff.com'
 tags: ['developer', 'ruby on rails', 'javascript', 'full-stack']
 updatesFeed: 'https://kinduff.com/feed.xml'

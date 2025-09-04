@@ -1,7 +1,7 @@
 ---
-title: 'jaredzimmerman.com'
-url: 'https://www.jaredzimmerman.com/'
-tags: []
+title: 'Jared Zimmerman'
+url: 'https://www.jaredzimmerman.com'
+tags: ['product design']
 nsfw: false
 rss: false
 ---

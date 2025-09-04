@@ -1,5 +1,5 @@
 ---
-title: 'joecooper.nyc'
+title: 'Joe Cooper'
 url: 'https://www.joecooper.nyc'
 tags: ['designer', 'developer', 'react']
 nsfw: false

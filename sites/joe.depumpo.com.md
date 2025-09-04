@@ -1,5 +1,5 @@
 ---
-title: 'Joe DePumpo | Full-Stack Web Developer'
+title: 'Joe DePumpo'
 url: 'https://joe.depumpo.com'
 tags: ['Web Developer', 'Rails', 'Ruby']
 nsfw: false

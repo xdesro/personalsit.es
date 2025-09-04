@@ -1,5 +1,5 @@
 ---
-title: 'thisisimportant.net'
+title: 'This is important'
 url: 'https://thisisimportant.net'
 tags: ['tech writing', 'data analysis', 'music']
 updatesFeed: 'https://thisisimportant.net/feed.xml'

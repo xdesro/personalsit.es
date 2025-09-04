@@ -1,8 +1,8 @@
 ---
 title: 'daedalOS'
-url: 'https://dustinbrett.com/'
+url: 'https://dustinbrett.com'
 tags: ['desktop environment', 'os', 'blog']
-updatesFeed: ''
+updatesFeed: 'https://dustinbrett.com/rss.xml'
 nsfw: false
-rss: false
+rss: true
 ---

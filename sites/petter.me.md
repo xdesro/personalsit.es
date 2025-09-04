@@ -1,8 +1,7 @@
 ---
-title: 'petter.me'
+title: 'Petter Ruud'
 url: 'https://petter.me'
 tags: ['frontend developer']
-updatesFeed: ''
 nsfw: false
 rss: false
 ---

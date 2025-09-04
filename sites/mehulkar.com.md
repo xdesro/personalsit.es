@@ -1,5 +1,5 @@
 ---
-title: 'mehulkar.com'
+title: 'Mehul Kar'
 url: 'https://www.mehulkar.com'
 tags: ['web developer']
 updatesFeed: 'https://mehulkar.com/feed.xml'

@@ -1,8 +1,8 @@
 ---
-title: 'kwon.nyc'
-url: 'https://kwon.nyc/'
+title: 'Kwon.nyc'
+url: 'https://kwon.nyc'
 tags: ['writer', 'doctor']
-updatesFeed: 'https://kwon.nyc/notes/index.xml'
+updatesFeed: 'https://kwon.nyc/index.xml'
 nsfw: false
 rss: true
 ---

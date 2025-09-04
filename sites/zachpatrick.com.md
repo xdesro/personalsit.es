@@ -1,8 +1,7 @@
 ---
-title: 'zachpatrick.com'
+title: 'Zach Patrick'
 url: 'https://zachpatrick.com'
 tags: ['web developer']
-updatesFeed: ''
 nsfw: false
 rss: false
 ---

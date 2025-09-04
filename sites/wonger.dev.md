@@ -1,8 +1,8 @@
 ---
-title: 'wonger.dev'
+title: "wonger's website"
 url: 'https://wonger.dev'
 tags: ['design', 'webapps', 'terminal']
-updatesFeed: 'https://wong-justin.github.io/feeds/wonger.xml'
+updatesFeed: 'https://wonger.dev/rss'
 nsfw: false
 rss: true
 ---

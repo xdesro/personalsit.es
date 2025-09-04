@@ -1,8 +1,7 @@
 ---
-title: 'johnmeguerian.com'
-url: 'https://johnmeguerian.com'
+title: 'John Meguerian'
+url: 'https://www.johnmeguerian.com'
 tags: ['product designer', 'frontend developer']
-updatesFeed: ''
 nsfw: false
 rss: false
 ---

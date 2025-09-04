@@ -1,5 +1,5 @@
 ---
-title: 'Daniel Perez Alvarez'
+title: 'Unindented'
 url: 'https://www.unindented.org'
 tags: ['web developer', 'typescript', 'javascript']
 updatesFeed: 'https://www.unindented.org/rss.xml'

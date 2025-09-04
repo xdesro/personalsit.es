@@ -1,5 +1,5 @@
 ---
-title: 'loige.co'
+title: 'Luciano Mammino'
 url: 'https://loige.co'
 tags: ['fullstack', 'developer', 'cloud architect']
 updatesFeed: 'https://loige.co/rss.xml'

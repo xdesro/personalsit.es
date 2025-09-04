@@ -1,7 +1,7 @@
 ---
-title: 'vincentp.me'
+title: 'Lifestream'
 url: 'https://vincentp.me'
 tags: ['IndieWeb', 'Cybernetics', 'Service Design', 'JavaScript', 'UX', 'HTML']
 nsfw: false
-rss: true
+rss: false
 ---

@@ -1,6 +1,6 @@
 ---
-title: 'mamboleoo.be'
-url: 'https://mamboleoo.be'
+title: 'Mamboleoo'
+url: 'https://www.mamboleoo.be'
 tags: ['frontend', 'developer', 'generative']
 updatesFeed: 'https://www.mamboleoo.be/feed'
 nsfw: false

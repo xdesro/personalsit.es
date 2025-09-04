@@ -1,8 +1,7 @@
 ---
-title: 'lusipa.dev'
-url: 'https://luispa.dev'
+title: 'LuisPa Blog'
+url: 'https://www.luispa.dev'
 tags: ['web developer', 'go-lang', 'javascript']
-updatesFeed: ''
 nsfw: false
 rss: false
 ---

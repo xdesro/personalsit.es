@@ -1,6 +1,6 @@
 ---
 title: 'El quiróptero amanuense'
-url: 'https://quiroptero.blog'
+url: 'https://www.quiroptero.blog'
 tags: ['writer', 'photographer']
 updatesFeed: 'https://www.quiroptero.blog/rss.xml'
 nsfw: false

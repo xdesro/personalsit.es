@@ -1,5 +1,5 @@
 ---
-title: 'samfeldstein.xyz'
+title: 'Sam Feldstein'
 url: 'https://samfeldstein.xyz'
 tags: ['web developer', 'frontend developer', 'photographer']
 updatesFeed: 'https://samfeldstein.xyz/feed.xml'

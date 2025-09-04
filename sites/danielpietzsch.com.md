@@ -1,5 +1,5 @@
 ---
-title: 'danielpietzsch.com'
+title: 'Daniel Pietzsch'
 url: 'https://danielpietzsch.com'
 tags: ['developer', 'photographer', 'musician', 'movie fan']
 updatesFeed: 'https://danielpietzsch.com/feed.atom'

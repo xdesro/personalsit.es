@@ -1,8 +1,8 @@
 ---
-title: 'dmc.omg.lol'
-url: 'https://dmc.omg.lol'
+title: 'dmc'
+url: 'https://dmc.lol'
 tags: ['web developer', 'runner']
-updatesFeed: 'https://dmc.omg.lol/feed.xml'
+updatesFeed: 'https://dmc.lol/feed.xml'
 nsfw: false
 rss: true
 ---

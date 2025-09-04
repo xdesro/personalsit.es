@@ -1,7 +1,8 @@
 ---
 title: 'Dominick Jay'
-url: 'https://www.dominickjay.com'
+url: 'https://dominickjay.com'
 tags: ['front-end developer', 'developer']
+updatesFeed: 'https://dominickjay.com/feed.xml'
 nsfw: false
-rss: false
+rss: true
 ---
