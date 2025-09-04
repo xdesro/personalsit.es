@@ -1,5 +1,5 @@
 ---
-title: 'vishwas.tech'
+title: 'Vishwasa Navada K'
 url: 'https://vishwas.tech'
 tags: ['Developer', 'Blogger', 'Traveller']
 updatesFeed: 'https://vishwas.tech/blog/feed.xml'

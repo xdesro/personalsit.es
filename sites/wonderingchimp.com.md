@@ -1,7 +1,8 @@
 ---
-title: 'wonderingchimp.com'
-url: 'https://wonderingchimp.com'
+title: 'Wondering Chimp'
+url: 'https://www.wonderingchimp.com'
 tags: ['devops', 'sustainability', 'writer']
+updatesFeed: 'https://www.wonderingchimp.com/rss/'
 nsfw: false
-rss: false
+rss: true
 ---

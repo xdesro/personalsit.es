@@ -1,5 +1,5 @@
 ---
-title: 'Jeff Bridgforth : Front-end Developer'
+title: 'Jeff Bridgforth'
 url: 'http://jeffbridgforth.com'
 tags: ['front-end developer', 'developer']
 updatesFeed: 'http://jeffbridgforth.com/feed/'

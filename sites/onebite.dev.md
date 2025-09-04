@@ -1,8 +1,8 @@
 ---
-title: 'One Bite Dev'
-url: 'https://onebite.dev/'
+title: 'OneBite.Dev'
+url: 'https://onebite.dev'
 tags: ['developer']
-updatesFeed: 'https://onebite.dev/index.xml'
+updatesFeed: 'https://onebite.dev/rss.xml'
 nsfw: false
 rss: true
 ---

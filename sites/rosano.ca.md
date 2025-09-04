@@ -1,8 +1,8 @@
 ---
-title: 'rosano.ca'
+title: 'Rosano'
 url: 'https://rosano.ca'
 tags: ['entrepreneur', 'writer', 'musician', 'developer']
-updatesFeed: 'https://rosano.ca/feed'
+updatesFeed: 'https://rosano.ca/en/feed'
 nsfw: false
 rss: true
 ---

@@ -1,6 +1,6 @@
 ---
 title: 'Raymii.org'
-url: 'https://raymii.org'
+url: 'https://raymii.org/s/'
 tags: ['sysadmin', 'c++','developer','Netherlands']
 updatesFeed: 'https://raymii.org/s/feed.xml'
 nsfw: false

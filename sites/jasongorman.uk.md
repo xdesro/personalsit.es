@@ -1,8 +1,8 @@
 ---
-title: 'jasongorman.uk'
-url: 'https://www.jasongorman.uk'
+title: 'Jason Gorman'
+url: 'https://jasongorman.uk'
 tags: ['Frontend Engineer', 'web developer']
-updatesFeed: 'https://www.jasongorman.uk/writing/feed.xml'
+updatesFeed: 'https://jasongorman.uk/writing/feed.xml'
 nsfw: false
 rss: true
 ---

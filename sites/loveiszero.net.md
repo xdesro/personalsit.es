@@ -1,5 +1,5 @@
 ---
-title: 'love is zero'
+title: 'Love is Zero'
 url: 'https://loveiszero.net'
 tags: ['blogger', 'art', 'fandom', 'photoshop', 'true crime', 'tarot', 'personal', 'writer']
 updatesFeed: 'https://loveiszero.net/?feed=rss2'

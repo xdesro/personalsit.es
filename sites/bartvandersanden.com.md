@@ -1,8 +1,8 @@
 ---
-title: 'bartvandersanden.com'
+title: 'Bart Vander Sanden'
 url: 'https://www.bartvandersanden.com'
 tags: ['designer', 'developer', 'photographer']
-updatesFeed: 'http://bartvandersanden.com/feed.xml'
+updatesFeed: 'https://bartvandersanden.com/feed.xml'
 nsfw: false
 rss: true
 ---

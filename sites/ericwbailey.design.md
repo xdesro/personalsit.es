@@ -1,5 +1,5 @@
 ---
-title: 'ericwbailey.design'
+title: 'Eric Bailey'
 url: 'https://ericwbailey.design'
 tags: ['designer', 'developer', 'a11y']
 updatesFeed: 'https://ericwbailey.design/feed/feed.xml'

@@ -2,7 +2,7 @@
 title: 'Saneef'
 url: 'https://saneef.com'
 tags: ['designer', 'frontend developer']
-updatesFeed: 'https://feeds.feedburner.com/saneef/'
+updatesFeed: 'https://saneef.com/feed.xml'
 nsfw: false
 rss: true
 ---

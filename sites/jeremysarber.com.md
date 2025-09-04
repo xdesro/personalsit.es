@@ -1,5 +1,5 @@
 ---
-title: 'jeremysarber.com'
+title: 'Jeremy Sarber'
 url: 'https://jeremysarber.com'
 tags: ['pastor', 'christianity']
 updatesFeed: 'https://jeremysarber.com/feed.rss'

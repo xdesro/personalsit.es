@@ -1,5 +1,5 @@
 ---
-title: 'JosephShambrook.dev'
+title: 'Joseph Shambrook'
 url: 'https://josephshambrook.dev'
 tags: ['full stack developer']
 updatesFeed: 'https://josephshambrook.dev/rss.xml'

@@ -1,6 +1,6 @@
 ---
 title: 'Jeremy Cherfas'
-url: 'https://jeremycherfas.net'
+url: 'https://www.jeremycherfas.net'
 tags: ['podcaster', 'writer', 'baker']
 updatesFeed: 'https://www.jeremycherfas.net/blog.rss'
 nsfw: false

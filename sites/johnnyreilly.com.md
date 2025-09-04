@@ -1,8 +1,8 @@
 ---
-title: 'johnnyreilly.com'
-url: 'https://blog.johnnyreilly.com'
+title: 'johnnyreilly'
+url: 'https://johnnyreilly.com'
 tags: ['engineer', 'web', 'typescript']
-updatesFeed: 'https://blog.johnnyreilly.com/rss.xml'
+updatesFeed: 'https://johnnyreilly.com/rss.xml'
 nsfw: false
 rss: true
 ---

@@ -1,8 +1,7 @@
 ---
-title: 'tiagorangel.com'
+title: "tiago's website"
 url: 'https://tiagorangel.com'
 tags: ['student']
-updatesFeed: 'https://blog.tiagorangel.com/'
 nsfw: false
-rss: true
+rss: false
 ---

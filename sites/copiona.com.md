@@ -1,5 +1,5 @@
 ---
-title: 'copiona.com'
+title: 'Jardín web de @librenauta'
 url: 'https://copiona.com'
 tags: ['designer', 'developer', 'enchanter']
 updatesFeed: 'https://copiona.com/feed.xml'

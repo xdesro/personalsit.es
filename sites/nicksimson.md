@@ -1,8 +1,8 @@
 ---
-title: 'nicksimson.com'
-url: 'https://nicksimson.com'
+title: 'Nick Simson'
+url: 'https://www.nicksimson.com'
 tags: ['designer', 'writer']
-updatesFeed: 'https://www.nicksimson.com/feed/feed.xml'
+updatesFeed: 'https://www.nicksimson.com/feed.xml'
 nsfw: false
 rss: true
 ---

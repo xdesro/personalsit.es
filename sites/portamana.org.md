@@ -1,8 +1,7 @@
 ---
-title: 'portamana.org'
+title: "PGLuca Porta Mana's page"
 url: 'https://portamana.org'
 tags: ['physics', 'probability theory', 'differential geometry', 'teaching']
-updatesFeed:
 nsfw: false
 rss: false
 ---

@@ -1,8 +1,8 @@
 ---
-title: 'bryandesrosiers.com'
-url: 'https://www.bryandesrosiers.com'
+title: 'Bryan Desrosiers'
+url: 'https://bryandesrosiers.com'
 tags: ['photographer', 'designer', 'composer']
-updatesFeed: 'https://www.bryandesrosiers.com/feed'
+updatesFeed: 'https://bryandesrosiers.com/feed'
 nsfw: false
 rss: true
 ---

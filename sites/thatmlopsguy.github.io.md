@@ -1,8 +1,8 @@
 ---
-title: 'thatmlopsguy.github.io'
+title: 'That MLOps Guy'
 url: 'https://thatmlopsguy.github.io'
 tags: ['developer', 'linux', 'python', 'infrastructure', 'devops','kubernetes', 'machine learning']
-updatesFeed: ''
+updatesFeed: 'https://thatmlopsguy.github.io/index.xml'
 nsfw: false
-rss: false
+rss: true
 ---

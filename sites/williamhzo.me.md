@@ -1,8 +1,7 @@
 ---
-title: 'William Hermozo'
-url: 'https://williamhzo.me'
+title: 'williamhzo.me'
+url: 'https://www.williamhzo.me'
 tags: ['web developer', 'front-end', 'web designer', 'blog']
-updatesFeed: 'https://williamhzo.me/rss.xml'
 nsfw: false
-rss: true
+rss: false
 ---

@@ -1,8 +1,8 @@
 ---
-title: 'ratik.in'
-url: 'https://ratik.in'
+title: 'Ratik'
+url: 'https://www.ratik.in'
 tags: ['software engineer', 'writer']
-updatesFeed: ''
+updatesFeed: 'https://www.ratik.in/feed.xml'
 nsfw: false
-rss: false
+rss: true
 ---

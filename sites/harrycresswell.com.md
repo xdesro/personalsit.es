@@ -1,5 +1,5 @@
 ---
-title: 'harrycresswell.com'
+title: 'Harry Cresswell'
 url: 'https://harrycresswell.com'
 tags: ['designer', 'developer', 'front-end', 'Hugo', 'Eleventy']
 updatesFeed: 'https://harrycresswell.com/feed.xml'

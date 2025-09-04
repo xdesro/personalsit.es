@@ -1,5 +1,5 @@
 ---
-title: 'alexmuraro.me'
+title: 'Alessandro Muraro'
 url: 'https://alexmuraro.me'
 tags: ['front-end developer', 'developer']
 updatesFeed: 'https://alexmuraro.me/feed/'

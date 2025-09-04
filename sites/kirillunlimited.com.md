@@ -1,8 +1,7 @@
 ---
-title: 'kirillunlimited.com'
+title: 'Kirill Ivanov'
 url: 'https://kirillunlimited.com'
 tags: ['front-end developer']
-updatesFeed: 'https://kirillunlimited.com/feed.xml'
 nsfw: false
-rss: true
+rss: false
 ---

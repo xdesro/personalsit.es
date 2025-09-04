@@ -1,8 +1,7 @@
 ---
-title: 'jackreid.xyz'
+title: 'Jack Reid'
 url: 'https://jackreid.xyz'
 tags: ['developer', 'personal']
-updatesFeed: 'https://jackreid.xyz/index.xml'
 nsfw: false
-rss: true
+rss: false
 ---

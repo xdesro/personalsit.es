@@ -1,5 +1,5 @@
 ---
-title: 'darianrosebrook.com'
+title: 'Darian Rosebrook'
 url: 'https://darianrosebrook.com'
 tags: ['product designer', 'writer', 'author', 'podcast host']
 updatesFeed: 'https://darianrosebrook.com/now'

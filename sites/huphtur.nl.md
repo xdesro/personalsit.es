@@ -1,5 +1,5 @@
 ---
-title: 'Marcel Appelman'
+title: 'huphtur'
 url: 'https://huphtur.nl'
 tags: ['dutch', 'cycling', 'skateboarding', 'computers']
 updatesFeed: 'https://huphtur.nl/feed.xml'

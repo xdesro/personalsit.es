@@ -1,7 +1,8 @@
 ---
-title: 'romanko.dev'
-url: 'https://romanko.dev'
+title: 'dpromanko'
+url: 'https://www.romanko.dev'
 tags: ['developer']
+updatesFeed: 'https://www.romanko.dev/index.xml'
 nsfw: false
-rss: false
+rss: true
 ---

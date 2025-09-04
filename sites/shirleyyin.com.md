@@ -1,5 +1,5 @@
 ---
-title: 'shirleyyin.com'
+title: 'shirley yin'
 url: 'https://shirleyyin.com'
 tags: ['developer']
 updatesFeed: 'https://shirleyyin.com/feed.xml'

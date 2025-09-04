@@ -1,8 +1,8 @@
 ---
-title: 'prameshbajra.github.io'
-url: 'https://prameshbajra.github.io/'
+title: 'Pramesh Bajracharya'
+url: 'https://prameshbajra.github.io'
 tags: ['Full Stack Developer', 'Deep Learning Engineer']
-updatesFeed: ''
+updatesFeed: 'https://prameshbajra.github.io/feed.xml'
 nsfw: false
 rss: true
 ---

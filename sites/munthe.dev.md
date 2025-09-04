@@ -1,6 +1,6 @@
 ---
-title: 'munthe.dev'
-url: 'https://munthe.dev'
+title: 'Efraim Munthe'
+url: 'https://munthe.dev/en/'
 tags: ['student', 'developer']
 nsfw: false
 rss: false

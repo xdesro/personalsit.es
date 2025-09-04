@@ -1,5 +1,5 @@
 ---
-title: 'rowanmanning.com'
+title: 'Rowan Manning'
 url: 'https://rowanmanning.com'
 tags: ['blogging', 'developer', 'indieweb', 'weeknotes']
 updatesFeed: 'https://rowanmanning.com/feed.xml'
