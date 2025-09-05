@@ -1,8 +1,8 @@
 ---
 title: 'Bryan Braun'
-url: 'https://bryanbraun.com'
+url: 'https://www.bryanbraun.com'
 tags: ['designer', 'developer']
-updatesFeed: 'https://bryanbraun.com/feed.json'
+updatesFeed: 'https://www.bryanbraun.com/feed.json'
 nsfw: false
 rss: true
 ---

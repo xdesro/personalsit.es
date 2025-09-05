@@ -1,8 +1,8 @@
 ---
 title: 'Ineza Bonté'
-url: 'https://ineza.codes'
+url: 'https://www.ineza.codes'
 tags: ['Fullstack developer', 'Open Source Contributor', 'writer', 'Freelancer', 'Nextjs', 'TailwindCSS']
-updatesFeed: 'https://ineza.codes/rss.xml'
+updatesFeed: 'https://www.ineza.codes/rss.xml'
 nsfw: false
 rss: true
 ---
