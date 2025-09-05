@@ -1,8 +1,8 @@
 ---
 title: 'Kev Quirk'
-url: 'https://kevq.uk'
+url: 'https://kevquirk.com'
 tags: ['web design', 'html', 'css', 'writing', 'linux', 'open source', 'wordpress', 'ssg', 'jekyll']
-updatesFeed: 'https://kevq.uk/feed'
+updatesFeed: 'https://kevquirk.com/feed'
 nsfw: false
 rss: true
 ---

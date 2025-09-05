@@ -1,8 +1,8 @@
 ---
 title: 'Jeff Bridgforth'
-url: 'http://jeffbridgforth.com'
+url: 'https://jeffbridgforth.com'
 tags: ['front-end developer', 'developer']
-updatesFeed: 'http://jeffbridgforth.com/feed/'
+updatesFeed: 'https://jeffbridgforth.com/feed/'
 nsfw: false
 rss: true
 ---

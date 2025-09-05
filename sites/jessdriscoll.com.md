@@ -1,8 +1,8 @@
 ---
 title: 'jess is typing'
-url: 'http://jessdriscoll.com'
+url: 'https://jessdriscoll.com'
 tags: ['writer', 'blogger', 'publisher', 'artist']
-updatesFeed: 'http://jessdriscoll.com/rss'
+updatesFeed: 'https://jessdriscoll.com/rss/'
 nsfw: false
 rss: true
 ---
