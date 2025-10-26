@@ -1,6 +1,6 @@
 ---
 title: "tiago's website"
-url: 'https://tiagorangel.com'
+url: 'https://tiago.zip'
 tags: ['student']
 nsfw: false
 rss: false
