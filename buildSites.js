@@ -4,7 +4,6 @@ const cloudinary = require('cloudinary').v2;
 const frontMatter = require('front-matter');
 const captureWebsite = require('capture-website');
 const filenamifyUrl = require('filenamify-url');
-const { resolve } = require('path');
 
 require('dotenv').config();
 
@@ -49,24 +48,29 @@ const getScreenshot = async (site) => {
   if (doesntExist) {
     try {
       const screenshot = await captureWebsite.buffer(site.url, { timeout: 5 });
-      cloudinary.uploader
-        .upload_stream({ resource_type: 'image', public_id: site.title })
-        .end(screenshot);
+      await new Promise((resolve, reject) => {
+        const uploadStream = cloudinary.uploader.upload_stream(
+          { resource_type: 'image', public_id: site.title },
+          (error, result) => {
+            if (error) reject(error);
+            else resolve(result);
+          }
+        );
+        uploadStream.end(screenshot);
+      });
     } catch (error) {
       console.error(site.title, error);
     }
   }
 };
+
 (async () => {
-  const sites = await getSites();
-  (async () => {
-    for (const site of sites) {
-      await getScreenshot(site);
-    }
-    console.log(`
+  const sites = getSites();
+  for (const site of sites) {
+    await getScreenshot(site);
+  }
+  console.log(`
     =====
     Screenshots collection complete.
     =====`);
-  })();
-  return;
 })();
