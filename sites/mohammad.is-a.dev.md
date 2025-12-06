@@ -1,8 +1,7 @@
 ---
-title: "Best Software dev"
+title: "Mohammad Ahmad"
 url: "https://mohammad.is-a.dev/"
 tags: ["Full stack", "developer"]
-updatesFeed: "https://bell.bz/feed.xml"
 nsfw: false
 rss: false
 ---
