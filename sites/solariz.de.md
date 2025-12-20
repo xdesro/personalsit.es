@@ -1,5 +1,5 @@
 ---
-title: "Marco G - solariz.de"
+title: "Marco G"
 url: "https://solariz.de"
 tags: ["network engineer", "it", "tech", "linux", "developer", "writer"]
 updatesFeed: "https://solariz.de/index.xml"
