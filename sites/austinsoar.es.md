@@ -1,0 +1,8 @@
+---
+title: 'Austin Soares'
+url: 'https://austinsoar.es'
+tags: ['product designer', 'developer', 'photographer', 'historian']
+updatesFeed: ''
+nsfw: false
+rss: false
+---
