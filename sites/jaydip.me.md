@@ -1,7 +1,8 @@
 ---
 title: 'Jaydip.me'
 url: 'https://jaydip.me'
-tags: ['developer', 'product designer']
+updatesFeed: 'https://jaydip.me/rss.xml'
+tags: ['web designer', 'product designer', 'writer']
 nsfw: false
-rss: false
+rss: true
 ---
