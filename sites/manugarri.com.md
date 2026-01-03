@@ -1,4 +1,3 @@
-
 ---
 title: "Manugarri's Website"
 url: 'https://manugarri.com'
