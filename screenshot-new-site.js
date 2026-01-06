@@ -14,7 +14,6 @@ cloudinary.config({
 const failedSites = [];
 const successfulSites = [];
 
-// Get only the changed files from the PR
 const getChangedSites = () => {
   const changedFiles = process.env.CHANGED_FILES?.split(' ') || [];
 
@@ -61,7 +60,7 @@ const checkIfExists = (site) => {
       })
       .on('error', (err) => {
         console.error(`Error checking Cloudinary: ${err.message}`);
-        resolve(true); // Assume doesn't exist if check fails
+        resolve(true);
       });
   });
 };
@@ -142,8 +141,6 @@ Successful: ${successfulSites.length}
 Failed: ${failedSites.length}
 ${failedSites.length > 0 ? `\nFailed sites:\n${failedSites.join('\n')}` : ''}
 =====`);
-
-    // Exit with error code if any failed
     process.exit(failedSites.length > 0 ? 1 : 0);
   } catch (error) {
     console.error('Fatal error:', error);
