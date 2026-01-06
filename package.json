@@ -24,11 +24,11 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "capture-website": "^0.8.1",
+    "capture-website": "^5.1.0",
     "cloudinary": "^2.7.0",
     "dotenv": "^8.2.0",
     "filenamify-url": "^2.1.1",
     "front-matter": "^3.1.0",
-    "html-minifier": "^3.5.20"
+    "html-minifier-next": "^4.16.4"
   }
 }

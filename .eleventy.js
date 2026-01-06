@@ -4,7 +4,7 @@ const rssPlugin = require('@11ty/eleventy-plugin-rss');
 // const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 
 const shuffle = require('./filters/shuffle.js');
-const htmlmin = require('html-minifier');
+const { minify } = require('html-minifier-next');
 
 require('dotenv').config();
 
@@ -35,9 +35,9 @@ module.exports = (eleventyConfig) => {
   });
 
   // Minify
-  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
+  eleventyConfig.addTransform('minify', function (content, outputPath) {
     if (outputPath.indexOf('.html') > -1) {
-      let minified = htmlmin.minify(content, {
+      let minified = minify(content, {
         useShortDoctype: true,
         removeComments: true,
         collapseWhitespace: true,
