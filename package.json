@@ -5,7 +5,7 @@
   "main": ".eleventy.js",
   "scripts": {
     "serve": "npx @11ty/eleventy --serve --quiet",
-    "build": "node buildSites.js && npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
