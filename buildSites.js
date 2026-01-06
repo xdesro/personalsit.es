@@ -1,5 +1,5 @@
 const fs = require('fs');
-const http = require('http');
+const https = require('https');
 const cloudinary = require('cloudinary').v2;
 const frontMatter = require('front-matter');
 const captureWebsite = require('capture-website');
@@ -13,6 +13,7 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
+const failedSites = [];
 
 const getSites = () => {
   const files = fs.readdirSync('sites').map((file) => {
@@ -36,7 +37,7 @@ const getScreenshot = async (site) => {
   //  TODO — Check if screenshot exists in Cloudinary space before running Puppeteer
   //  TODO — Statically render URLs in template files
   const doesntExist = await new Promise((resolve, reject) => {
-    http.get(cloudinary.url(site.title), (response) => {
+    https.get(cloudinary.url(site.title), (response) => {
       if (response.statusCode !== 404) {
         console.log(`${site.title} exists on cloudinary.`);
       } else {
@@ -53,7 +54,8 @@ const getScreenshot = async (site) => {
         .upload_stream({ resource_type: 'image', public_id: site.title })
         .end(screenshot);
     } catch (error) {
-      console.error(site.title, error);
+      console.warn(site.title, error);
+      failedSites.push(site.title);
     }
   }
 };
@@ -64,9 +66,12 @@ const getScreenshot = async (site) => {
       await getScreenshot(site);
     }
     console.log(`
-    =====
-    Screenshots collection complete.
-    =====`);
+=====
+Screenshots collection complete.
+
+Failed sites (may need to capture manually): 
+${failedSites.join(`\n`)}
+=====`);
   })();
   return;
 })();
