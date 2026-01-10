@@ -24,6 +24,12 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addCollection('sitesAlphabetized', (collection) => {
     return collection.getFilteredByGlob('sites/*.md');
   });
+  eleventyConfig.addCollection('randomRedirect', (collection) => {
+    return collection
+      .getFilteredByGlob('sites/*.md')
+      .filter((item) => item.data.url);
+  });
+
   // Plugins
   eleventyConfig.addPlugin(rssPlugin);
 
