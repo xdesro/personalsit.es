@@ -1,5 +1,5 @@
 ---
-title: 'Tom Ruddell's Blog'
+title: 'Tom Ruddell'
 url: 'https://2earth.github.io/website/'
 tags: ['design', 'sustainability', 'remanufacturing', circular economy']
 updatesFeed: 'https://2earth.github.io/website/rss.xml'
