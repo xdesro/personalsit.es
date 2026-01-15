@@ -2,7 +2,6 @@ const fs = require('fs');
 const https = require('https');
 const cloudinary = require('cloudinary').v2;
 const frontMatter = require('front-matter');
-const captureWebsite = require('capture-website');
 const filenamifyUrl = require('filenamify-url');
 
 cloudinary.config({
@@ -69,6 +68,7 @@ const getScreenshot = async (site) => {
   const doesntExist = await checkIfExists(site);
 
   if (doesntExist) {
+    const { default: captureWebsite } = await import('capture-website');
     try {
       console.log(`Capturing screenshot for ${site.url}...`);
       const screenshot = await captureWebsite.buffer(site.url, {
