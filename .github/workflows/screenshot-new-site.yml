@@ -1,15 +1,12 @@
 name: Capture screenshotties
-
 on:
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
       - 'sites/*.md'
-
 jobs:
   screenshot:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
