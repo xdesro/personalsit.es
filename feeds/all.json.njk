@@ -1,0 +1,12 @@
+---
+permalink: /feed/all.json
+eleventyExcludeFromCollections: true
+---
+{"items": [
+    {%- for item in collections.sites -%}
+      {%- if not item.data.external -%}
+      "{{ item.data.url }}"
+      {%- endif -%}
+      {%- if not loop.last -%},{%- endif -%}
+    {%- endfor -%}
+]}
