@@ -18,9 +18,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hankchizljaw/personalsit.es/issues"
+    "url": "https://github.com/xdesro/personalsit.es/issues"
   },
-  "homepage": "https://github.com/hankchizljaw/personalsit.es#readme",
+  "homepage": "https://github.com/xdesro/personalsit.es#readme",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
