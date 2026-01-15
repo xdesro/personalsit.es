@@ -28,6 +28,16 @@ jobs:
           files: |
             sites/*.md
 
+      - name: Debug - Check env vars
+        env:
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+        run: |
+          echo "CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME:-(not set)}"
+          echo "CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY:-(not set)}"
+          echo "CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET:-(not set)}"
+
       - name: Capture screenshots
         if: steps.changed-files.outputs.any_changed == 'true'
         env:
