@@ -11,3 +11,8 @@
   from = "/redirect-to-random-site-url"
   to = "/.netlify/functions/redirect-to-random-site-url"
   status = 200
+
+[[redirects]]
+  from = "/random"
+  to = "/.netlify/functions/redirect-to-random-site-url"
+  status = 200
