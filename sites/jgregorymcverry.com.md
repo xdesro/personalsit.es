@@ -2,8 +2,6 @@
 title: 'INTERTEXTrEVOLUTION'
 url: 'https://jgregorymcverry.com'
 tags: ['literacies', 'open pedagogy', 'IndieWeb',]
-updatesFeed: 'https://jgregorymcverry.com/feed.xml'
-nsfw: false
-rss: true
+rss: 'https://jgregorymcverry.com/feed.xml'
 h-feed: true
 ---

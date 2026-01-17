@@ -2,7 +2,5 @@
 title: 'sdairs'
 url: 'https://www.alasdairb.com'
 tags: ['data engineering', 'clickhouse', 'analytics', 'startups', 'data']
-updatesFeed: 'https://www.alasdairb.com/rss.xml'
-nsfw: false
-rss: true
+rss: 'https://www.alasdairb.com/rss.xml'
 ---

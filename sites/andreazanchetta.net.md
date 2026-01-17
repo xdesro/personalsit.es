@@ -11,7 +11,5 @@ tags:
     'music',
     'italy',
   ]
-updatesFeed: 'https://andreazanchetta.net/feed.xml'
-nsfw: false
-rss: true
+rss: 'https://andreazanchetta.net/feed.xml'
 ---

@@ -2,7 +2,5 @@
 title: 'Paul Stamatiou'
 url: 'https://paulstamatiou.com'
 tags: ['designer', 'developer', 'writer', 'photographer']
-updatesFeed: 'https://paulstamatiou.com/posts.xml'
-nsfw: false
-rss: true
+rss: 'https://paulstamatiou.com/posts.xml'
 ---

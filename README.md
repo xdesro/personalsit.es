@@ -19,11 +19,11 @@ Want to add your site? We'd love your contribution. Go ahead and follow these st
    title: 'Andy Bell'
    url: 'https://bell.bz'
    tags: ['web designer', 'writer']
-   updatesFeed: 'https://bell.bz/feed.xml'
-   nsfw: false
-   rss: true
+   rss: 'https://bell.bz/feed.xml'
    ---
    ```
+
+(The only required fields are `title` and `url`. `tags` are pretty free-form, and `rss` is usually for RSS style content!)
 
 4. 🖥 Create a pull request, and after your site has been approved by an admin, it'll appear on [personalsit.es](https://personalsit.es)!
 

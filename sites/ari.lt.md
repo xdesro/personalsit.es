@@ -2,7 +2,5 @@
 title: 'Arija A.'
 url: 'https://ari.lt'
 tags: ['developer', 'blogger', 'c', 'python', 'indie']
-updatesFeed: 'https://ari.lt/rss.xml'
-nsfw: false
-rss: true
+rss: 'https://ari.lt/rss.xml'
 ---
