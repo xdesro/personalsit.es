@@ -2,7 +2,5 @@
 title: 'Robert Jelenic'
 url: 'https://www.robertjelenic.com'
 tags: ['marketing', 'blogger','podcasts']
-updatesFeed: 'https://www.robertjelenic.com/blog/index.xml'
-nsfw: false
-rss: true
+rss: 'https://www.robertjelenic.com/blog/index.xml'
 ---

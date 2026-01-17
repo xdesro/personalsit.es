@@ -2,7 +2,5 @@
 title: 'Lene Saile'
 url: 'https://www.lenesaile.com'
 tags: ['web designer', 'web developer', 'writer', 'Eleventy']
-updatesFeed: 'https://www.lenesaile.com/en/feed.xml'
-nsfw: false
-rss: true
+rss: 'https://www.lenesaile.com/en/feed.xml'
 ---

@@ -2,7 +2,5 @@
 title: 'Thomas Vantuycom'
 url: 'https://www.thomasvantuycom.com'
 tags: ['web developer', 'dancer']
-updatesFeed: 'https://www.thomasvantuycom.com/feed.xml'
-nsfw: false
-rss: true
+rss: 'https://www.thomasvantuycom.com/feed.xml'
 ---
