@@ -28,7 +28,7 @@ Want to add your site? We'd love your contribution. Go ahead and follow these st
 4. 🖥 Create a pull request, and after your site has been approved by an admin, it'll appear on [personalsit.es](https://personalsit.es)!
 
 > [!NOTE]
-> I close AI PRs.
+> I don't really fw LLMs, and I close glaringly AI-generated PRs. No hard feelings, it's just a repo about personal websites!
 
 ## 🖼️ Updating your site's screenshot
 
