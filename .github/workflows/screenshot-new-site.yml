@@ -36,5 +36,9 @@ jobs:
           CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
           CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
           CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          S3_USER_ACCESS_KEY: ${{ secrets.S3_USER_ACCESS_KEY }}
+          S3_USER_ACCESS_KEY_SECRET: ${{ secrets.S3_USER_ACCESS_KEY_SECRET }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          S3_REGION: ${{ secrets.S3_REGION }}
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: node screenshot-new-site.js
