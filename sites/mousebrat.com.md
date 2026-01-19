@@ -1,13 +1,6 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2867
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-
-\f0\fs24 \cf0 \'97\
-Title: \'91Shawn Carter\'92\
-Url: \'91https://mousebrat.com'\
-Tags: [\'91photographer\'92, \'91designer\'92, \'91writer\'92, \'91podcaster\'92]\
-Rss: \'91https://mousebrat.com/feed/'\
-\'97}
+---
+title: "Shawn Carter"
+url: "https://mousebrat.com"
+tags: ["photographer", "designer", "writer", "podcaster"]
+rss: "https://mousebrat.com/feed/"
+---
