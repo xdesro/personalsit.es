@@ -1,30 +1,30 @@
 const fs = require('fs');
-const https = require('https');
-const cloudinary = require('cloudinary').v2;
+const AWS = require('aws-sdk');
 const frontMatter = require('front-matter');
 const filenamifyUrl = require('filenamify-url');
 
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+const s3 = new AWS.S3({
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
 });
 
-const failedSites = [];
-const successfulSites = [];
+const S3_BUCKET = process.env.S3_BUCKET;
+const S3_REGION = process.env.AWS_REGION || 'us-east-1';
 
-const getChangedSites = () => {
+function getS3Url(filename) {
+  return `https://${S3_BUCKET}.s3.${S3_REGION}.amazonaws.com/${filename}`;
+}
+
+function getChangedSites() {
   const changedFiles = process.env.CHANGED_FILES?.split(' ') || [];
 
-  console.log('Changed files:', changedFiles);
-
-  const urls = changedFiles
+  return changedFiles
     .filter((file) => file.endsWith('.md'))
     .map((file) => {
       try {
         const content = fs.readFileSync(file, 'utf-8');
-        const parsedFile = frontMatter(content);
-        const { url } = parsedFile.attributes;
+        const parsed = frontMatter(content);
+        const { url } = parsed.attributes;
 
         if (!url) {
           console.warn(`No URL found in ${file}`);
@@ -37,113 +37,117 @@ const getChangedSites = () => {
           file,
         };
       } catch (error) {
-        console.error(`Error reading ${file}:`, error.message);
+        console.error(`Error reading ${file}: ${error.message}`);
         return null;
       }
     })
     .filter((site) => site !== null && site.title && site.url);
+}
 
-  return urls;
-};
-
-const checkIfExists = (site) => {
+function checkIfExists(site) {
   return new Promise((resolve) => {
-    https
-      .get(cloudinary.url(site.title), (response) => {
-        if (response.statusCode !== 404) {
-          console.log(`${site.title} exists on cloudinary.`);
+    s3.headObject(
+      {
+        Bucket: S3_BUCKET,
+        Key: `${site.title}.png`,
+      },
+      (err) => {
+        if (err?.code === 'NotFound') {
+          console.log(`${site.title} does not exist on S3`);
+          resolve(true);
+        } else if (err) {
+          console.error(`Error checking S3: ${err.message}`);
+          resolve(true);
         } else {
-          console.log(`${site.title} DOES NOT exist on cloudinary.`);
+          console.log(`${site.title} exists on S3`);
+          resolve(false);
         }
-        resolve(response.statusCode === 404);
-      })
-      .on('error', (err) => {
-        console.error(`Error checking Cloudinary: ${err.message}`);
-        resolve(true);
-      });
+      }
+    );
   });
-};
+}
 
-const getScreenshot = async (site) => {
+async function getScreenshot(site, results) {
   const doesntExist = await checkIfExists(site);
 
-  if (doesntExist) {
-    const { default: captureWebsite } = await import('capture-website');
-    try {
-      console.log(`Capturing screenshot for ${site.url}...`);
-      const screenshot = await captureWebsite.buffer(site.url, {
-        timeout: 30,
-        launchOptions: {
-          args: ['--no-sandbox', '--disable-setuid-sandbox'],
-        },
-      });
-
-      await new Promise((resolve, reject) => {
-        cloudinary.uploader
-          .upload_stream(
-            { resource_type: 'image', public_id: site.title },
-            (error, result) => {
-              if (error) reject(error);
-              else resolve(result);
-            }
-          )
-          .end(screenshot);
-      });
-
-      console.log(`✅ Successfully captured: ${site.title}`);
-      successfulSites.push(site.title);
-    } catch (error) {
-      console.warn(`❌ Failed to capture ${site.title}:`, error.message);
-      failedSites.push(site.title);
-    }
-  } else {
-    successfulSites.push(`${site.title} (already exists)`);
+  if (!doesntExist) {
+    results.successful.push(`${site.title} (already on CDN)`);
+    return;
   }
-};
 
-(async () => {
+  try {
+    const { default: captureWebsite } = await import('capture-website');
+
+    console.log(`Capturing screenshot for ${site.url}...`);
+
+    const screenshot = await captureWebsite.buffer(site.url, {
+      timeout: 30,
+      launchOptions: {
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      },
+    });
+
+    const filename = `${site.title}.png`;
+
+    await s3
+      .upload({
+        Bucket: S3_BUCKET,
+        Key: filename,
+        Body: screenshot,
+        ContentType: 'image/png',
+      })
+      .promise();
+
+    const s3Url = getS3Url(filename);
+    console.log(
+      `✨ — Screenshot taken for ${site.title}\n    Production URL is ${s3Url}`
+    );
+
+    results.successful.push(site.title);
+  } catch (error) {
+    console.log(
+      `🤯 — Oh god, screenshot FAILED for ${site.title}.\n    They're saying ${error.message}`
+    );
+    results.failed.push(site.title);
+  }
+}
+
+(async function main() {
   try {
     const sites = getChangedSites();
 
     if (sites.length === 0) {
-      console.log('No sites to process from changed files.');
-      fs.writeFileSync(
-        'screenshot-results.json',
-        JSON.stringify({
-          success: [],
-          failed: [],
-          message: 'No sites found in changed markdown files',
-        })
-      );
+      console.log('No new sites to screenshot boys.');
       return;
     }
 
-    console.log(`Processing ${sites.length} site(s)...`);
-
-    for (const site of sites) {
-      await getScreenshot(site);
-    }
+    console.log(
+      `🚧 Watch out fellas, papa's screenshotting ${sites.length} site(s)...`
+    );
 
     const results = {
-      success: successfulSites,
-      failed: failedSites,
+      successful: [],
+      failed: [],
     };
 
-    fs.writeFileSync(
-      'screenshot-results.json',
-      JSON.stringify(results, null, 2)
-    );
+    for (const site of sites) {
+      await getScreenshot(site, results);
+    }
 
     console.log(`
 =====
-Screenshots collection complete.
-Successful: ${successfulSites.length}
-Failed: ${failedSites.length}
-${failedSites.length > 0 ? `\nFailed sites:\n${failedSites.join('\n')}` : ''}
+Screenshotting for this PR is complete.
+✨ Successful: ${results.successful.length}
+💥 Failed: ${results.failed.length}
+${
+  results.failed.length > 0
+    ? `\nFailed sites:\n${results.failed.join('\n')}`
+    : ''
+}
 =====`);
-    process.exit(failedSites.length > 0 ? 1 : 0);
+    process.exit(results.failed.length > 0 ? 1 : 0);
   } catch (error) {
-    console.error('Fatal error:', error);
+    console.error('Fatal error:', error.message);
     process.exit(1);
   }
 })();

@@ -50,13 +50,12 @@ module.exports = (eleventyConfig) => {
 
   // Shortcodes
   eleventyConfig.addShortcode(
-    'cloudinaryUrl',
-    (path, transforms) =>
-      `https://res.cloudinary.com/${
-        process.env.CLOUDINARY_CLOUD_NAME
-      }/image/upload/${transforms}/${filenamifyUrl(path, {
+    'cdnUrl',
+    (path) =>
+      // Thanks to Andy Bell for this one
+      `https://personalsites.b-cdn.net/${filenamifyUrl(path, {
         replacement: '',
-      })}.png`
+      })}.png?width=600`
   );
 
   // Return config settings
