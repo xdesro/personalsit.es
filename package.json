@@ -24,6 +24,7 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@aws-sdk/client-s3": "^3.971.0",
     "capture-website": "^5.1.0",
     "cloudinary": "^2.7.0",
     "dotenv": "^8.2.0",
