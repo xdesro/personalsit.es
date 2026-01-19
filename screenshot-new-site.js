@@ -8,18 +8,15 @@ const frontMatter = require('front-matter');
 const filenamifyUrl = require('filenamify-url');
 
 const s3Client = new S3Client({
-  region: process.env.AWS_REGION || 'us-east-1',
+  region: process.env.S3_REGION || 'us-east-2',
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    accessKeyId: process.env.S3_USER_ACCESS_KEY,
+    secretAccessKey: process.env.S3_USER_ACCESS_KEY_SECRET,
   },
 });
 
-const S3_BUCKET = process.env.S3_BUCKET;
-const S3_REGION = process.env.AWS_REGION || 'us-east-1';
-
 function getS3Url(filename) {
-  return `https://${S3_BUCKET}.s3.${S3_REGION}.amazonaws.com/${filename}`;
+  return `https://${process.env.S3_BUCKET}.s3.${process.env.S3_REGION}.amazonaws.com/${filename}`;
 }
 
 function getChangedSites() {
@@ -52,7 +49,7 @@ async function checkIfExists(site) {
   try {
     await s3Client.send(
       new HeadObjectCommand({
-        Bucket: S3_BUCKET,
+        Bucket: 'personalsit.es',
         Key: `${site.title}.png`,
       })
     );
@@ -87,7 +84,7 @@ async function getScreenshot(site, results) {
     const filename = `${site.title}.png`;
     await s3Client.send(
       new PutObjectCommand({
-        Bucket: S3_BUCKET,
+        Bucket: process.env.S3_BUCKET,
         Key: filename,
         Body: screenshot,
         ContentType: 'image/png',
