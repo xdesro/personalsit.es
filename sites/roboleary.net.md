@@ -1,6 +1,6 @@
 ---
 title: 'Rob OLeary'
-url: 'https://www.roboleary.net'
-tags: ['web developer', "data architect". 'writer']
-rss: 'https://www.roboleary.net/feed.xml'
+url: 'https://roboleary.net'
+tags: ['web developer', 'data architect', 'writer']
+rss: 'https://roboleary.net/feed.xml'
 ---
