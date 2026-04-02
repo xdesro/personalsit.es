@@ -3,6 +3,10 @@
 node_modules
 _site
 
+# IDE / editor specific ignores
+.idea/
+.vscode/
+
 # Local Netlify folder
 .netlify
 
