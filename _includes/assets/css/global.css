@@ -36,14 +36,13 @@ dt {
   padding: 0px;
 }
 
-html {
-  /* Hide persistent scrollbar in IE (10/11) and Edge */
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
 ul,
 ol {
   list-style: none;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
 }
 
 /* end mini reset */
@@ -115,18 +114,23 @@ a {
   filter: invert(1);
 }
 
+.theme-toggle svg,
+.github-link svg {
+  width: 1rem;
+  transition: fill 250ms;
+
+  &:hover {
+    fill: var(--color__text--primary);
+  }
+}
+
 .theme-toggle {
-  display: inline-block;
   justify-self: start;
   padding: 0;
   cursor: pointer;
   color: var(--color__text--secondary);
   border: none;
   background: transparent;
-}
-
-.theme-toggle svg {
-  width: 1rem;
 }
 
 [dark] .theme-toggle--to-dark {
@@ -204,24 +208,6 @@ a {
 
 }
 
-.social-links {
-  display: inline-grid;
-  grid-auto-flow: column;
-  grid-gap: 1rem;
-  grid-row: 3;
-  justify-content: start;
-  color: var(--color__text--tertiary);
-}
-
-.social-link {
-  width: 1rem;
-  height: 1rem;
-}
-
-.social-link__icon:hover {
-  color: var(--color__text--secondary);
-}
-
 .fixed-nav {
   position: fixed;
   z-index: 2;
@@ -292,7 +278,6 @@ a {
 .item__image {
   width: 100%;
   height: auto;
-  min-height: 12.5rem;
   background-color: #e2e2e2;
 }
 
@@ -431,6 +416,17 @@ a {
   bottom: 100%;
   width: 0.75rem;
 }
+
+@media (max-width: 30rem) {
+  .items {
+  	padding-inline: 0.5rem;
+  }
+
+  .item {
+    width: calc(100vw - 1rem);
+  }
+}
+
 
 @media (min-width: 32rem) {
   .site-head {
