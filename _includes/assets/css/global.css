@@ -83,8 +83,8 @@ a {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
-  width: 1px;
-  height: auto;
+  inline-size: 1px;
+  block-size: auto;
   margin: 0;
   padding: 0;
   white-space: nowrap;
@@ -92,22 +92,23 @@ a {
 }
 
 .site-head {
-  max-width: 65rem;
-  margin: 0 auto;
-  padding: 14rem 1rem 4.5rem;
+  max-inline-size: 65rem;
+  margin-inline: auto;
+  padding-block: 14rem 4.5rem;
+  padding-inline: 1rem;
 }
 
 .header {
   display: grid;
   grid-gap: 2rem;
-  height: 5rem;
-  margin-bottom: 6rem;
+  block-size: 5rem;
+  margin-block-end: 6rem;
 }
 
 .header .header__logo {
   align-self: center;
-  width: 100%;
-  max-width: 18rem;
+  inline-size: 100%;
+  max-inline-size: 18rem;
 }
 
 [dark] .header {
@@ -116,7 +117,7 @@ a {
 
 .theme-toggle svg,
 .github-link svg {
-  width: 1rem;
+  inline-size: 1rem;
   transition: fill 250ms;
 
   &:hover {
@@ -145,13 +146,17 @@ a {
   display: block;
 }
 
+.github-link {
+  inline-size: fit-content;
+}
+
 .header__text {
   position: absolute;
-  top: auto;
-  left: -10000px;
+  inset-block-start: auto;
+  inset-inline-start: -10000px;
   overflow: hidden;
-  width: 1px;
-  height: 1px;
+  inline-size: 1px;
+  block-size: 1px;
 }
 
 .filters-nav {
@@ -166,7 +171,7 @@ a {
   text-transform: uppercase;
   color: var(--color__text--secondary);
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
   text-decoration: none;
 }
 
@@ -186,7 +191,7 @@ a {
   text-transform: uppercase;
   color: var(--color__text--secondary);
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
   text-decoration: none;
 }
 
@@ -211,24 +216,24 @@ a {
 .fixed-nav {
   position: fixed;
   z-index: 2;
-  top: 0;
-  left: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   display: grid;
   overflow: hidden;
   grid-column-gap: 2rem;
   grid-template-columns: 6.875rem 1fr;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding-block: 1.5rem;
+  padding-inline: 1rem;
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
   transition-property: background-color, border;
   pointer-events: none;
-  /* transition: background-color 0.3s ease-in-out; */
 }
 
 .fixed-nav--active {
   pointer-events: all;
-  border-bottom: 1px solid var(--color__text--tertiary);
+  border-block-end: 1px solid var(--color__text--tertiary);
   background-color: var(--color__site--background);
 }
 
@@ -241,9 +246,13 @@ a {
   transform: translateX(-100%);
 }
 
+[dir="rtl"] .fixed-nav__logo g {
+  transform: translateX(100%);
+}
+
 .fixed-nav__border {
-  width: 100vh;
-  min-width: 60rem;
+  inline-size: 100vh;
+  min-inline-size: 60rem;
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
 }
@@ -265,19 +274,23 @@ a {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
-  max-width: 65rem;
-  margin: 0 auto;
-  padding: 0 1rem;
+  max-inline-size: 65rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 .item {
   position: relative;
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
+
+  a {
+    display: block;
+  }
 }
 
 .item__image {
-  width: 100%;
-  height: auto;
+  inline-size: 100%;
+  block-size: auto;
   background-color: #e2e2e2;
 }
 
@@ -298,8 +311,8 @@ a {
 .item__toggle {
   font-size: 0.75rem;
   position: absolute;
-  top: calc(100% - 1rem);
-  right: 0;
+  inset-block-start: calc(100% - 1rem);
+  inset-inline-end: 0;
   display: none;
   cursor: pointer;
   text-transform: uppercase;
@@ -314,12 +327,11 @@ a {
 
 .item__toggle:after {
   display: block;
-  width: 100%;
-  height: 1px;
+  inline-size: 100%;
+  block-size: 1px;
   content: '';
   transition: all 0.2s ease;
   transform: scaleX(0);
-  transform-origin: 0 0;
   background-color: currentColor;
 }
 
@@ -332,7 +344,7 @@ a {
 }
 
 .item__toggle svg {
-  height: 0.6rem;
+  block-size: 0.6rem;
   transition: all 0.2s ease;
   transform: rotate(90deg);
 }
@@ -343,10 +355,10 @@ a {
 
 .item-tray {
   z-index: 2;
-  top: calc(100% + 1rem);
-  left: 0;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--color__border);
+  inset-block-start: calc(100% + 1rem);
+  inset-inline-start: 0;
+  padding-block-end: 1rem;
+  border-block-end: 2px solid var(--color__border);
 }
 
 .item-tray__inner {
@@ -358,8 +370,8 @@ a {
 
 .item-tray__image {
   display: none;
-  width: auto;
-  height: 10rem;
+  inline-size: auto;
+  block-size: 10rem;
 }
 
 .item-tray__site-title {
@@ -375,7 +387,7 @@ a {
 
 .item-tray__meta-title {
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-block-end: 0.5rem;
   text-transform: uppercase;
   color: var(--color__text--tertiary);
 }
@@ -400,8 +412,8 @@ a {
 .item-tray__link {
   font-weight: bold;
   position: relative;
-  margin-top: 1rem;
-  text-align: right;
+  margin-block-start: 1rem;
+  text-align: end;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -412,9 +424,9 @@ a {
 
 .item-tray__link svg {
   position: absolute;
-  right: 0;
-  bottom: 100%;
-  width: 0.75rem;
+  inset-inline-end: 0;
+  inset-block-end: 100%;
+  inline-size: 0.75rem;
 }
 
 @media (max-width: 30rem) {
@@ -423,14 +435,14 @@ a {
   }
 
   .item {
-    width: calc(100vw - 1rem);
+    inline-size: calc(100vw - 1rem);
   }
 }
 
 
 @media (min-width: 32rem) {
   .site-head {
-    padding-top: 6rem;
+    padding-block-start: 6rem;
   }
 
   .header {
@@ -445,11 +457,11 @@ a {
   }
 
   .header:before {
-    background-position-x: 0%;
+    background-position-x: start;
   }
 
   .header:after {
-    background-position-x: 100%;
+    background-position-x: end;
   }
 
   .content {
@@ -469,7 +481,7 @@ a {
 
 @media (min-width: 42rem) {
   .fixed-nav {
-    border-bottom: none;
+    border-block-end: none;
     background-color: transparent;
   }
 
@@ -484,12 +496,12 @@ a {
   .item-tray {
     position: absolute;
     display: none;
-    padding-top: 1rem;
-    border-top: 2px solid var(--color__border);
+    padding-block-start: 1rem;
+    border-block-start: 2px solid var(--color__border);
   }
 
   .item--active {
-    margin-bottom: 13rem;
+    margin-block-end: 13rem;
   }
 
   .item--active .item-tray {
@@ -497,7 +509,7 @@ a {
   }
 
   .item:nth-of-type(2n) .item-tray {
-    left: calc(-100% - 2rem);
+    inset-inline-start: calc(-100% - 2rem);
   }
 
   .item-tray__image {
@@ -531,15 +543,15 @@ a {
 
 @media (min-width: 63rem) {
   .item:nth-of-type(3n - 2) .item-tray {
-    left: 0;
+    inset-inline-start: 0;
   }
 
   .item:nth-of-type(3n - 1) .item-tray {
-    left: calc(-100% - 2rem);
+    inset-inline-start: calc(-100% - 2rem);
   }
 
   .item:nth-of-type(3n) .item-tray {
-    left: calc(-200% - 4rem);
+    inset-inline-start: calc(-200% - 4rem);
   }
 
   .item-tray__image {
