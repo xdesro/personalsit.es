@@ -1,5 +1,3 @@
-
-
 <li class="item" id="{{ item.data.url }}">
     <a href="{{ item.data.url  }}">
         <p class="visually-hidden">View site</p>
@@ -10,7 +8,7 @@
     <span class="item__url">{{ item.data.url | cleanUrl }}</span>
     <button class="item__toggle">
         Details
-        <svg viewBox="0 0 13 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 13 13">
             <use xlink:href="#arrow-up-right">
         </svg>
     </button>
@@ -29,14 +27,14 @@
             <div class="item-tray__column item-tray__column--links">
                 {% if item.data.rss %}
                     <a class="item-tray__link item-tray__link--feed" href="{{ item.data.rss }}">
-                    <svg viewBox="0 0 13 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 13 13">
                         <use xlink:href="#arrow-up-right">
                     </svg>
                     Go to feed
                 </a>
                 {% endif %}
                 <a class="item-tray__link item-tray__link--site" href="{{ item.data.url }}">
-                    <svg viewBox="0 0 13 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 13 13">
                         <use xlink:href="#arrow-up-right">
                     </svg>
                     Go to site
