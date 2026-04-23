@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/xdesro/personalsit.es#readme",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@aws-sdk/client-s3": "^3.971.0",
     "capture-website": "^5.1.0",
