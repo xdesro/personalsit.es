@@ -1,12 +1,9 @@
-const fs = require('fs');
-const https = require('https');
-const cloudinary = require('cloudinary').v2;
-const frontMatter = require('front-matter');
-const captureWebsite = require('capture-website');
-const filenamifyUrl = require('filenamify-url');
-const { resolve } = require('path');
-
-require('dotenv').config();
+import fs from 'node:fs';
+import https from 'node:https';
+import { v2 as cloudinary } from 'cloudinary';
+import frontMatter from 'front-matter';
+import captureWebsite from 'capture-website';
+import filenamifyUrl from 'filenamify-url';
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -36,7 +33,7 @@ const getSites = () => {
 const getScreenshot = async (site) => {
   //  TODO — Check if screenshot exists in Cloudinary space before running Puppeteer
   //  TODO — Statically render URLs in template files
-  const doesntExist = await new Promise((resolve, reject) => {
+  const doesntExist = await new Promise((resolve) => {
     https.get(cloudinary.url(site.title), (response) => {
       if (response.statusCode !== 404) {
         console.log(`${site.title} exists on cloudinary.`);
@@ -59,19 +56,14 @@ const getScreenshot = async (site) => {
     }
   }
 };
-(async () => {
-  const sites = await getSites();
-  (async () => {
-    for (const site of sites) {
-      await getScreenshot(site);
-    }
-    console.log(`
-=====
-Screenshots collection complete.
+const sites = getSites();
+for (const site of sites) {
+  await getScreenshot(site);
+}
 
-Failed sites (may need to capture manually): 
-${failedSites.join(`\n`)}
+console.log(`
+=====
+Screenshot collection complete.
+
+${failedSites.length > 0 ? `Failed sites:\n${failedSites.join('\n')}. May need to capture manually.` : 'All sites captured successfully!'}
 =====`);
-  })();
-  return;
-})();

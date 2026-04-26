@@ -1,14 +1,9 @@
-const filenamifyUrl = require('filenamify-url');
+import filenamifyUrl from 'filenamify-url';
+import rssPlugin from '@11ty/eleventy-plugin-rss';
+import shuffle from './filters/shuffle.js';
+import { minify } from 'html-minifier-next';
 
-const rssPlugin = require('@11ty/eleventy-plugin-rss');
-// const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
-
-const shuffle = require('./filters/shuffle.js');
-const { minify } = require('html-minifier-next');
-
-require('dotenv').config();
-
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
   // Pass through
   eleventyConfig.addPassthroughCopy('assets');
 
@@ -30,8 +25,7 @@ module.exports = (eleventyConfig) => {
   // Filters
   eleventyConfig.addFilter('shuffle', shuffle);
   eleventyConfig.addFilter('cleanUrl', (str) => {
-    const urlCruft = /http[s]?:\/\/|\/$/gi;
-    return str.replace(urlCruft, '');
+	return str.replace(/^https?:\/\/| \/$/gi, '');
   });
 
   // Minify

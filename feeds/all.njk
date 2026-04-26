@@ -7,7 +7,7 @@ permalink: feed/all.xml
 	<subtitle>All sites from personalsit.es</subtitle>
 	<link href="https://personalsit.es/feed/all.xml" rel="self"/>
 	<link href="https://personalsit.es/"/>
-	<updated>{{ collections.sites | rssLastUpdatedDate }}</updated>
+	<updated>{{ collections.sites | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
 	<id>https://personalsit.es</id>
 	<author>
 		<name>Andy Bell</name>
@@ -18,7 +18,7 @@ permalink: feed/all.xml
             <entry>
                 <title>{{ post.data.title }}</title>
                 <link href="{{ post.data.url }}"/>
-                <updated>{{ post.date | rssDate }}</updated>
+                <updated>{{ post.date | dateToRfc3339 }}</updated>
                 <id>{{ absolutePostUrl }}</id>
                 <content type="html"><![CDATA[
                     <h3>{{ post.data.title }}</h3>

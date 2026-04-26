@@ -1,5 +1,5 @@
 // From: https://github.com/Daplie/knuth-shuffle/blob/master/index.js
-module.exports = function shuffle(items) {
+export default function(items) {
     var currentIndex = items.length,
         temporaryValue,
         randomIndex;
