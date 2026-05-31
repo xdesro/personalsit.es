@@ -1,11 +1,11 @@
-const fs = require('fs');
-const {
+import fs from 'fs';
+import {
   S3Client,
   HeadObjectCommand,
   PutObjectCommand,
-} = require('@aws-sdk/client-s3');
-const frontMatter = require('front-matter');
-const filenamifyUrl = require('filenamify-url');
+} from '@aws-sdk/client-s3';
+import frontMatter from 'front-matter';
+import filenamifyUrl from 'filenamify-url';
 
 const s3Client = new S3Client({
   region: process.env.S3_REGION || 'us-east-2',
