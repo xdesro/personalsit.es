@@ -4,7 +4,7 @@ permalink: feed/opml.opml
 <?xml version="1.0" encoding="utf-8"?>
 <opml version="1.0">
   <head>
-    <dateCreated>{{ collections.sites | rssLastUpdatedDate }}</dateCreated>
+    <dateCreated>{{ collections.sites | getNewestCollectionItemDate | dateToRfc822 }}</dateCreated>
     <title>Personal sites are awesome!</title>
   </head>
   <body>
