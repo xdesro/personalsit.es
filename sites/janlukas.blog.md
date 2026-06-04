@@ -1,6 +1,6 @@
 ---
 title: 'Jan-Lukas Else'
-url: 'https://jlelse.blog'
+url: 'https://janlukas.blog'
 tags: ['developer', 'indieweb', 'blogger', 'personal']
-rss: 'https://jlelse.blog/.rss'
+rss: 'https://janlukas.blog/.rss'
 ---
