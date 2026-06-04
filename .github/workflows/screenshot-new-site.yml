@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version: '24.15.0'
 
       - name: Install dependencies
         run: npm install
@@ -45,7 +45,4 @@ jobs:
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
           S3_REGION: ${{ secrets.S3_REGION }}
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
-        run: |
-          rm -rf ~/.cache/puppeteer
-          npx puppeteer browsers install chrome
-          node screenshot-new-site.js
+        run: run: node screenshot-new-site.js
