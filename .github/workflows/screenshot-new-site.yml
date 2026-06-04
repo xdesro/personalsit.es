@@ -46,5 +46,6 @@ jobs:
           S3_REGION: ${{ secrets.S3_REGION }}
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
+          rm -rf ~/.cache/puppeteer
           npx puppeteer browsers install chrome
           node screenshot-new-site.js
