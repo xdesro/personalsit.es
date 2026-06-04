@@ -45,4 +45,4 @@ jobs:
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
           S3_REGION: ${{ secrets.S3_REGION }}
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
-        run: run: node screenshot-new-site.js
+        run: node screenshot-new-site.js
