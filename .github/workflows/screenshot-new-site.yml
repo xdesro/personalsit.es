@@ -45,4 +45,6 @@ jobs:
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
           S3_REGION: ${{ secrets.S3_REGION }}
           CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
-        run: node screenshot-new-site.js
+        run: |
+          npx puppeteer browsers install chrome
+          node screenshot-new-site.js
