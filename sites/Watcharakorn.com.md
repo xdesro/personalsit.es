@@ -1,6 +1,6 @@
 ---
 title: 'Watcharakorn'
-url: 'https://watcharakorn.com'
+url: 'https://watcharakorn.net'
 tags: ['developer', 'blogger']
-rss: 'https://watcharakorn.com/feed.xml'
+rss: 'https://watcharakorn.net/feed.xml'
 ---
