@@ -1,5 +1,5 @@
 ---
-title: 'Ramoon Canales | Product Leader Portfolio'
+title: 'Ramoon Canales'
 url: 'https://ramon.tech'
 tags: ['Product Leader', 'AI Systems', 'Developer']
 ---
