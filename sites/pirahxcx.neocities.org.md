@@ -1,0 +1,6 @@
+---
+title: 'Pira HxCx'
+url: 'https://pirahxcx.neocities.org/'
+tags: ['punk', 'blog', 'pets']
+rss: 'https://pirahxcx.neocities.org/atom.xml'
+---
