@@ -1,6 +1,6 @@
 ---
 title: 'Wilhelm Codes'
 url: 'https://wilhelm.codes'
-tags: ['blog', 'developer', 'platform engineering', 'go', 'open source', 'hugo']
+tags: ['blog', 'developer', 'go', 'open source']
 rss: 'https://wilhelm.codes/index.xml'
 ---
