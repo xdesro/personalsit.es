@@ -1,16 +1,6 @@
 ---
 title: "Ateş Göral"
 url: "https://ates.dev"
-tags:
-  [
-    "developer",
-    "maker",
-    "graphics",
-    "creative-coding",
-    "javascript",
-    "open-source",
-    "ai",
-    "mcp",
-  ]
+tags: ["developer", "maker", "javascript", "open source", "ai"]
 rss: "https://ates.dev/feed.xml"
 ---
