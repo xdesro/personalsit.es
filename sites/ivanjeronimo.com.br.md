@@ -1,0 +1,6 @@
+---
+title: 'Ivan Jerônimo'
+url: 'https://ivanjeronimo.com.br/'
+tags: ['illustrator', 'writer', 'urban sketcher']
+rss: 'https://ivanjeronimo.com.br/feed/'
+---
