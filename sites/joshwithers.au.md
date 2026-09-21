@@ -1,6 +1,6 @@
 ---
 title: 'Josh Withers'
 url: 'https://joshwithers.au'
-tags: ['web developer', 'writer', 'marriage celebrant']
+tags: ['developer', 'writer']
 rss: 'https://joshwithers.au/rss.xml'
 ---
