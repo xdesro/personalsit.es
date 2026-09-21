@@ -1,0 +1,5 @@
+---
+title: 'Jay Motley'
+url: 'https://jaymotley.com'
+tags: ['writer']
+---
