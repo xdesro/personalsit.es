@@ -1,0 +1,5 @@
+---
+title: 'Alexandru Mărășteanu'
+url: 'https://alexei.ro/en/'
+tags: ['developer', 'python', 'postgresql']
+---
