@@ -1,6 +1,6 @@
 ---
 title: 'Gary Alexander'
 url: 'https://garyalexander.co.uk'
-tags: ['artist', 'geek', 'photographer', 'eleventy']
+tags: ['artist', 'photographer']
 rss: 'https://garyalexander.co.uk/feed.xml'
 ---
