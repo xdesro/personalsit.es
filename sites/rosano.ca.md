@@ -1,6 +1,6 @@
 ---
 title: 'Rosano'
 url: 'https://rosano.ca'
-tags: ['developer', 'founder', 'musician', 'writer']
-rss: 'https://rosano.ca/en/feed'
+tags: ['developer', 'writer', 'blog', 'open source', 'travel', 'podcaster', 'musician']
+rss: 'https://rosano.ca/feed'
 ---
