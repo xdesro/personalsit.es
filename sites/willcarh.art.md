@@ -1,5 +1,0 @@
----
-title: 'Will Carhart'
-url: 'http://willcarh.art'
-tags: ['developer', 'python']
----

@@ -1,5 +1,0 @@
----
-title: 'alvez.dev'
-url: 'https://www.alvez.dev/'
-tags: ['developer', 'tech']
----

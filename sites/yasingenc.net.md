@@ -1,5 +1,0 @@
----
-title: 'Yasin Genc'
-url: 'https://yasingenc.net'
-tags: ['accessibility', 'css', 'designer', 'developer', 'freelancer', 'html', 'javascript']
----

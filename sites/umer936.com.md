@@ -1,5 +1,0 @@
----
-title: 'Umer Salman'
-url: 'https://umer936.com'
-tags: ['designer', 'developer']
----

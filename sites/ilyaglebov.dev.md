@@ -1,5 +1,0 @@
----
-title: 'Ilya Glebov'
-url: 'https://ilyaglebov.dev'
-tags: ['developer', 'leadership']
----

@@ -1,6 +1,0 @@
----
-title: 'Ben Byford Portfolio'
-url: 'https://www.benbyford.com'
-tags: ['ai', 'designer', 'educator', 'philosophy']
-rss: 'https://benbyford.com/articles/rss'
----

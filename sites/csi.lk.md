@@ -1,5 +1,0 @@
----
-title: 'Callum Silcock'
-url: 'https://csi.lk'
-tags: ['developer', 'react', 'speaker']
----

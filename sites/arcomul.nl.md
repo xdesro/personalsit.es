@@ -1,5 +1,0 @@
----
-title: 'arcomul.nl'
-url: 'https://www.arcomul.nl'
-tags: ['developer', 'food']
----

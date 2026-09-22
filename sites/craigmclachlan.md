@@ -1,5 +1,0 @@
----
-title: 'Craig McLachlan'
-url: 'https://www.craigmclachlan.co.uk'
-tags: ['blog', 'css', 'designer', 'photographer', 'ssg']
----

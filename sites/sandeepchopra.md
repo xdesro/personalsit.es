@@ -1,5 +1,0 @@
----
-title: 'Sandeep Chopra'
-url: 'https://www.sandeepchopra.ca/'
-tags: ['developer', 'leadership']
----

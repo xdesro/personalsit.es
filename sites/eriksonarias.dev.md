@@ -1,5 +1,0 @@
----
-title: 'eriksonarias.dev'
-url: 'https://eriksonarias.dev'
-tags: ['data', 'designer', 'developer', 'musician', 'writer']
----

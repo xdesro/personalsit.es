@@ -1,5 +1,0 @@
----
-title: 'Hip-Hop Quoted'
-url: 'https://hiphopquoted.com'
-tags: ['blog', 'designer']
----

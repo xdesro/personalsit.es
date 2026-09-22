@@ -1,5 +1,0 @@
----
-title: 'okuramasafumi.com'
-url: 'https://okuramasafumi.com'
-tags: ['developer', 'ruby']
----

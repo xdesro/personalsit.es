@@ -1,5 +1,0 @@
----
-title: 'Dan Barbarito'
-url: 'https://barbarito.me'
-tags: ['developer', 'freelancer', 'leadership']
----

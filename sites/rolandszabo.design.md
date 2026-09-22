@@ -1,5 +1,0 @@
----
-title: 'Roland Szabó'
-url: 'https://rolandszabo.design'
-tags: ['accessibility', 'css', 'designer', 'developer', 'html']
----

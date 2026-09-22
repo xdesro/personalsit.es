@@ -1,5 +1,0 @@
----
-title: 'Jonathon Toon'
-url: 'https://jonathontoon.com'
-tags: ['developer', 'javascript', 'sports']
----

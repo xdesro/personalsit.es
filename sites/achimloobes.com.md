@@ -1,5 +1,0 @@
----
-title: 'Achim Loobes'
-url: 'https://achimloobes.com'
-tags: ['designer', 'developer', 'mobile']
----

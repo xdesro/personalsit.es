@@ -1,5 +1,0 @@
----
-title: 'Dominic Duffin'
-url: 'https://dominicduffin.uk'
-tags: ['css', 'developer', 'javascript', 'python', 'ssg', 'tech']
----

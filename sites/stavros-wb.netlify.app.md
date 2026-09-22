@@ -1,5 +1,0 @@
----
-title: "Stavros' web corner"
-url: 'https://stavros-wb.netlify.app'
-tags: ['data', 'developer', 'python', 'science']
----

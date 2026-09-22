@@ -1,6 +1,0 @@
----
-title: 'Artem Novichkov'
-url: 'https://artemnovichkov.com'
-tags: ['blog', 'developer', 'mobile']
-rss: 'https://artemnovichkov.com/feed.xml'
----

@@ -1,5 +1,0 @@
----
-title: 'Kam Black'
-url: 'https://kam.black'
-tags: ['developer', 'educator', 'games', 'wordpress']
----

@@ -1,5 +1,0 @@
----
-title: 'Chuck Reynolds'
-url: 'https://chuckreynolds.us'
-tags: ['developer', 'marketer', 'wordpress']
----

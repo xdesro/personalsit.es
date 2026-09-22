@@ -1,5 +1,0 @@
----
-title: 'Manny Becerra'
-url: 'https://www.mannybecerra.com'
-tags: ['accessibility', 'designer', 'developer', 'educator', 'product manager', 'speaker']
----

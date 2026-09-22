@@ -1,5 +1,0 @@
----
-title: 'Levi Nunnink'
-url: 'https://nunn.ink'
-tags: ['designer', 'developer', 'founder']
----

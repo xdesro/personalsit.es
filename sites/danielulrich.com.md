@@ -1,5 +1,0 @@
----
-title: 'danielulrich.com'
-url: 'https://danielulrich.com'
-tags: ['developer', 'founder']
----

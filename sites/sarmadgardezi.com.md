@@ -1,5 +1,0 @@
----
-title: 'Sarmad Gardezi'
-url: 'https://sarmadgardezi.com'
-tags: ['developer']
----

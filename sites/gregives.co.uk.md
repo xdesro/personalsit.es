@@ -1,5 +1,0 @@
----
-title: 'Greg Ives'
-url: 'https://www.gregives.co.uk'
-tags: ['blog', 'designer', 'developer', 'vue']
----

@@ -1,5 +1,0 @@
----
-title: 'Ben Evans'
-url: 'https://www.tinydesign.co.uk/ben-evans-portfolio'
-tags: ['designer', 'illustrator']
----

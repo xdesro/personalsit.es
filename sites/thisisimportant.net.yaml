@@ -1,0 +1,4 @@
+title: 'This is important'
+url: 'https://thisisimportant.net'
+tags: ['data', 'musician', 'writer']
+feed: 'https://thisisimportant.net/feed.xml'

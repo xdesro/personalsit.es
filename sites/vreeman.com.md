@@ -1,5 +1,0 @@
----
-title: 'Simon Vreeman'
-url: 'https://vreeman.com'
-tags: ['marketer']
----

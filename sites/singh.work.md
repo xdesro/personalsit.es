@@ -1,5 +1,0 @@
----
-title: 'Shivani Singh'
-url: 'https://singh.work/'
-tags: ['designer', 'politics']
----

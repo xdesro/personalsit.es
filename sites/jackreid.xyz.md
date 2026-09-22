@@ -1,5 +1,0 @@
----
-title: 'Jack Reid'
-url: 'https://jackreid.xyz'
-tags: ['blog', 'developer']
----

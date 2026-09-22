@@ -1,6 +1,0 @@
----
-title: 'Lisi Linhart'
-url: 'https://lisilinhart.info'
-tags: ['designer', 'developer']
-rss: 'https://lisilinhart.info/feed.xml'
----

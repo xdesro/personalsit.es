@@ -1,6 +1,0 @@
----
-title: 'Jon Camfield dot com'
-url: 'https://www.joncamfield.com/'
-tags: ['politics', 'privacy', 'security', 'tech']
-rss: 'https://www.joncamfield.com/feed.xml'
----

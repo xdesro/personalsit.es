@@ -1,5 +1,0 @@
----
-title: 'Bálint Magyar'
-url: 'https://balintmagyar.com'
-tags: ['artist', 'designer', 'developer', 'games', 'musician', 'security']
----

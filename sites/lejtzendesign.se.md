@@ -1,5 +1,0 @@
----
-title: 'Lejtzén Design'
-url: 'https://lejtzendesign.se'
-tags: ['designer', 'developer']
----

@@ -1,5 +1,0 @@
----
-title: 'Oleksandr Dudynets'
-url: 'https://dudynets.dev'
-tags: ['developer', 'mobile']
----

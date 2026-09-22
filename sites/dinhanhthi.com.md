@@ -1,5 +1,0 @@
----
-title: 'Site of Thi'
-url: 'https://dinhanhthi.com'
-tags: ['data', 'designer', 'digital garden', 'science']
----

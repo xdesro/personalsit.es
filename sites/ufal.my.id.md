@@ -1,5 +1,0 @@
----
-title: 'Ufal Salman'
-url: 'https://ufal.my.id'
-tags: ['musician', 'writer']
----

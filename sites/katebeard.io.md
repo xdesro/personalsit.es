@@ -1,5 +1,0 @@
----
-title: 'katebeard.co'
-url: 'http://katebeard.co'
-tags: ['developer']
----

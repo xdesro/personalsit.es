@@ -1,5 +1,0 @@
----
-title: 'Santiago Degetau'
-url: 'https://www.taus.mx'
-tags: ['designer', 'developer', 'games']
----

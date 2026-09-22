@@ -1,5 +1,0 @@
----
-title: 'Vincent Tantardini'
-url: 'https://vnn.io'
-tags: ['designer', 'photographer']
----

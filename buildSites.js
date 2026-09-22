@@ -1,7 +1,8 @@
 import fs from 'node:fs';
+import path from 'node:path';
 import https from 'node:https';
 import { v2 as cloudinary } from 'cloudinary';
-import frontMatter from 'front-matter';
+import yaml from 'js-yaml';
 import captureWebsite from 'capture-website';
 import filenamifyUrl from 'filenamify-url';
 
@@ -13,13 +14,16 @@ cloudinary.config({
 const failedSites = [];
 
 const getSites = () => {
-  const files = fs.readdirSync('sites').map((file) => {
-    return fs.readFileSync(`sites/${file}`, 'utf-8');
-  });
+  const files = fs
+    .readdirSync('sites')
+    .filter((file) => file.endsWith('.yaml'))
+    .map((file) => {
+      return fs.readFileSync(path.join('sites', file), 'utf-8');
+    });
   const urls = files
     .map((file) => {
-      const parsedFile = frontMatter(file);
-      const { url } = parsedFile.attributes;
+      const parsedFile = yaml.load(file) ?? {};
+      const { url } = parsedFile;
       return { title: filenamifyUrl(url, { replacement: '' }), url };
     })
     .filter((site) => {

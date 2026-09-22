@@ -1,5 +1,0 @@
----
-title: 'Alper'
-url: 'https://www.aktasalper.com/'
-tags: ['developer']
----

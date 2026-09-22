@@ -1,5 +1,0 @@
----
-title: 'danhemerlein.com'
-url: 'https://danhemerlein.com'
-tags: ['css', 'developer', 'musician', 'photographer', 'react']
----

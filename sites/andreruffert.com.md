@@ -1,8 +1,0 @@
----
-title: 'André Ruffert'
-url: 'https://andreruffert.com'
-tags: ['developer']
-rss: https://andreruffert.com/weblog/rss.xml
----
-
-Crafting resilient, user-friendly software for the modern web.

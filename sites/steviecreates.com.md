@@ -1,5 +1,0 @@
----
-title: 'Stevie Creates'
-url: 'https://www.steviecreates.com'
-tags: ['developer', 'php', 'python', 'writer']
----

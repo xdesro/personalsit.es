@@ -1,5 +1,0 @@
----
-title: "Luciano Strika (@StrikingLoo)"
-url: 'https://strikingloo.github.io'
-tags: ['ai', 'developer', 'digital garden']
----

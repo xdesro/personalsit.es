@@ -1,5 +1,0 @@
----
-title: 'Nick Colley'
-url: 'https://nickcolley.co.uk'
-tags: ['accessibility', 'designer', 'developer']
----

@@ -1,5 +1,0 @@
----
-title: 'Kevin Adam'
-url: 'http://bykevin.work'
-tags: ['designer', 'developer']
----

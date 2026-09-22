@@ -1,5 +1,0 @@
----
-title: 'williamhzo.me'
-url: 'https://www.williamhzo.me'
-tags: ['blog', 'designer', 'developer']
----

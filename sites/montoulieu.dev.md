@@ -1,5 +1,0 @@
----
-title: 'Pieter Montoulieu'
-url: 'https://www.montoulieu.dev'
-tags: ['developer', 'games', 'vue', 'wordpress']
----

@@ -1,5 +1,0 @@
----
-title: 'Ford Hurley'
-url: 'https://fordhurley.com'
-tags: ['developer']
----

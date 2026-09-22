@@ -1,5 +1,0 @@
----
-title: 'Aravind Voggu'
-url: 'https://www.avoggu.com'
-tags: ['developer', 'maker', 'ssg', 'sustainability']
----

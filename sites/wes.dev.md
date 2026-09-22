@@ -1,5 +1,0 @@
----
-title: 'Wes Souza'
-url: 'https://wes.dev'
-tags: ['developer', 'retro computing']
----

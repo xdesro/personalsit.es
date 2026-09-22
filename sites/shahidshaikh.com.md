@@ -1,5 +1,0 @@
----
-title: 'Shahid Shaikh'
-url: 'https://www.shahidshaikh.com'
-tags: ['blog', 'developer']
----

@@ -1,5 +1,0 @@
----
-title: 'Musical Web Dev'
-url: 'https://musicalwebdev.com'
-tags: ['css', 'designer', 'developer', 'educator']
----

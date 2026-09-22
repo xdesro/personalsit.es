@@ -1,5 +1,0 @@
----
-title: 'Saurish Srivastava'
-url: 'https://saurish.com'
-tags: ['developer', 'student']
----

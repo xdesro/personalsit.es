@@ -1,5 +1,0 @@
----
-title: 'Zach Patrick'
-url: 'https://zachpatrick.com'
-tags: ['developer']
----

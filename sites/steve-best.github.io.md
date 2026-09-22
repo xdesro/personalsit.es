@@ -1,5 +1,0 @@
----
-title: 'Steve Best'
-url: 'https://steve-best.github.io'
-tags: ['css', 'designer', 'html', 'linux', 'security', 'tech', 'writer']
----

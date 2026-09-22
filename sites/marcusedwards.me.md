@@ -1,5 +1,0 @@
----
-title: 'Marcus Edwards'
-url: 'https://marcusedwards.me/web-portfolio'
-tags: ['developer', 'maker']
----

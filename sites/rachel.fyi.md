@@ -1,6 +1,0 @@
----
-title: 'Rachel Cantor'
-url: 'https://rachel.fyi'
-tags: ['accessibility', 'developer', 'freelancer', 'javascript', 'react']
-rss: 'https://rachel.fyi/rss.xml'
----

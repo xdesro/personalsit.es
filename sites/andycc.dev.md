@@ -1,5 +1,0 @@
----
-title: 'Andy Castille'
-url: 'https://andycc.dev'
-tags: ['developer']
----

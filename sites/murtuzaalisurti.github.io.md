@@ -1,6 +1,0 @@
----
-title: 'Murtuzaali Surti'
-url: 'https://murtuzaalisurti.github.io'
-tags: ['designer', 'developer', 'writer']
----
-

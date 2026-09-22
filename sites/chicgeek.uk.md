@@ -1,5 +1,0 @@
----
-title: 'Laura Kishimoto'
-url: 'https://www.chicgeek.uk'
-tags: ['css', 'developer', 'html', 'javascript', 'leadership']
----

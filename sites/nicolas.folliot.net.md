@@ -1,5 +1,0 @@
----
-title: 'Nicolas Folliot'
-url: 'https://nicolas.folliot.net'
-tags: ['designer']
----

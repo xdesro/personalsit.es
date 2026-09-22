@@ -1,5 +1,0 @@
----
-title: 'Jasper Lai'
-url: 'https://lai.nz'
-tags: ['accessibility', 'css', 'designer', 'developer']
----

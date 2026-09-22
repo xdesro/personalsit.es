@@ -1,5 +1,0 @@
----
-title: 'Oscar Marcelo'
-url: 'https://oscarmarcelo.com'
-tags: ['designer', 'developer']
----

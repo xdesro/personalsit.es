@@ -1,5 +1,0 @@
----
-title: 'Gary Lake'
-url: 'https://www.garylake.co.uk'
-tags: ['designer', 'developer', 'founder']
----

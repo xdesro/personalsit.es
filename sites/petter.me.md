@@ -1,5 +1,0 @@
----
-title: 'Petter Ruud'
-url: 'https://petter.me'
-tags: ['developer']
----

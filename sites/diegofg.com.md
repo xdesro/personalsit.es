@@ -1,5 +1,0 @@
----
-title: 'Diego F. Goberna Tech Portfolio'
-url: 'https://diegofg.com'
-tags: ['artist', 'developer']
----

@@ -1,5 +1,0 @@
----
-title: 'Icely @ icely.neocities.org'
-url: 'https://icely.neocities.org'
-tags: ['artist', 'designer', 'developer', 'games', 'musician']
----

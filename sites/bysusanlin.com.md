@@ -1,5 +1,0 @@
----
-title: 'Susan Lin'
-url: 'https://bysusanlin.com'
-tags: ['artist', 'designer']
----

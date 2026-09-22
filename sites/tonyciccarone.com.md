@@ -1,5 +1,0 @@
----
-title: 'Tony Ciccarone'
-url: 'https://tonyciccarone.com'
-tags: ['developer', 'wordpress']
----

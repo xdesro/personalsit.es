@@ -1,5 +1,0 @@
----
-title: 'lejtzen.dev'
-url: 'https://lejtzen.dev'
-tags: ['css', 'developer', 'html', 'javascript']
----

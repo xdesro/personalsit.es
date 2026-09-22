@@ -1,5 +1,0 @@
----
-title: 'Simon Betton'
-url: 'https://www.simonbetton.com'
-tags: ['developer', 'freelancer']
----

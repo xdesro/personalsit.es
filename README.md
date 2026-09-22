@@ -8,22 +8,20 @@ Want to add your site? We'd love your contribution. Go ahead and follow these st
 
 1. 🍴 Fork this repository.
 
-2. 📝 Add a new `.md` file in `sites` that is `{yourDomain}.md`.
+2. 📝 Add a new `.yaml` file in `sites` that is `{yourDomain}.yaml`.
 
-   > For example: `sites/bell.bz.md`.
+   > For example: `sites/bell.bz.yaml`.
 
 3. 🖋 Fill out the details. Here's the template:
 
    ```yaml
-   ---
-   title: 'Andy Bell'
-   url: 'https://bell.bz'
-   tags: ['web designer', 'writer']
-   rss: 'https://bell.bz/feed.xml'
-   ---
+   title: "Andy Bell"
+   url: "https://bell.bz"
+   tags: ["developer", "writer"]
+   feed: "https://bell.bz/feed.xml"
    ```
 
-(The only required fields are `title` and `url`. `tags` are pretty free-form, and `rss` is usually for RSS style content!)
+The required fields are `title`, `url`, and `tags`. `feed` is optional and points to your site's RSS/Atom feed. Tags must come from the list in [`sites.schema.json`](sites.schema.json).
 
 4. 🖥 Create a pull request, and after your site has been approved by an admin, it'll appear on [personalsit.es](https://personalsit.es)!
 

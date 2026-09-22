@@ -1,5 +1,0 @@
----
-title: 'Amit@NextFive.xyz'
-url: 'https://nextfive.xyz/'
-tags: ['maker', 'photographer', 'writer']
----

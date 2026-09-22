@@ -1,5 +1,0 @@
----
-title: 'Ludwinas'
-url: 'https://ludwinas.com'
-tags: ['artist', 'developer']
----

@@ -1,5 +1,0 @@
----
-title: 'Jimmy Ofisia'
-url: 'https://dsgn.lv'
-tags: ['designer']
----

@@ -1,5 +1,0 @@
----
-title: 'Luciano Jung'
-url: 'https://lucianojung.de'
-tags: ['designer', 'developer', 'writer']
----

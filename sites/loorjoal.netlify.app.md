@@ -1,5 +1,0 @@
----
-title: 'Jorge A. Lozano O.'
-url: 'https://loorjoal.netlify.app/'
-tags: ['accessibility', 'comics', 'designer']
----

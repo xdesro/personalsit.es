@@ -1,5 +1,0 @@
----
-title: 'peril.lol'
-url: 'https://peril.lol'
-tags: ['designer', 'developer', 'student', 'writer']
----

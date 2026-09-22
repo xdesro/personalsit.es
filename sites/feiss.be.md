@@ -1,5 +1,0 @@
----
-title: 'Diego F. Goberna Portfolio'
-url: 'https://feiss.be'
-tags: ['artist', 'developer']
----

@@ -1,5 +1,0 @@
----
-title: 'TheLastGimbus'
-url: 'https://the.lastgimbus.com'
-tags: ['developer', 'linux', 'maker', 'security']
----

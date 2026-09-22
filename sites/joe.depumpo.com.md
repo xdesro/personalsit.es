@@ -1,5 +1,0 @@
----
-title: 'Joe DePumpo'
-url: 'https://joe.depumpo.com'
-tags: ['developer', 'ruby']
----

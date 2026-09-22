@@ -1,5 +1,0 @@
----
-title: "Nick Gray"
-url: "https://nickgray.net/"
-tags: ['writer']
----

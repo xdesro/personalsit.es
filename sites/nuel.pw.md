@@ -1,5 +1,0 @@
----
-title: 'nuel.pw'
-url: 'https://nuel.pw'
-tags: ['books', 'comics', 'games']
----

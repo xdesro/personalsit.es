@@ -1,5 +1,0 @@
----
-title: 'Le monsieur de la photo'
-url: 'https://www.lemonsieurdelaphoto.com'
-tags: ['freelancer', 'photographer', 'portfolio', 'speaker']
----

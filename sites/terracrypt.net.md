@@ -1,6 +1,0 @@
----
-title: Terracrypt
-url: 'https://www.terracrypt.net/'
-tags: ['blog', 'developer', 'linux']
-rss: 'https://www.terracrypt.net/feed.xml'
----

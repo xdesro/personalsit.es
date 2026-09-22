@@ -1,5 +1,0 @@
----
-title: 'Chandru'
-url: 'https://druchan.com'
-tags: ['developer', 'writer']
----

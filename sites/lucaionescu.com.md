@@ -1,5 +1,0 @@
----
-title: 'Luca Ionescu'
-url: 'https://lucaionescu.com'
-tags: ['artist', 'developer']
----

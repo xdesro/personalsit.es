@@ -1,6 +1,0 @@
----
-title: 'lucasjordan.dev'
-url: 'https://lucasjordan.dev/'
-tags: ['accessibility', 'developer']
-rss: ''
----

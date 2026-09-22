@@ -1,5 +1,0 @@
----
-title: 'Shelomoh Khual'
-url: 'https://shelomoh.work'
-tags: ['designer', 'developer']
----

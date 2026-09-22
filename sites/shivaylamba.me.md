@@ -1,5 +1,0 @@
----
-title: 'Shivay Lamba'
-url: 'https://shivaylamba.me'
-tags: ['ai', 'developer', 'leadership']
----

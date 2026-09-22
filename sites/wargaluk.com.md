@@ -1,5 +1,0 @@
----
-title: 'wargaluk'
-url: 'https://wargaluk.com'
-tags: ['blog']
----

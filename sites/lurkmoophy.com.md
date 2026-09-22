@@ -1,5 +1,0 @@
----
-title: 'lurkmoophy.com'
-url: 'https://www.lurkmoophy.com'
-tags: ['designer', 'developer', 'illustrator', 'writer']
----

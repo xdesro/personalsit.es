@@ -1,5 +1,0 @@
----
-title: 'Andrew (radi8)'
-url: 'https://radi8.dev'
-tags: ['developer', 'maker']
----

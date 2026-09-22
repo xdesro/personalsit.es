@@ -1,5 +1,0 @@
----
-title: 'Andy Carolan'
-url: 'https://andycarolan.com'
-tags: ['designer', 'illustrator']
----

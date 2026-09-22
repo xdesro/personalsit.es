@@ -1,5 +1,0 @@
----
-title: 'Griffen Edge'
-url: 'https://griffenedge.com'
-tags: ['designer']
----

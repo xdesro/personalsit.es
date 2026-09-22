@@ -1,5 +1,0 @@
----
-title: 'John Meguerian'
-url: 'https://www.johnmeguerian.com'
-tags: ['designer', 'developer']
----

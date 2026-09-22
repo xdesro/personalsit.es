@@ -1,6 +1,0 @@
----
-title: 'spacetime.dev'
-url: 'https://spacetime.dev'
-tags: ['developer', 'philosophy', 'science', 'security']
-rss: 'https://spacetime.dev/feed.xml'
----

@@ -1,6 +1,0 @@
----
-title: 'Nikhil Jose'
-url: 'http://nikjos.in'
-tags: ['developer', 'go', 'javascript']
-rss: ''
----

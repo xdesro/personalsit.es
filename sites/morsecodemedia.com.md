@@ -1,5 +1,0 @@
----
-title: 'morsecodemedia.com'
-url: 'https://morsecodemedia.com'
-tags: ['css', 'developer', 'freelancer', 'html', 'javascript', 'leadership', 'marketer', 'php', 'vue']
----

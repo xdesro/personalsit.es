@@ -1,5 +1,0 @@
----
-title: 'Efraim Munthe'
-url: 'https://munthe.dev/en/'
-tags: ['developer', 'student']
----

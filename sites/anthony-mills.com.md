@@ -1,5 +1,0 @@
----
-title: 'Anthony Mills'
-url: 'https://www.anthony-mills.com'
-tags: ['developer', 'freelancer', 'leadership', 'linux', 'wordpress']
----

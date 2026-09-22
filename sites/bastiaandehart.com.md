@@ -1,5 +1,0 @@
----
-title: 'Bastiaan de Hart'
-url: 'https://bastiaandehart.com'
-tags: ['designer', 'developer']
----

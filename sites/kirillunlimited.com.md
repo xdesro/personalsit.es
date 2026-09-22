@@ -1,5 +1,0 @@
----
-title: 'Kirill Ivanov'
-url: 'https://kirillunlimited.com'
-tags: ['developer']
----

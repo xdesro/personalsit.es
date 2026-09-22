@@ -1,5 +1,0 @@
----
-title: 'Luke Allen'
-url: 'https://ekul.me'
-tags: ['blog', 'designer', 'developer', 'indieweb', 'writer']
----

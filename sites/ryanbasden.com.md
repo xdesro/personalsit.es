@@ -1,5 +1,0 @@
----
-title: 'Ryan Basden'
-url: 'https://ryanbasden.com'
-tags: ['security', 'writer']
----

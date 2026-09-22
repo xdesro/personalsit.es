@@ -1,5 +1,0 @@
----
-title: 'Igor Štumberger'
-url: 'https://igorstumberger.com'
-tags: ['designer', 'developer']
----

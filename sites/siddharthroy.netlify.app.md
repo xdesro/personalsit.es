@@ -1,5 +1,0 @@
----
-title: 'Siddharth Roy'
-url: 'https://siddharthroy.netlify.app'
-tags: ['designer', 'developer']
----

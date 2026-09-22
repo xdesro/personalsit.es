@@ -1,5 +1,0 @@
----
-title: 'Jacqueline Guo'
-url: 'https://jacquelineguo.com'
-tags: ['designer', 'developer', 'musician', 'photographer', 'writer']
----

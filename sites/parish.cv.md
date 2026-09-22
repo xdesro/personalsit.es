@@ -1,5 +1,0 @@
----
-title: 'Parish Khan'
-url: 'https://parish.cv'
-tags: ['developer', 'react', 'typescript']
----

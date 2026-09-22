@@ -26,8 +26,8 @@
                 <div class="item-tray__tags">{{ item.data.tags | join(', ')}}</div>
                 </div>
                 <div class="item-tray__column item-tray__column--links">
-                    {% if item.data.rss %}
-                        <a class="item-tray__link item-tray__link--feed" href="{{ item.data.rss }}">
+                    {% if item.data.feed %}
+                        <a class="item-tray__link item-tray__link--feed" href="{{ item.data.feed }}">
                         <svg viewBox="0 0 13 13" aria-hidden="true">
                             <use href="#arrow-up-right"></use>
                         </svg>

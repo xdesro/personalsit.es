@@ -1,5 +1,0 @@
----
-title: 'Alex Bimpson'
-url: 'https://www.alexbimpson.co.uk'
-tags: ['designer', 'developer', 'photographer']
----

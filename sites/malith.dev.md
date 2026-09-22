@@ -1,5 +1,0 @@
----
-title: 'Malith Rukshan'
-url: 'https://malith.dev'
-tags: ['developer', 'javascript', 'php', 'react']
----

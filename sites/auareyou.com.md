@@ -1,5 +1,0 @@
----
-title: 'Au Pleguezuelo'
-url: 'https://auareyou.com/'
-tags: ['developer']
----

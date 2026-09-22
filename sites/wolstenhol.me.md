@@ -1,5 +1,0 @@
----
-title: 'Phil Wolstenholme'
-url: 'https://wolstenhol.me'
-tags: ['css', 'developer', 'vue']
----

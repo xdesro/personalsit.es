@@ -1,5 +1,0 @@
----
-title: '{ r()wdy.c[]des: true }'
-url: 'https://rowdy.codes'
-tags: ['accessibility', 'developer', 'speaker']
----

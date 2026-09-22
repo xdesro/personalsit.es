@@ -2,26 +2,35 @@ import filenamifyUrl from 'filenamify-url';
 import rssPlugin from '@11ty/eleventy-plugin-rss';
 import shuffle from './filters/shuffle.js';
 import { minify } from 'html-minifier-next';
+import { loadSiteFile } from './validateSites.js';
 
 export default (eleventyConfig) => {
   // Pass through
   eleventyConfig.addPassthroughCopy('assets');
 
+  // Site entries are plain YAML files, validated against sites.schema.json
+  eleventyConfig.addTemplateFormats('yaml');
+  eleventyConfig.addExtension('yaml', {
+    outputFileExtension: 'html',
+    getData: (inputPath) => loadSiteFile(inputPath),
+    compile: () => () => '',
+  });
+
   // Collections
   eleventyConfig.addCollection('sites', (collection) => {
-    return collection.getFilteredByGlob('sites/*.md');
+    return collection.getFilteredByGlob('sites/*.yaml');
   });
   eleventyConfig.addCollection('sitesWithFeeds', (collection) => {
     return collection
-      .getFilteredByGlob('sites/*.md')
-      .filter((item) => item.data.rss);
+      .getFilteredByGlob('sites/*.yaml')
+      .filter((item) => item.data.feed);
   });
   eleventyConfig.addCollection('sitesAlphabetized', (collection) => {
-    return collection.getFilteredByGlob('sites/*.md');
+    return collection.getFilteredByGlob('sites/*.yaml');
   });
   eleventyConfig.addCollection('allTags', (collection) => {
     const counts = new Map();
-    collection.getFilteredByGlob('sites/*.md').forEach((item) => {
+    collection.getFilteredByGlob('sites/*.yaml').forEach((item) => {
       (item.data.tags || []).forEach((tag) => {
         counts.set(tag, (counts.get(tag) || 0) + 1);
       });

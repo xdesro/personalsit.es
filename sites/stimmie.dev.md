@@ -1,5 +1,0 @@
----
-title: 'Stimmie'
-url: 'https://stimmie.dev'
-tags: ['blog', 'developer', 'portfolio', 'react', 'travel']
----

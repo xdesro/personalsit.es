@@ -1,5 +1,0 @@
----
-title: 'Derek Houck'
-url: 'https://derekhouck.com'
-tags: ['developer', 'film', 'ruby']
----

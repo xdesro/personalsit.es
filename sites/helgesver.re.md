@@ -1,5 +1,0 @@
----
-title: 'Helge Sverre'
-url: 'https://helgesver.re'
-tags: ['developer', 'php', 'vue']
----

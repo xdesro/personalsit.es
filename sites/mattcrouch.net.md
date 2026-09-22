@@ -1,5 +1,0 @@
----
-title: 'Matt Crouch'
-url: 'https://www.mattcrouch.net'
-tags: ['blog', 'developer']
----

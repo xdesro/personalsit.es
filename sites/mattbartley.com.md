@@ -1,5 +1,0 @@
----
-title: 'Matt Bartley'
-url: 'https://www.mattbartley.com'
-tags: ['designer', 'developer', 'maker']
----

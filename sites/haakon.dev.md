@@ -1,5 +1,0 @@
----
-title: 'Håkon Underbakke'
-url: 'https://haakon.dev'
-tags: ['designer', 'developer', 'react']
----

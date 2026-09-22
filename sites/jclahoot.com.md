@@ -1,5 +1,0 @@
----
-title: 'JCLaHoot.com'
-url: 'https://jclahoot.com'
-tags: ['blog', 'designer', 'developer', 'maker']
----

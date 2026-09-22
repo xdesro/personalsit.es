@@ -1,5 +1,0 @@
----
-title: 'Lifestream'
-url: 'https://vincentp.me'
-tags: ['designer', 'html', 'indieweb', 'javascript']
----

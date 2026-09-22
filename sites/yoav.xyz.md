@@ -1,5 +1,0 @@
----
-title: "Yoav"
-url: "https://yoav.xyz"
-tags: ['developer']
----

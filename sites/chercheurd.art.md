@@ -1,5 +1,0 @@
----
-title: "Chercheur d'Art"
-url: 'https://www.chercheurd.art'
-tags: ['designer']
----

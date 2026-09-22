@@ -1,5 +1,0 @@
----
-title: 'Sebastian Hilton'
-url: 'https://www.sebastianhilton.com'
-tags: ['designer', 'privacy', 'tech']
----

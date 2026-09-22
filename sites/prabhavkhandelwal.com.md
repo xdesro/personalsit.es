@@ -1,5 +1,0 @@
----
-title: 'Prabhav Khandelwal'
-url: 'https://prabhavkhandelwal.com'
-tags: ['designer']
----

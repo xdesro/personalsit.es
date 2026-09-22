@@ -1,5 +1,0 @@
----
-title: 'Mikael Jergefelt'
-url: 'https://librarian.dev'
-tags: ['books', 'developer']
----

@@ -1,5 +1,0 @@
----
-title: 'Vivarism'
-url: 'https://vivarism.net'
-tags: ['artist', 'blog', 'writer']
----

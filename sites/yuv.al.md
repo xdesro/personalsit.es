@@ -1,5 +1,0 @@
----
-title: 'Yuval Adam'
-url: 'https://yuv.al'
-tags: ['developer', 'founder', 'tech']
----

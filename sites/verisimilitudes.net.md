@@ -1,6 +1,0 @@
----
-title: 'An Index of Verisimilitudes'
-url: 'http://verisimilitudes.net'
-tags: ['developer', 'retro computing', 'security']
-rss: 'http://verisimilitudes.net/rss.xml'
----

@@ -1,6 +1,0 @@
----
-title: "Daryl Sun's Journal"
-url: 'https://blog.darylsun.page'
-tags: ['blog', 'games', 'indieweb', 'retro computing', 'tech']
-rss: 'https://blog.darylsun.page/rss.xml'
----

@@ -1,5 +1,0 @@
----
-title: 'Andrew Dinh'
-url: 'https://andrewkdinh.com'
-tags: ['developer', 'photographer']
----

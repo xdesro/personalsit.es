@@ -1,8 +1,0 @@
----
-title: '~stdout'
-url: 'https://alobanov.github.io'
-tags: ['blog', 'developer', 'film', 'games', 'mobile', 'musician']
-rss: 'https://alobanov.github.io/feed.xml'
----
-
-Logs, music and notes — films, games and podcasts with short notes, tracks made without a DAW, and bookmarks worth keeping.

@@ -1,5 +1,0 @@
----
-title: 'Organic Metal'
-url: 'https://www.organicmetal.co.uk/'
-tags: ['artist', 'blog', 'comics', 'illustrator', 'photographer']
----

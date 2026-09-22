@@ -1,5 +1,0 @@
----
-title: 'Vivien Gontier'
-url: 'https://www.viviengontier.com'
-tags: ['developer', 'photographer']
----

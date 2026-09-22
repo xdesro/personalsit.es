@@ -1,5 +1,0 @@
----
-title: 'Pain Propaganda'
-url: 'https://painpropaganda.com'
-tags: ['artist', 'designer', 'developer', 'musician', 'photographer', 'writer']
----

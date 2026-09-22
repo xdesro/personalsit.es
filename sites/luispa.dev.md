@@ -1,5 +1,0 @@
----
-title: 'LuisPa Blog'
-url: 'https://www.luispa.dev'
-tags: ['developer', 'go', 'javascript']
----

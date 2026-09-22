@@ -1,5 +1,0 @@
----
-title: 'Erik Kunz'
-url: 'https://erik-kunz.com'
-tags: ['designer', 'student']
----

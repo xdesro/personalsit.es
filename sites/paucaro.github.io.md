@@ -1,5 +1,0 @@
----
-title: 'Paula Asto'
-url: 'https://paucaro.github.io'
-tags: ['ai', 'developer', 'games']
----

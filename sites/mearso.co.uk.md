@@ -1,5 +1,0 @@
----
-title: 'Kevin Mears'
-url: 'https://www.mearso.co.uk'
-tags: ['blog', 'data', 'designer', 'film']
----

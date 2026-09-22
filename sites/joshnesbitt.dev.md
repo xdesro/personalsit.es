@@ -1,5 +1,0 @@
----
-title: 'Josh Nesbitt'
-url: 'https://joshnesbitt.dev'
-tags: ['developer', 'leadership', 'speaker']
----

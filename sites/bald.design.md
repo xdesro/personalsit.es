@@ -1,5 +1,0 @@
----
-title: 'B as in BALD'
-url: 'https://bald.design'
-tags: ['designer', 'developer', 'marketer', 'parenting']
----

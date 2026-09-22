@@ -1,5 +1,0 @@
----
-title: 'Sung Won Chung'
-url: 'https://megadev.ai'
-tags: ['data', 'developer', 'writer']
----

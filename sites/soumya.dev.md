@@ -1,5 +1,0 @@
----
-title: 'Soumya Ranjan Mohanty'
-url: 'https://soumya.dev'
-tags: ['developer', 'writer']
----

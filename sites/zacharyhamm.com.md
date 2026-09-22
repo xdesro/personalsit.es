@@ -1,5 +1,0 @@
----
-title: 'Zachary J. Hamm'
-url: 'https://zacharyhamm.com'
-tags: ['developer', 'javascript']
----

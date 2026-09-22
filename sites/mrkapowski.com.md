@@ -1,5 +1,0 @@
----
-title: 'Mr.Kapowski'
-url: 'https://mrkapowski.com'
-tags: ['blog', 'developer', 'games', 'maker']
----

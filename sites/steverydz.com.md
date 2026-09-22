@@ -1,5 +1,0 @@
----
-title: 'Steve Rydz'
-url: 'https://steverydz.com'
-tags: ['blog', 'developer', 'photographer', 'writer']
----

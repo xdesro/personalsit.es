@@ -1,5 +1,0 @@
----
-title: 'Bryn Taylor'
-url: 'https://www.bryntaylor.co.uk'
-tags: ['designer', 'freelancer', 'portfolio']
----

@@ -1,5 +1,0 @@
----
-title: 'Piotr Porzuczek'
-url: 'http://porzuczek.pl'
-tags: ['developer', 'photographer', 'writer']
----

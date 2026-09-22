@@ -1,5 +1,0 @@
----
-title: 'garethjoyce.co.uk'
-url: 'https://www.garethjoyce.co.uk'
-tags: ['accessibility', 'designer', 'mental health']
----

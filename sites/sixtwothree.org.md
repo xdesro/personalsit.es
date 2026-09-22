@@ -1,5 +1,0 @@
----
-title: 'sixtwothree.org'
-url: 'https://sixtwothree.org'
-tags: ['developer', 'musician', 'photographer', 'speaker', 'writer']
----

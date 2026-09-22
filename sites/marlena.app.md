@@ -1,5 +1,0 @@
----
-title: 'Marlena Müller'
-url: 'https://marlena.app'
-tags: ['science', 'student']
----

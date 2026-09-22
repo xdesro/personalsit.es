@@ -1,5 +1,0 @@
----
-title: 'Logan Nickleson'
-url: 'https://logans.website'
-tags: ['artist', 'designer', 'developer']
----

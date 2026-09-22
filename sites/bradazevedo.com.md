@@ -1,5 +1,0 @@
----
-title: 'Brad Azevedo'
-url: 'https://www.bradazevedo.com/'
-tags: ['designer', 'developer']
----

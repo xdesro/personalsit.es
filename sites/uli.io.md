@@ -1,5 +1,0 @@
----
-title: 'Uli'
-url: 'https://uli.io'
-tags: ['developer', 'php']
----

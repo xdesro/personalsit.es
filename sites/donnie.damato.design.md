@@ -1,5 +1,0 @@
----
-title: 'Donnie D’Amato'
-url: 'https://donnie.damato.design'
-tags: ['accessibility', 'designer', 'developer', 'educator']
----

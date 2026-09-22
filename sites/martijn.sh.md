@@ -1,5 +1,0 @@
----
-title: './Martijn.sh > Blog'
-url: 'https://martijn.sh'
-tags: ['blog', 'data', 'developer', 'maker', 'researcher', 'security']
----

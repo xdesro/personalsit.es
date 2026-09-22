@@ -1,5 +1,0 @@
----
-title: 'Dilip Kumar'
-url: 'https://www.dilipmaurya.in'
-tags: ['developer']
----

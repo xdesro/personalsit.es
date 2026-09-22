@@ -1,5 +1,0 @@
----
-title: 'Michael Groen'
-url: 'https://michaelgroen.com'
-tags: ['designer', 'product manager']
----

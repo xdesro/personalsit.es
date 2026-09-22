@@ -1,5 +1,0 @@
----
-title: 'Kevin Abou Hanna'
-url: 'https://abouhanna.com'
-tags: ['designer', 'developer']
----

@@ -1,5 +1,0 @@
----
-title: 'spianoDev'
-url: 'https://www.spiano.dev'
-tags: ['developer']
----

@@ -1,5 +1,0 @@
----
-title: 'Cyd Stumpel'
-url: 'https://cydstumpel.nl'
-tags: ['css', 'developer', 'php', 'vue']
----

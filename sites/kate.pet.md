@@ -1,5 +1,0 @@
----
-title: "kate's homepage"
-url: 'https://kate.pet'
-tags: ['designer', 'developer', 'lgbtq', 'retro computing', 'vue']
----

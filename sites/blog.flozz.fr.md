@@ -1,6 +1,0 @@
----
-title: 'FLOZzʼ Blog'
-url: 'https://blog.flozz.fr/'
-tags: ['blog', 'developer', 'games', 'linux', 'open source']
-rss: 'https://blog.flozz.fr/feeds/rss.xml'
----

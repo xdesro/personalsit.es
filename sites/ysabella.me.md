@@ -1,5 +1,0 @@
----
-title: 'ysabella nicole alvarez'
-url: 'https://www.ysabella.me'
-tags: ['css', 'designer', 'digital garden', 'html', 'ssg', 'writer']
----

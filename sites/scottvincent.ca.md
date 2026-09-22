@@ -1,5 +1,0 @@
----
-title: 'Scott Vincent'
-url: 'https://scottvincent.ca/'
-tags: ['css', 'designer', 'javascript', 'musician']
----

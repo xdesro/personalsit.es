@@ -1,5 +1,0 @@
----
-title: 'Linus Bohman'
-url: 'https://linusbohman.se'
-tags: ['developer', 'maker', 'photographer', 'writer']
----

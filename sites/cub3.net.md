@@ -1,5 +1,0 @@
----
-title: 'Sergi Pons Freixes'
-url: 'https://cub3.net'
-tags: ['blog', 'developer', 'open source', 'python']
----

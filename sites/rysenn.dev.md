@@ -1,5 +1,0 @@
----
-title: 'Ryan Senn'
-url: 'https://ryansenn.dev'
-tags: ['developer', 'founder']
----

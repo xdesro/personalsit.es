@@ -1,5 +1,0 @@
----
-title: '~gautampk'
-url: 'https://22wlp.org/~gautampk/'
-tags: ['science', 'self-hosting', 'sports', 'writer']
----

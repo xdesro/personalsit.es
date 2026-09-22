@@ -1,5 +1,0 @@
----
-title: 'Juan Ignacio Rios'
-url: 'https://juanignacio.dev'
-tags: ['designer', 'developer']
----

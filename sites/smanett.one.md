@@ -1,5 +1,0 @@
----
-title: "Massimiliano Lambertini's Smanett.one"
-url: 'https://smanett.one'
-tags: ['data', 'developer']
----

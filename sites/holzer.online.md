@@ -1,6 +1,0 @@
----
-title: 'Fabians public notepad'
-url: 'https://holzer.online'
-tags: ['books', 'developer', 'javascript']
-rss: 'https://holzer.online/feed.xml'
----

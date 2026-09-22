@@ -1,5 +1,0 @@
----
-title: 'Atanas Atanasov'
-url: 'https://atanas.info'
-tags: ['data', 'developer', 'javascript']
----

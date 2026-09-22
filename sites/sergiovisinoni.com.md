@@ -1,5 +1,0 @@
----
-title: 'Sergio Visinoni'
-url: 'https://sergiovisinoni.com'
-tags: ['freelancer', 'speaker', 'writer']
----

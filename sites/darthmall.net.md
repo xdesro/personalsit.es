@@ -1,6 +1,0 @@
----
-title: 'Evan Sheehan'
-url: 'https://darthmall.net'
-tags: ['blog', 'developer', 'indieweb', 'ssg']
-rss: 'https://darthmall.net/feed/all.xml'
----

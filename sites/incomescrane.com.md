@@ -1,5 +1,0 @@
----
-title: 'Sara Tanku'
-url: 'https://incomescrane.com'
-tags: ['developer', 'games']
----

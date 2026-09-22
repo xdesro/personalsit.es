@@ -1,0 +1,25 @@
+name: Validate site entries
+on:
+  pull_request:
+    paths:
+      - 'sites/*.yaml'
+      - 'sites.schema.json'
+      - 'validateSites.js'
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24.15.0'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate site entries
+        run: npm run validate

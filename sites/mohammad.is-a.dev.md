@@ -1,5 +1,0 @@
----
-title: "Mohammad Ahmad"
-url: "https://mohammad.is-a.dev/"
-tags: ['developer']
----

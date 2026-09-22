@@ -1,5 +1,0 @@
----
-title: 'Barrett Kowalsky'
-url: 'https://barrettkowalsky.com'
-tags: ['developer', 'photographer', 'writer']
----

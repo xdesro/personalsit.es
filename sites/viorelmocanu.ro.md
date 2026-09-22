@@ -1,5 +1,0 @@
----
-title: 'Viorel Mocanu'
-url: 'https://www.viorelmocanu.ro'
-tags: ['css', 'designer', 'developer', 'film', 'freelancer', 'html', 'indieweb', 'podcaster']
----

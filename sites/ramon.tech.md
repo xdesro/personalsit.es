@@ -1,5 +1,0 @@
----
-title: 'Ramon Canales'
-url: 'https://ramon.tech'
-tags: ['ai', 'developer', 'product manager']
----

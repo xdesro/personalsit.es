@@ -1,5 +1,0 @@
----
-title: "Marcelo's Hard Drive"
-url: 'https://hd.marceloexc.com'
-tags: ['blog', 'photographer', 'php']
----

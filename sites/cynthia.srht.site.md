@@ -1,5 +1,0 @@
----
-title: "Santacharya's Bizzare Epiphanies"
-url: 'https://cynthia.srht.site/'
-tags: ['books', 'film', 'philosophy', 'politics']
----

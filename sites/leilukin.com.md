@@ -1,6 +1,0 @@
----
-title: "Leilukin's Hub"
-url: 'https://leilukin.com'
-tags: ['blog', 'lgbtq', 'mental health']
-rss: 'https://leilukin.com/feed.xml'
----

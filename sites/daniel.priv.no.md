@@ -1,6 +1,0 @@
----
-title: 'Daniel Aleksandersen'
-url: 'https://www.daniel.priv.no'
-tags: ['developer', 'linux', 'tech', 'writer']
-rss: 'https://feed.ctrl.blog/latest.atom'
----

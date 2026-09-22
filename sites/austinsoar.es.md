@@ -1,6 +1,0 @@
----
-title: 'Austin Soares'
-url: 'https://austinsoar.es'
-tags: ['designer', 'developer', 'photographer', 'researcher']
-rss: ''
----

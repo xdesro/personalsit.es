@@ -1,5 +1,0 @@
----
-title: 'Lucas Rees'
-url: 'https://www.lucasrees.com'
-tags: ['blog', 'designer', 'developer']
----

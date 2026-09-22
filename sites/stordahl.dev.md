@@ -1,5 +1,0 @@
----
-title: 'Jacob Stordahl'
-url: 'https://stordahl.dev'
-tags: ['developer', 'javascript']
----

@@ -1,5 +1,0 @@
----
-title: 'olegkruchay.com'
-url: 'https://olegkruchay.com'
-tags: ['blog', 'developer', 'vue']
----

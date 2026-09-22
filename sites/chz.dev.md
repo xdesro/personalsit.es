@@ -1,5 +1,0 @@
----
-title: 'CHZ - Chingiz Mammadov'
-url: 'https://chz.dev'
-tags: ['developer']
----

@@ -1,5 +1,0 @@
----
-title: 'Marek Dlugos'
-url: 'https://www.marekdlugos.com'
-tags: ['designer', 'developer', 'marketer', 'photographer', 'travel']
----

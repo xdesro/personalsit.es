@@ -1,5 +1,0 @@
----
-title: "Chris Barry"
-url: "https://chriswb.dev/"
-tags: ['developer', 'photographer']
----

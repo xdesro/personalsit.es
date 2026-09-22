@@ -1,5 +1,0 @@
----
-title: 'Chris Rowe'
-url: 'http://chrisrowe.net'
-tags: ['css', 'developer', 'php', 'vue']
----

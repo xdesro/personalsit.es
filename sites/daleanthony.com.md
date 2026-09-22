@@ -1,5 +1,0 @@
----
-title: 'Dale-Anthony Williams'
-url: 'https://daleanthony.com'
-tags: ['designer']
----

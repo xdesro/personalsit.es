@@ -1,5 +1,0 @@
----
-title: 'Ayush Gupta'
-url: 'https://ayushgupta.dev'
-tags: ['designer', 'developer', 'freelancer', 'javascript', 'react']
----

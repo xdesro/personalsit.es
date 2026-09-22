@@ -1,5 +1,0 @@
----
-title: 'anonewb'
-url: 'https://anonewb.github.io'
-tags: ['developer']
----

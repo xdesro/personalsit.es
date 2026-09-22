@@ -1,5 +1,0 @@
----
-title: 'Iván Barcia'
-url: 'https://barcia.dev'
-tags: ['css', 'designer', 'html', 'javascript']
----

@@ -1,5 +1,0 @@
----
-title: 'Simon Phumin Schweikert'
-url: 'https://simonphum.in'
-tags: ['accessibility', 'designer']
----

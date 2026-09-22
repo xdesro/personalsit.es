@@ -1,0 +1,98 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://personalsit.es/sites.schema.json",
+	"title": "PersonalSit.es site entry",
+	"type": "object",
+	"required": ["title", "url", "tags"],
+	"additionalProperties": false,
+	"properties": {
+		"title": {
+			"type": "string",
+			"minLength": 1
+		},
+		"url": {
+			"type": "string",
+			"format": "uri",
+			"pattern": "^https?://"
+		},
+		"tags": {
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"enum": [
+					"accessibility",
+					"ai",
+					"artist",
+					"blog",
+					"books",
+					"comics",
+					"css",
+					"data",
+					"designer",
+					"developer",
+					"digital garden",
+					"educator",
+					"emacs",
+					"film",
+					"food",
+					"founder",
+					"freelancer",
+					"games",
+					"go",
+					"html",
+					"illustrator",
+					"indieweb",
+					"javascript",
+					"leadership",
+					"lgbtq",
+					"linux",
+					"maker",
+					"marketer",
+					"mental health",
+					"mobile",
+					"musician",
+					"open source",
+					"parenting",
+					"philosophy",
+					"photographer",
+					"php",
+					"podcaster",
+					"politics",
+					"portfolio",
+					"privacy",
+					"product manager",
+					"python",
+					"react",
+					"religion",
+					"researcher",
+					"retro computing",
+					"ruby",
+					"rust",
+					"science",
+					"security",
+					"self-hosting",
+					"speaker",
+					"sports",
+					"ssg",
+					"student",
+					"sustainability",
+					"tech",
+					"travel",
+					"typescript",
+					"vue",
+					"wordpress",
+					"writer"
+				]
+			}
+		},
+		"feed": {
+			"type": "string",
+			"format": "uri",
+			"pattern": "^https?://"
+		},
+		"description": {
+			"type": "string",
+			"minLength": 1
+		}
+	}
+}

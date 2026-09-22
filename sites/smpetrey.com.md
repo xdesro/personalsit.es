@@ -1,5 +1,0 @@
----
-title: 'Stephen Petrey'
-url: 'https://smpetrey.com'
-tags: ['designer', 'developer']
----

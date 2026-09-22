@@ -1,5 +1,0 @@
----
-title: 'Michael Levy'
-url: 'https://michaelevy.com'
-tags: ['books', 'developer', 'musician']
----

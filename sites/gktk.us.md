@@ -1,5 +1,0 @@
----
-title: 'Ganesh Kumar'
-url: 'https://www.gktk.us'
-tags: ['designer', 'developer']
----

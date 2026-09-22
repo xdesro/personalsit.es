@@ -1,5 +1,0 @@
----
-title: 'ufal"s log'
-url: 'https://ufal.envs.net'
-tags: ['indieweb', 'linux', 'musician', 'writer']
----

@@ -1,5 +1,0 @@
----
-title: 'Levi Zitting'
-url: 'https://www.levizitting.com'
-tags: ['developer']
----

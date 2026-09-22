@@ -1,5 +1,0 @@
----
-title: 'Stephen Handley'
-url: 'https://person.sh'
-tags: ['artist', 'developer', 'musician']
----

@@ -1,5 +1,0 @@
----
-title: 'Christopher KADE'
-url: 'https://christopherkade.com'
-tags: ['blog', 'developer']
----

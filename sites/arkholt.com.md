@@ -1,5 +1,0 @@
----
-title: 'Arkholt'
-url: 'https://arkholt.com'
-tags: ['artist', 'comics', 'illustrator', 'writer']
----

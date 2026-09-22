@@ -1,5 +1,0 @@
----
-title: 'ndom91'
-url: 'https://ndo.dev'
-tags: ['developer']
----

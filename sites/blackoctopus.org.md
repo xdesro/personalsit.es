@@ -1,5 +1,0 @@
----
-title: 'Black Octopus Journal'
-url: 'https://www.blackoctopus.org'
-tags: ['blog']
----

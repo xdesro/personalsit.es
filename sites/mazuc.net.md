@@ -1,5 +1,0 @@
----
-title: 'Chris Mazuc'
-url: 'https://mazuc.net'
-tags: ['maker', 'portfolio']
----

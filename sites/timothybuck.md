@@ -1,5 +1,0 @@
----
-title: 'Timothy Buck'
-url: 'https://timothybuck.me'
-tags: ['podcaster', 'product manager', 'writer']
----
