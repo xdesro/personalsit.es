@@ -6,21 +6,26 @@
 %}
 <title>{{ meta.title }} | Yes we got hot and fresh sites</title>
 
+<meta property="og:title" content="{{ meta.title }}">
+<meta name="description" content="{{ meta.description }}">
+<meta property="og:description" content="{{ meta.description }}">
+
 <link rel="icon" href="/assets/images/favicon.ico">
 <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
-<link rel="manifest" href="/assets/images/site.webmanifest">
 
-<meta name="description" content="{{ meta.description }}">
-<meta property="og:url" content="{{ meta.url }}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="{{ meta.title }}">
-<meta property="og:description" content="{{ meta.description }}">
 <meta property="og:image" content="{{ meta.url }}/assets/images/opengraph.webp">
+<meta property="og:image:type" content="image/webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta property="og:site_name" content="PersonalSit.es">
 
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f7f7f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1f2123" media="(prefers-color-scheme: dark)">
+
+<link rel="manifest" href="/assets/images/site.webmanifest">
 
 {% for feed in feeds.items %}
     <link rel="alternate" type="application/rss+xml" title="{{ feed.text }}" href="{{ feed.url }}" />
