@@ -4,7 +4,7 @@ import {
   HeadObjectCommand,
   PutObjectCommand,
 } from '@aws-sdk/client-s3';
-import frontMatter from 'front-matter';
+import yaml from 'js-yaml';
 import filenamifyUrl from 'filenamify-url';
 
 const s3Client = new S3Client({
@@ -22,12 +22,12 @@ function getS3Url(filename) {
 function getChangedSites() {
   const changedFiles = process.env.CHANGED_FILES?.split(' ') || [];
   return changedFiles
-    .filter((file) => file.endsWith('.md'))
+    .filter((file) => file.endsWith('.yaml'))
     .map((file) => {
       try {
         const content = fs.readFileSync(file, 'utf-8');
-        const parsed = frontMatter(content);
-        const { url } = parsed.attributes;
+        const parsed = yaml.load(content);
+        const { url } = parsed;
         if (!url) {
           console.warn(`No URL found in ${file}`);
           return null;

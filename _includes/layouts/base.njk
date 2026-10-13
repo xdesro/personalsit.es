@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     {% include 'partials/meta.njk' %}
     <style>{% include "assets/css/global.css" %}</style>
+    <script>
+        try {
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme === 'light' || storedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', storedTheme);
+            }
+        } catch (error) {}
+    </script>
+    <script>
+        document.documentElement.classList.replace('no-js', 'js');
+    </script>
 </head>
 <body>
     <div class="wrapper">

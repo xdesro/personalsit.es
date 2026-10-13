@@ -14,7 +14,6 @@ permalink: feed/all.xml
 		<email>andy@hankchizljaw.io</email>
 	</author>
 	{%- for post in collections.sites %}
-        {% if not post.data.external %}
             <entry>
                 <title>{{ post.data.title }}</title>
                 <link href="{{ post.data.url }}"/>
@@ -24,7 +23,7 @@ permalink: feed/all.xml
                     <h3>{{ post.data.title }}</h3>
                     <dl>
                         <dt><b>Has RSS Feed?</b></dt>
-                        <dd>{{ 'Yes' if post.data.rss else 'No' }}</dd>
+                        <dd>{{ 'Yes' if post.data.feed else 'No' }}</dd>
                         <dt><b>Tags</b></dt>
                         {% for tag in post.data.tags %}
                             {% if tag !== 'sites' %}
@@ -35,6 +34,5 @@ permalink: feed/all.xml
                     <p><a href="{{ post.data.url }}" rel="external">Visit site</a></p>
              ]]></content>
             </entry>
-        {% endif %}
 	{%- endfor %}
 </feed>

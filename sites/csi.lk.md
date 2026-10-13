@@ -1,5 +1,0 @@
----
-title: 'Callum Silcock'
-url: 'https://csi.lk'
-tags: ['principal engineer', 'front-end developer', 'web developer', 'conference speaker', 'architect', 'micro frontends', 'react', 'nojs']
----

@@ -1,6 +1,0 @@
----
-title: 'Tales from the South Pole'
-url: 'https://peterpoliwoda.me'
-tags: ['senior software engineer', 'fullstack', 'developer', 'Node.js', 'IBM Cloud', 'IoT', 'robots', 'chatbots']
-rss: 'https://peterpoliwoda.me/rss/'
----
