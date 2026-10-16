@@ -9,10 +9,6 @@ permalink: feed/all.xml
 	<link href="https://personalsit.es/"/>
 	<updated>{{ collections.sites | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
 	<id>https://personalsit.es</id>
-	<author>
-		<name>Andy Bell</name>
-		<email>andy@hankchizljaw.io</email>
-	</author>
 	{%- for post in collections.sites %}
             <entry>
                 <title>{{ post.data.title }}</title>
