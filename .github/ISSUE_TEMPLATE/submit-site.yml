@@ -1,0 +1,133 @@
+name: Submit a site
+description: Suggest a personal site for the personalsit.es directory.
+title: "[Site submission] "
+labels: ["site-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a site! We're genuinely thrilled to have you.
+
+        Fill in the details below and we'll review your submission and look at getting your site listed. Get in contact with us if you have any problems.
+
+        Before submitting, please make sure the site is a personal site and that the URL and feed are publicly accessible.
+  - type: input
+    id: site-title
+    attributes:
+      label: Site title
+      description: The name shown on the site, or the site owner's name.
+      placeholder: Andy Bell
+    validations:
+      required: true
+  - type: input
+    id: site-url
+    attributes:
+      label: Site URL
+      description: The full URL (including the protocol).
+      placeholder: https://bell.bz
+    validations:
+      required: true
+  - type: dropdown
+    id: tags
+    attributes:
+      label: Tags
+      description: Pick at least one. Choose the tags that best describe the site.
+      multiple: true
+      options:
+        - accessibility
+        - ai
+        - artist
+        - blog
+        - books
+        - comics
+        - css
+        - data
+        - designer
+        - developer
+        - digital garden
+        - educator
+        - emacs
+        - film
+        - food
+        - founder
+        - freelancer
+        - games
+        - go
+        - html
+        - illustrator
+        - indieweb
+        - javascript
+        - leadership
+        - lgbtq
+        - linux
+        - maker
+        - marketer
+        - mental health
+        - mobile
+        - musician
+        - open source
+        - parenting
+        - philosophy
+        - photographer
+        - php
+        - podcaster
+        - politics
+        - portfolio
+        - privacy
+        - product manager
+        - python
+        - react
+        - religion
+        - researcher
+        - retro computing
+        - ruby
+        - rust
+        - science
+        - security
+        - self-hosting
+        - speaker
+        - sports
+        - ssg
+        - student
+        - sustainability
+        - tech
+        - travel
+        - typescript
+        - vue
+        - wordpress
+        - writer
+    validations:
+      required: true
+  - type: input
+    id: feed-url
+    attributes:
+      label: Feed URL (optional)
+      description: The RSS, Atom, or JSON feed for the site, if it has one.
+      placeholder: https://bell.bz/feed.xml
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: Description (very optional)
+      description: A short description of the site or the person behind it.
+      placeholder: Designer, developer, and writer.
+    validations:
+      required: false
+  - type: textarea
+    id: maintainer-notes
+    attributes:
+      label: Notes for maintainers
+      description: Anything you'd like to say to the humans reviewing this? This won't be published on the site.
+      placeholder: The story behind the site, a favourite page, or just say hi.
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: This is my personal site, or I have permission from its owner to submit it.
+          required: true
+        - label: I've read the contribution guidelines and understand that a human maintainer will review this submission.
+          required: true

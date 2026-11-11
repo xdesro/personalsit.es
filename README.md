@@ -4,7 +4,16 @@ Personal sites are rad, so this project was built so we can all discover each ot
 
 ## 📇 Adding your own site
 
-Want to add your site? We'd love your contribution. Go ahead and follow these steps, and [reach out](https://bsky.app/profile/strange.website) if you have any trouble with this!
+Want to add your site? We'd love your contribution. The easiest way is to use the [site submission form](https://github.com/xdesro/personalsit.es/issues/new?template=submit-site.yml). Fill in your site details and a maintainer will review it. You'll need a GitHub account, but you don't need to fork the repository or know Git.
+
+After you fill out the form:
+
+1. 📝 A GitHub issue with your site details is generated.
+2. 🤖 An automation checks the submission is valid and not a duplicate. If anything is awry, it leaves a comment letting you know.
+3. 👀 A maintainer reviews the issue and applies the `approved` label.
+4. 🖥 A pull request is opened automatically. Once merged, your site appears on [personalsit.es](https://personalsit.es)!
+
+If you prefer the manual route you can author your own pull request:
 
 1. 🍴 Fork this repository.
 

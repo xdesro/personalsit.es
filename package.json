@@ -7,7 +7,9 @@
   "scripts": {
     "serve": "npx @11ty/eleventy --serve --quiet",
     "build": "npx @11ty/eleventy",
-    "validate": "node validateSites.js"
+    "validate": "node validateSites.js",
+    "test": "node --test",
+    "check:issue-form": "node .github/scripts/check-issue-form.mjs"
   },
   "repository": {
     "type": "git",

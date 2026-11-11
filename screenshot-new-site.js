@@ -1,139 +1,141 @@
-import fs from 'fs';
-import {
-  S3Client,
-  HeadObjectCommand,
-  PutObjectCommand,
-} from '@aws-sdk/client-s3';
-import yaml from 'js-yaml';
-import filenamifyUrl from 'filenamify-url';
+import fs from "node:fs";
+import path from "node:path";
+import yaml from "js-yaml";
+import captureWebsite from "capture-website";
+import filenamifyUrl from "filenamify-url";
+import { getPublicUrlError } from "./validateSites.js";
 
-const s3Client = new S3Client({
-  region: process.env.S3_REGION || 'us-east-2',
-  credentials: {
-    accessKeyId: process.env.S3_USER_ACCESS_KEY,
-    secretAccessKey: process.env.S3_USER_ACCESS_KEY_SECRET,
-  },
-});
+const outputDir = path.resolve(process.env.SCREENSHOT_OUTPUT_DIR || "screenshots");
+const sitesDir = path.resolve("sites");
+const maxChangedFiles = Number(process.env.MAX_CHANGED_FILES || 25);
+const changedFiles = (process.env.CHANGED_FILES || "").split(/\s+/).filter(Boolean);
+const browserEnv = Object.fromEntries(["HOME", "PATH", "LANG", "LC_ALL", "TMPDIR", "TZ", "DISPLAY", "XDG_CONFIG_HOME", "XDG_CACHE_HOME", "XDG_DATA_HOME"].filter((key) => process.env[key] !== undefined).map((key) => [key, process.env[key]]));
 
-function getS3Url(filename) {
-  return `https://${process.env.S3_BUCKET}.s3.${process.env.S3_REGION}.amazonaws.com/${filename}`;
+function getSafeFilename(url) {
+	const base = filenamifyUrl(url, { replacement: "" });
+	if (!base || base !== path.basename(base) || base.includes("..")) {
+		throw new Error(`Could not derive a safe screenshot filename for ${url}`);
+	}
+	return `${base}.png`;
 }
 
 function getChangedSites() {
-  const changedFiles = process.env.CHANGED_FILES?.split(' ') || [];
-  return changedFiles
-    .filter((file) => file.endsWith('.yaml'))
-    .map((file) => {
-      try {
-        const content = fs.readFileSync(file, 'utf-8');
-        const parsed = yaml.load(content);
-        const { url } = parsed;
-        if (!url) {
-          console.warn(`No URL found in ${file}`);
-          return null;
-        }
-        return {
-          title: filenamifyUrl(url, { replacement: '' }),
-          url,
-          file,
-        };
-      } catch (error) {
-        console.error(`Error reading ${file}: ${error.message}`);
-        return null;
-      }
-    })
-    .filter((site) => site !== null && site.title && site.url);
+	if (changedFiles.length > maxChangedFiles) {
+		throw new Error(`Refusing to capture ${changedFiles.length} sites in one run (limit: ${maxChangedFiles})`);
+	}
+
+	const sites = [];
+	const seenFilenames = new Set();
+
+	for (const file of changedFiles) {
+		if (!file.endsWith(".yaml")) continue;
+
+		const filePath = path.resolve(file);
+		if (!filePath.startsWith(`${sitesDir}${path.sep}`)) {
+			throw new Error(`Refusing to read a file outside sites/: ${file}`);
+		}
+
+		const stat = fs.lstatSync(filePath);
+		if (!stat.isFile()) {
+			throw new Error(`Refusing to read a non-regular file: ${file}`);
+		}
+
+		const data = yaml.load(fs.readFileSync(filePath, "utf-8"));
+		const url = data?.url;
+		if (!url) {
+			console.warn(`No URL found in ${file}`);
+			continue;
+		}
+
+		const urlError = getPublicUrlError(url);
+		if (urlError) {
+			console.warn(`Skipping ${file}: ${urlError}`);
+			continue;
+		}
+
+		let filename;
+		try {
+			filename = getSafeFilename(url);
+		} catch (error) {
+			console.warn(error.message);
+			continue;
+		}
+
+		if (seenFilenames.has(filename)) continue;
+		seenFilenames.add(filename);
+
+		sites.push({
+			title: data.title || filename,
+			url,
+			filename,
+			source: file,
+		});
+	}
+
+	return sites;
 }
 
-async function checkIfExists(site) {
-  try {
-    await s3Client.send(
-      new HeadObjectCommand({
-        Bucket: 'personalsit.es',
-        Key: `${site.title}.png`,
-      })
-    );
-    console.log(`${site.title} exists on S3`);
-    return false;
-  } catch (error) {
-    if (error.name === 'NotFound') {
-      console.log(`${site.title} does not exist on S3`);
-      return true;
-    } else {
-      console.error(`Error checking S3: ${error.message}`);
-      return true;
-    }
-  }
-}
+async function main() {
+	fs.mkdirSync(outputDir, { recursive: true });
 
-async function getScreenshot(site, results) {
-  const doesntExist = await checkIfExists(site);
-  if (!doesntExist) {
-    results.successful.push(`${site.title} (already on CDN)`);
-    return;
-  }
-  try {
-    const { default: captureWebsite } = await import('capture-website');
-    console.log(`Capturing screenshot for ${site.url}...`);
-    const screenshot = await captureWebsite.buffer(site.url, {
-      timeout: 30,
-      launchOptions: {
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
-      },
-    });
-    const filename = `${site.title}.png`;
-    await s3Client.send(
-      new PutObjectCommand({
-        Bucket: process.env.S3_BUCKET,
-        Key: filename,
-        Body: screenshot,
-        ContentType: 'image/png',
-      })
-    );
-    const s3Url = getS3Url(filename);
-    console.log(
-      `✨ — Screenshot taken for ${site.title}\n    Production URL is ${s3Url}`
-    );
-    results.successful.push(site.title);
-  } catch (error) {
-    console.log(
-      `🤯 — Oh god, screenshot FAILED for ${site.title}.\n    They're saying ${error.message}`
-    );
-    results.failed.push(site.title);
-  }
-}
+	const sites = getChangedSites();
+	const manifest = {
+		generatedAt: new Date().toISOString(),
+		pullRequest: process.env.PR_NUMBER || null,
+		screenshots: [],
+		failures: [],
+	};
 
-(async function main() {
-  try {
-    const sites = getChangedSites();
-    if (sites.length === 0) {
-      console.log('No new sites to screenshot boys.');
-      return;
-    }
-    console.log(
-      `🚧 Watch out fellas, papa's screenshotting ${sites.length} site(s)...`
-    );
-    const results = {
-      successful: [],
-      failed: [],
-    };
-    for (const site of sites) {
-      await getScreenshot(site, results);
-    }
-    console.log(`
+	for (const site of sites) {
+		try {
+			console.log(`Capturing screenshot for ${site.url}...`);
+			const screenshot = await captureWebsite.buffer(site.url, {
+				timeout: 30,
+				// This job deliberately has no repository or cloud secrets as the privileged upload happens in a separate workflow.
+				launchOptions: {
+					args: ["--no-sandbox", "--disable-setuid-sandbox"],
+					env: browserEnv,
+				},
+			});
+
+			if (!Buffer.isBuffer(screenshot) || screenshot.length === 0) {
+				throw new Error("capture returned an empty image");
+			}
+
+			const outputPath = path.join(outputDir, site.filename);
+			fs.writeFileSync(outputPath, screenshot);
+			manifest.screenshots.push({
+				filename: site.filename,
+				url: site.url,
+				title: site.title,
+			});
+			console.log(`✨ Captured ${site.filename}`);
+		} catch (error) {
+			console.error(`Screenshot failed for ${site.url}: ${error.message}`);
+			manifest.failures.push({
+				source: site.source,
+				url: site.url,
+				error: error.message,
+			});
+		}
+	}
+
+	fs.writeFileSync(path.join(outputDir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
+
+	console.log(`
 =====
-Screenshotting for this PR is complete.
-✨ Successful: ${results.successful.length}
-💥 Failed: ${results.failed.length}
-${
-  results.failed.length > 0
-    ? `\nFailed sites:\n${results.failed.join('\n')}`
-    : ''
-}
+Screenshot capture complete.
+✨ Successful: ${manifest.screenshots.length}
+💥 Failed: ${manifest.failures.length}
+${manifest.failures.length > 0 ? `\nFailed sites:\n${manifest.failures.map((failure) => failure.url).join("\n")}` : ""}
 =====`);
-    process.exit(results.failed.length > 0 ? 1 : 0);
-  } catch (error) {
-    console.error('Fatal error:', error.message);
-    process.exit(1);
-  }
-})();
+
+	if (process.env.GITHUB_STEP_SUMMARY) {
+		fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `Captured ${manifest.screenshots.length} screenshot(s); ${manifest.failures.length} failed.\n`);
+	}
+}
+
+main().catch((error) => {
+	console.error("Fatal error:", error.message);
+	process.exit(1);
+});

@@ -2,20 +2,28 @@ name: Validate site entries
 on:
   pull_request:
     paths:
-      - 'sites/*.yaml'
-      - 'sites.schema.json'
-      - 'validateSites.js'
+      - "sites/*.yaml"
+      - "sites.schema.json"
+      - "validateSites.js"
+      - ".github/ISSUE_TEMPLATE/submit-site.yml"
+      - ".github/scripts/*.mjs"
+      - ".github/workflows/site-submission.yml"
+      - ".github/workflows/screenshot-new-site.yml"
+      - ".github/workflows/upload-screenshots.yml"
+      - "screenshot-new-site.js"
+      - "upload-screenshots.js"
+      - "test/*.mjs"
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
-          node-version: '24.15.0'
+          node-version: "26.13.0"
           cache: npm
 
       - name: Install dependencies
@@ -23,3 +31,9 @@ jobs:
 
       - name: Validate site entries
         run: npm run validate
+
+      - name: Run tests
+        run: npm test
+
+      - name: Check issue form tags
+        run: npm run check:issue-form

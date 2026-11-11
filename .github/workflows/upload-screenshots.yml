@@ -1,0 +1,100 @@
+name: Upload screenshots
+on:
+  workflow_run:
+    workflows: ["Capture screenshotties"]
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: upload-screenshots-${{ github.event.workflow_run.head_sha }}
+  cancel-in-progress: true
+
+jobs:
+  upload:
+    if: |
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Verify pull request is approved
+        id: verify
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          HEAD_REPO: ${{ github.event.workflow_run.head_repository.full_name }}
+          HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${PR_NUMBER:-}" ] && [ -n "${HEAD_REPO:-}" ] && [ -n "${HEAD_BRANCH:-}" ]; then
+            HEAD_OWNER=${HEAD_REPO%%/*}
+            PR_NUMBER=$(gh api --method GET "repos/$REPO/pulls" \
+              -f state=open -f "head=${HEAD_OWNER}:${HEAD_BRANCH}" \
+              --jq '.[0].number // empty' 2>/dev/null || true)
+          fi
+
+          if [ -z "${PR_NUMBER:-}" ]; then
+            PR_NUMBER=$(gh api "repos/$REPO/commits/$HEAD_SHA/pulls" \
+              --jq '[.[] | select(.state == "open")][0].number // empty' 2>/dev/null || true)
+          fi
+
+          if [ -z "${PR_NUMBER:-}" ]; then
+            echo "No open pull request found for $HEAD_SHA; skipping upload."
+            echo "approved=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          labels=$(gh api "repos/$REPO/pulls/$PR_NUMBER" --jq '.labels[].name')
+          if ! grep -qx 'approved' <<< "$labels"; then
+            echo "Pull request #$PR_NUMBER is not approved; skipping upload."
+            echo "approved=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "Pull request #$PR_NUMBER is approved."
+          echo "approved=true" >> "$GITHUB_OUTPUT"
+
+      - name: Download screenshots
+        if: steps.verify.outputs.approved == 'true'
+        uses: actions/download-artifact@v8
+        with:
+          name: screenshots
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+          # Keep artefact contents outside the trusted checkout so they can't overwrite repository files before the upload.
+          path: ${{ runner.temp }}/screenshots
+
+      - name: Setup Node.js
+        if: steps.verify.outputs.approved == 'true'
+        uses: actions/setup-node@v7
+        with:
+          node-version: "26.13.0"
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.verify.outputs.approved == 'true'
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
+        run: npm ci
+
+      - name: Upload screenshots to S3
+        if: steps.verify.outputs.approved == 'true'
+        env:
+          S3_USER_ACCESS_KEY: ${{ secrets.S3_USER_ACCESS_KEY }}
+          S3_USER_ACCESS_KEY_SECRET: ${{ secrets.S3_USER_ACCESS_KEY_SECRET }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          S3_REGION: ${{ secrets.S3_REGION }}
+          SCREENSHOT_ARTIFACT_DIR: ${{ runner.temp }}/screenshots
+        run: node upload-screenshots.js

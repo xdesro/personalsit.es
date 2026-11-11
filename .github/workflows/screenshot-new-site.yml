@@ -1,48 +1,60 @@
 name: Capture screenshotties
 on:
-  pull_request_target:
-    types: [assigned, opened, synchronize, reopened]
+  pull_request:
+    types: [labeled, synchronize, reopened]
     paths:
-      - 'sites/*.yaml'
-jobs:
-  screenshot:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout base repo
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
+      - "sites/*.yaml"
 
-      - name: Fetch PR commit history
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    if: contains(github.event.pull_request.labels.*.name, 'approved')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout trusted base
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Fetch pull request head
         run: git fetch origin pull/${{ github.event.pull_request.number }}/head:pr_head
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: '24.15.0'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Securely overlay untrusted PR site files
+      - name: Apply submitted site entries
         run: git checkout pr_head -- sites/
 
-      - name: Get changed site files
-        id: changed-files
-        uses: tj-actions/changed-files@v47
+      - name: Find changed site entries
+        id: changed
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          files=$(git diff --name-only --diff-filter=AM "$BASE_SHA" pr_head -- 'sites/*.yaml' | tr '\n' ' ')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
         with:
-          files: |
-            sites/*.yaml
+          node-version: "26.13.0"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Capture screenshots
-        if: steps.changed-files.outputs.any_changed == 'true'
         env:
-          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
-          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
-          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
-          S3_USER_ACCESS_KEY: ${{ secrets.S3_USER_ACCESS_KEY }}
-          S3_USER_ACCESS_KEY_SECRET: ${{ secrets.S3_USER_ACCESS_KEY_SECRET }}
-          S3_BUCKET: ${{ secrets.S3_BUCKET }}
-          S3_REGION: ${{ secrets.S3_REGION }}
-          CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+          SCREENSHOT_OUTPUT_DIR: screenshots
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: node screenshot-new-site.js
+
+      - name: Upload screenshots artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: screenshots
+          path: screenshots/
+          retention-days: 1
+          if-no-files-found: error
