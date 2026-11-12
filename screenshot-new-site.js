@@ -122,6 +122,10 @@ async function main() {
 
 	fs.writeFileSync(path.join(outputDir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
 
+	if (sites.length > 0 && manifest.screenshots.length === 0) {
+		throw new Error("No screenshots were captured");
+	}
+
 	console.log(`
 =====
 Screenshot capture complete.

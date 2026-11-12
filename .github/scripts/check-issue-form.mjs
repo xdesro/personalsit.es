@@ -14,8 +14,8 @@ const expectedLabels = ["Site title", "Site URL", "Tags", "Feed URL (optional)",
 const actualLabels = (issueForm?.body ?? []).map((field) => field.attributes?.label).filter(Boolean);
 const missingLabels = expectedLabels.filter((label) => !actualLabels.includes(label));
 
-if (!issueForm?.title?.startsWith("[Site submission]")) {
-	console.error('The issue form title must start with "[Site submission]".');
+if (typeof issueForm?.title !== "string" || issueForm.title.trim() === "") {
+	console.error("The issue form must set a default title.");
 	process.exit(1);
 }
 

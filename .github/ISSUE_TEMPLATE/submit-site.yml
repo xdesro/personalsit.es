@@ -1,6 +1,6 @@
 name: Submit a site
 description: Suggest a personal site for the personalsit.es directory.
-title: "[Site submission] "
+title: "Adding [YOUR SITE NAME HERE]"
 labels: ["site-submission"]
 body:
   - type: markdown

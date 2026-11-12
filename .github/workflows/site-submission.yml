@@ -10,7 +10,7 @@ jobs:
       issues: write
     if: |
       (github.event.action == 'opened' || github.event.action == 'edited' || github.event.action == 'reopened') &&
-      (contains(github.event.issue.labels.*.name, 'site-submission') || startsWith(github.event.issue.title, '[Site submission]'))
+      (contains(github.event.issue.labels.*.name, 'site-submission') || contains(github.event.issue.body, '### Site title'))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -46,7 +46,7 @@ jobs:
     if: |
       github.event.action == 'labeled' &&
       github.event.label.name == 'approved' &&
-      (contains(github.event.issue.labels.*.name, 'site-submission') || startsWith(github.event.issue.title, '[Site submission]'))
+      (contains(github.event.issue.labels.*.name, 'site-submission') || contains(github.event.issue.body, '### Site title'))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
