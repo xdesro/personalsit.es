@@ -1,0 +1,107 @@
+name: Update site screenshot
+on:
+  issues:
+    types: [opened, edited, reopened, labeled]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    if: |
+      (github.event.action == 'opened' || github.event.action == 'edited' || github.event.action == 'reopened') &&
+      (contains(github.event.issue.labels.*.name, 'screenshot-update') ||
+       contains(github.event.issue.body, '### Site URL to update'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "26.13.0"
+          cache: npm
+
+      - name: Install dependencies
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
+        run: npm ci
+
+      - name: Validate screenshot update request
+        env:
+          MODE: validate
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_ACTION: ${{ github.event.action }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node .github/scripts/screenshot-update.mjs
+
+  update:
+    if: |
+      github.event.action == 'labeled' &&
+      github.event.label.name == 'screenshot-approved' &&
+      (contains(github.event.issue.labels.*.name, 'screenshot-update') ||
+       contains(github.event.issue.body, '### Site URL to update'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "26.13.0"
+          cache: npm
+
+      - name: Install dependencies
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
+        run: npm ci
+
+      - name: Configure Chromium
+        run: |
+          for candidate in google-chrome google-chrome-stable chromium chromium-browser; do
+            if command -v "$candidate" >/dev/null 2>&1; then
+              chrome=$(command -v "$candidate")
+              break
+            fi
+          done
+
+          if [ -n "${chrome:-}" ]; then
+            echo "Using system Chrome: $chrome"
+            echo "PUPPETEER_EXECUTABLE_PATH=$chrome" >> "$GITHUB_ENV"
+          else
+            echo "System Chrome not found; installing Puppeteer Chrome"
+            PUPPETEER_SKIP_DOWNLOAD=false \
+              PUPPETEER_CHROME_SKIP_DOWNLOAD=false \
+              PUPPETEER_SKIP_CHROME_DOWNLOAD=false \
+              ./node_modules/.bin/puppeteer browsers install chrome
+          fi
+
+      - name: Verify Chromium
+        run: |
+          node --input-type=module -e "import fs from 'node:fs'; import puppeteer from 'puppeteer'; const path = puppeteer.executablePath(); console.log(path); if (!fs.existsSync(path)) process.exit(1);"
+
+      - name: Capture and upload screenshot
+        env:
+          MODE: update
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_ACTION: ${{ github.event.action }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          S3_USER_ACCESS_KEY: ${{ secrets.S3_USER_ACCESS_KEY }}
+          S3_USER_ACCESS_KEY_SECRET: ${{ secrets.S3_USER_ACCESS_KEY_SECRET }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          S3_REGION: ${{ secrets.S3_REGION }}
+        run: node .github/scripts/screenshot-update.mjs

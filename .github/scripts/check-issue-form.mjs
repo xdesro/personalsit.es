@@ -64,3 +64,26 @@ if (formTags.length !== schemaTags.length) {
 }
 
 console.log(`The issue form tag list matches all ${schemaTags.length} schema tags.`);
+
+const updateFormPath = path.join(repoRoot, ".github", "ISSUE_TEMPLATE", "update-screenshot.yml");
+const updateForm = yaml.load(fs.readFileSync(updateFormPath, "utf-8"));
+const expectedUpdateLabels = ["Site URL to update", "Notes for maintainers", "Confirmation"];
+const actualUpdateLabels = (updateForm?.body ?? []).map((field) => field.attributes?.label).filter(Boolean);
+const missingUpdateLabels = expectedUpdateLabels.filter((label) => !actualUpdateLabels.includes(label));
+
+if (typeof updateForm?.title !== "string" || updateForm.title.trim() === "") {
+	console.error("The screenshot update form must set a default title.");
+	process.exit(1);
+}
+
+if (!updateForm?.labels?.includes("screenshot-update")) {
+	console.error('The screenshot update form must apply the "screenshot-update" label.');
+	process.exit(1);
+}
+
+if (missingUpdateLabels.length > 0) {
+	console.error(`The screenshot update form is missing expected field(s): ${missingUpdateLabels.join(", ")}`);
+	process.exit(1);
+}
+
+console.log("The screenshot update issue form is valid.");

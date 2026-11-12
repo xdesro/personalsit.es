@@ -1,0 +1,35 @@
+name: Update a site screenshot
+description: Request a fresh screenshot for a site that is already listed in the directory.
+title: "Updating screenshot for [SITE URL HERE]"
+labels: ["screenshot-update"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to request a new screenshot for a site that is already listed in the directory. This is useful when a site has been redesigned or its existing screenshot is otherwise out of date.
+
+        A maintainer will review the request to capture and upload the new screenshot.
+  - type: input
+    id: site-url
+    attributes:
+      label: Site URL to update
+      description: The URL of the site as it appears in the directory.
+      placeholder: https://bell.bz
+    validations:
+      required: true
+  - type: textarea
+    id: maintainer-notes
+    attributes:
+      label: Notes for maintainers
+      description: Anything else the maintainers should know. This won't be published on the site.
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: This is my site, or I have permission from its owner to request an updated screenshot.
+          required: true
+        - label: I understand that a human maintainer will review this request before the screenshot is updated.
+          required: true

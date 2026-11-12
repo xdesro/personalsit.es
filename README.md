@@ -37,7 +37,7 @@ The required fields are `title`, `url`, and `tags`. `feed` is optional and point
 
 ## 🖼️ Updating your site's screenshot
 
-Right now, this is a fairly manual process. Feel free to [open an issue](https://github.com/xdesro/personalsit.es/issues/new) with a request to update your screenshot and we'll be happy to sort that out!
+Use the [screenshot update form](https://github.com/xdesro/personalsit.es/issues/new?template=update-screenshot.yml) to request a fresh screenshot. A maintainer will review the request, and once it's approved the screenshot is captured and uploaded automatically.
 
 ## 📄 Contributions
 

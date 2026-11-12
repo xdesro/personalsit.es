@@ -8,6 +8,7 @@ import { getPublicUrlError } from "./validateSites.js";
 const outputDir = path.resolve(process.env.SCREENSHOT_OUTPUT_DIR || "screenshots");
 const sitesDir = path.resolve("sites");
 const maxChangedFiles = Number(process.env.MAX_CHANGED_FILES || 25);
+const overwriteExisting = process.env.SCREENSHOT_OVERWRITE === "true";
 const changedFiles = (process.env.CHANGED_FILES || "").split(/\s+/).filter(Boolean);
 const browserEnv = Object.fromEntries(["HOME", "PATH", "LANG", "LC_ALL", "TMPDIR", "TZ", "DISPLAY", "XDG_CONFIG_HOME", "XDG_CACHE_HOME", "XDG_DATA_HOME"].filter((key) => process.env[key] !== undefined).map((key) => [key, process.env[key]]));
 
@@ -82,6 +83,7 @@ async function main() {
 	const manifest = {
 		generatedAt: new Date().toISOString(),
 		pullRequest: process.env.PR_NUMBER || null,
+		overwrite: overwriteExisting,
 		screenshots: [],
 		failures: [],
 	};
@@ -98,12 +100,12 @@ async function main() {
 				},
 			});
 
-			if (!Buffer.isBuffer(screenshot) || screenshot.length === 0) {
+			if (!(screenshot instanceof Uint8Array) || screenshot.byteLength === 0) {
 				throw new Error("capture returned an empty image");
 			}
 
 			const outputPath = path.join(outputDir, site.filename);
-			fs.writeFileSync(outputPath, screenshot);
+			fs.writeFileSync(outputPath, Buffer.from(screenshot));
 			manifest.screenshots.push({
 				filename: site.filename,
 				url: site.url,

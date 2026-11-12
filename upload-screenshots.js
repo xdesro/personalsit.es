@@ -29,6 +29,10 @@ const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
 if (!Array.isArray(manifest.screenshots)) {
   throw new Error('Screenshot manifest does not contain a screenshots array');
 }
+const overwrite = manifest.overwrite === true;
+if (overwrite) {
+  console.log('Overwriting existing screenshots');
+}
 if (manifest.screenshots.length > 50) {
   throw new Error(
     `Refusing to upload ${manifest.screenshots.length} screenshots in one run`
@@ -42,6 +46,19 @@ const s3 = new S3Client({
     secretAccessKey: process.env.S3_USER_ACCESS_KEY_SECRET,
   },
 });
+
+function isSafeFilename(filename) {
+  return (
+    filename.length > 0 &&
+    filename.length <= 200 &&
+    filename.endsWith('.png') &&
+    path.basename(filename) === filename &&
+    !filename.includes('\\') &&
+    !filename.startsWith('.') &&
+    !filename.includes('..') &&
+    !/[\u0000-\u001f\u007f]/.test(filename)
+  );
+}
 
 async function exists(filename) {
   try {
@@ -74,10 +91,7 @@ async function main() {
     const filename = String(entry?.filename ?? '');
 
     try {
-      if (
-        !/^[a-z0-9][a-z0-9._-]*\.png$/i.test(filename) ||
-        filename.includes('..')
-      ) {
+      if (!isSafeFilename(filename)) {
         throw new Error(`Unsafe screenshot filename: ${filename}`);
       }
       if (seen.has(filename)) {
@@ -104,7 +118,7 @@ async function main() {
         throw new Error(`Screenshot is not a PNG: ${filename}`);
       }
 
-      if (await exists(filename)) {
+      if (!overwrite && (await exists(filename))) {
         skipped++;
         continue;
       }
