@@ -13,8 +13,6 @@ jobs:
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      PUPPETEER_CACHE_DIR: ${{ github.workspace }}/.puppeteer-cache
     steps:
       - name: Checkout trusted base
         uses: actions/checkout@v7
@@ -48,8 +46,25 @@ jobs:
           PUPPETEER_SKIP_DOWNLOAD: "true"
         run: npm ci
 
-      - name: Install Chromium
-        run: ./node_modules/.bin/puppeteer browsers install chrome
+      - name: Configure Chromium
+        run: |
+          for candidate in google-chrome google-chrome-stable chromium chromium-browser; do
+            if command -v "$candidate" >/dev/null 2>&1; then
+              chrome=$(command -v "$candidate")
+              break
+            fi
+          done
+
+          if [ -n "${chrome:-}" ]; then
+            echo "Using system Chrome: $chrome"
+            echo "PUPPETEER_EXECUTABLE_PATH=$chrome" >> "$GITHUB_ENV"
+          else
+            echo "System Chrome not found; installing Puppeteer Chrome"
+            PUPPETEER_SKIP_DOWNLOAD=false \
+              PUPPETEER_CHROME_SKIP_DOWNLOAD=false \
+              PUPPETEER_SKIP_CHROME_DOWNLOAD=false \
+              ./node_modules/.bin/puppeteer browsers install chrome
+          fi
 
       - name: Verify Chromium
         run: |
