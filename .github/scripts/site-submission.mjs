@@ -178,14 +178,10 @@ function buildFailureComment() {
 }
 
 export function buildPrBody(site, issueNumber, notes) {
-	const lines = ["## New site submission", "", `Closes #${issueNumber}`, "", `- **Title:** ${site.title}`, `- **URL:** <${site.url}>`, `- **Tags:** ${site.tags.join(", ")}`];
+	const lines = [`Closes #${issueNumber}`, "", `- **Title:** ${site.title}`, `- **URL:** <${site.url}>`, `- **Tags:** ${site.tags.join(", ")}`];
 
 	if (site.feed) lines.push(`- **Feed:** <${site.feed}>`);
 	if (site.description) lines.push(`- **Description:** ${site.description}`);
-
-	if (notes) {
-		lines.push("", "## Notes for maintainers", "", ...notes.split("\n").map((line) => `> ${line}`));
-	}
 
 	lines.push("", "Submitted through the site submission issue form.");
 	return lines.join("\n");
