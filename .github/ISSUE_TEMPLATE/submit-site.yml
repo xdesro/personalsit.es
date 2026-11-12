@@ -6,11 +6,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for submitting a site! We're genuinely thrilled to have you.
-
-        Fill in the details below and we'll review your submission and look at getting your site listed. Get in contact with us if you have any problems.
-
-        Before submitting, please make sure the site is a personal site and that the URL and feed are publicly accessible.
+        Thanks for submitting a site! We're genuinely thrilled to have you. Fill in the details below and we'll review your submission and look at getting your site listed. Get in contact with us if you have any problems.
+        Before submitting, be sure your site is a personal one and that the URL and feed are publicly accessible.
   - type: input
     id: site-title
     attributes:
