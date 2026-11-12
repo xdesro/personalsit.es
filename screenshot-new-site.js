@@ -98,12 +98,12 @@ async function main() {
 				},
 			});
 
-			if (!Buffer.isBuffer(screenshot) || screenshot.length === 0) {
+			if (!(screenshot instanceof Uint8Array) || screenshot.byteLength === 0) {
 				throw new Error("capture returned an empty image");
 			}
 
 			const outputPath = path.join(outputDir, site.filename);
-			fs.writeFileSync(outputPath, screenshot);
+			fs.writeFileSync(outputPath, Buffer.from(screenshot));
 			manifest.screenshots.push({
 				filename: site.filename,
 				url: site.url,
