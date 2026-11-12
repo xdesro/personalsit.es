@@ -3,20 +3,27 @@ on:
   workflow_run:
     workflows: ["Capture screenshotties"]
     types: [completed]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Capture screenshotties workflow run ID"
+        required: true
+        type: string
 
 permissions:
   actions: read
   contents: read
 
 concurrency:
-  group: upload-screenshots-${{ github.event.workflow_run.head_sha }}
+  group: upload-screenshots-${{ inputs.run_id || github.event.workflow_run.id }}
   cancel-in-progress: true
 
 jobs:
   upload:
     if: |
-      github.event.workflow_run.event == 'pull_request' &&
-      github.event.workflow_run.conclusion == 'success'
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.event == 'pull_request' &&
+       github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -29,7 +36,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: screenshots
-          run-id: ${{ github.event.workflow_run.id }}
+          run-id: ${{ inputs.run_id || github.event.workflow_run.id }}
           github-token: ${{ github.token }}
           # Keep artefact contents outside the trusted checkout so they can't overwrite repository files before the upload.
           path: ${{ runner.temp }}/screenshots
