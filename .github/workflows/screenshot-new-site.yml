@@ -13,6 +13,8 @@ jobs:
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      PUPPETEER_CACHE_DIR: ${{ github.workspace }}/.puppeteer-cache
     steps:
       - name: Checkout trusted base
         uses: actions/checkout@v7
@@ -47,7 +49,11 @@ jobs:
         run: npm ci
 
       - name: Install Chromium
-        run: npx puppeteer browsers install chrome
+        run: ./node_modules/.bin/puppeteer browsers install chrome
+
+      - name: Verify Chromium
+        run: |
+          node --input-type=module -e "import fs from 'node:fs'; import puppeteer from 'puppeteer'; const path = puppeteer.executablePath(); console.log(path); if (!fs.existsSync(path)) process.exit(1);"
 
       - name: Capture screenshots
         env:
