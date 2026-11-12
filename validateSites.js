@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
-import yaml from "js-yaml";
+import * as yaml from "js-yaml";
 
 const schemaPath = fileURLToPath(new URL("./sites.schema.json", import.meta.url));
 const schema = JSON.parse(fs.readFileSync(schemaPath, "utf-8"));

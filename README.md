@@ -17,9 +17,7 @@ If you prefer the manual route you can author your own pull request:
 
 1. 🍴 Fork this repository.
 
-2. 📝 Add a new `.yaml` file in `sites` that is `{yourDomain}.yaml`.
-
-   > For example: `sites/bell.bz.yaml`.
+2. 📝 Add a new `.yaml` file in the `/sites` directory titled `{yourDomain}.yaml`. For example, `sites/bell.bz.yaml`.
 
 3. 🖋 Fill out the details. Here's the template:
 

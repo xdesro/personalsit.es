@@ -1,7 +1,7 @@
 import filenamifyUrl from 'filenamify-url';
 import rssPlugin from '@11ty/eleventy-plugin-rss';
 import shuffle from './filters/shuffle.js';
-import { minify } from 'html-minifier-next';
+import { minify } from 'html-minifier';
 import { loadSiteFile } from './validateSites.js';
 
 export default (eleventyConfig) => {
@@ -49,9 +49,9 @@ export default (eleventyConfig) => {
   });
 
   // Minify
-  eleventyConfig.addTransform('minify', function (content, outputPath) {
+  eleventyConfig.addTransform('minify', async function (content, outputPath) {
     if (outputPath.indexOf('.html') > -1) {
-      let minified = minify(content, {
+      let minified = await minify(content, {
         useShortDoctype: true,
         removeComments: true,
         collapseWhitespace: true,

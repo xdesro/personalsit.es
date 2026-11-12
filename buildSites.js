@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import https from 'node:https';
 import { v2 as cloudinary } from 'cloudinary';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 import captureWebsite from 'capture-website';
 import filenamifyUrl from 'filenamify-url';
 

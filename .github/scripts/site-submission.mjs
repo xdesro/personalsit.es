@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import yaml from "js-yaml";
+import * as yaml from "js-yaml";
 import { findDuplicateSite, formatValidationError, getPublicUrlError, getSiteHostname, loadAllSiteFiles, validateSiteData } from "../../validateSites.js";
 
 const repoRoot = fileURLToPath(new URL("../..", import.meta.url));
