@@ -71,4 +71,7 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           GITHUB_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          # Optional: PAT/GitHub App token used to open PRs. PRs opened with
+          # GITHUB_TOKEN do not trigger PR workflows automatically.
+          SITE_SUBMISSION_TOKEN: ${{ secrets.SITE_SUBMISSION_TOKEN }}
         run: node .github/scripts/site-submission.mjs

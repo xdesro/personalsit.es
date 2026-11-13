@@ -214,12 +214,11 @@ function refPath(ref) {
 	return ref.split("/").map(encodeURIComponent).join("/");
 }
 
-function createGithubClient() {
-	const token = process.env.GITHUB_TOKEN;
+function createGithubClient(token = process.env.GITHUB_TOKEN) {
 	const repo = process.env.GITHUB_REPOSITORY;
 
 	if (!token || !repo) {
-		throw new Error("GITHUB_TOKEN and GITHUB_REPOSITORY are required");
+		throw new Error("A GitHub token and GITHUB_REPOSITORY are required");
 	}
 
 	async function request(method, endpoint, body) {
@@ -341,7 +340,16 @@ async function createPullRequest(client, site, filename, issueNumber, notes) {
 		await client.request("PATCH", `/repos/${client.repo}/git/refs/heads/${refPath(branch)}`, { sha: commit.sha, force: true });
 	}
 
-	const pr = await client.request("POST", `/repos/${client.repo}/pulls`, {
+	// Use a non-GITHUB_TOKEN identity when available. GitHub suppresses workflow
+	// runs for pull requests opened by GITHUB_TOKEN, even with pull_request_target.
+	const prClient = process.env.SITE_SUBMISSION_TOKEN
+		? createGithubClient(process.env.SITE_SUBMISSION_TOKEN)
+		: client;
+	if (!process.env.SITE_SUBMISSION_TOKEN) {
+		console.warn("SITE_SUBMISSION_TOKEN is not set; PR workflows may require manual approval.");
+	}
+
+	const pr = await prClient.request("POST", `/repos/${client.repo}/pulls`, {
 		title: `Add ${site.title}`,
 		head: branch,
 		base,
