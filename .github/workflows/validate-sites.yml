@@ -8,6 +8,7 @@ on:
       - ".github/ISSUE_TEMPLATE/*.yml"
       - ".github/scripts/*.mjs"
       - ".github/workflows/site-submission.yml"
+      - ".github/workflows/site-removal.yml"
       - ".github/workflows/screenshot-new-site.yml"
       - ".github/workflows/screenshot-on-push.yml"
       - ".github/workflows/screenshot-update.yml"

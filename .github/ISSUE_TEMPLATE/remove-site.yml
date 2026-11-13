@@ -1,0 +1,51 @@
+name: Remove a site
+description: Request removal of a site that is already listed in the directory.
+title: "Removing [SITE URL HERE]"
+labels: ["site-removal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to request removal of a site that is already listed in the directory.
+
+        A maintainer will review the request and apply the `approved` label. Once approved, a pull request removing the entry will be opened for review.
+  - type: input
+    id: site-url
+    attributes:
+      label: Site URL to remove
+      description: The URL of the site as it appears in the directory.
+      placeholder: https://bell.bz
+    validations:
+      required: true
+  - type: dropdown
+    id: reason-type
+    attributes:
+      label: Reason for removal
+      description: Why should this site be removed from the directory?
+      options:
+        - I own this site, or I have permission from its owner
+        - The site has changed (for example, it is now spam, a casino, or otherwise unsafe)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Details (optional)
+      description: Any additional context about why the site should be removed.
+    validations:
+      required: false
+  - type: textarea
+    id: maintainer-notes
+    attributes:
+      label: Notes for maintainers
+      description: Anything else the maintainers should know.
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I understand that a human maintainer will review this request.
+          required: true

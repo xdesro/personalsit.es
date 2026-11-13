@@ -16,19 +16,19 @@ const LABELS = {
 	},
 	validated: {
 		color: "1d76db",
-		description: "The site submission passed validation",
+		description: "The request passed validation",
 	},
-	"needs-fix": {
+	"needs-fixed": {
 		color: "d93f0b",
-		description: "The site submission needs changes before it can be approved",
+		description: "The request needs changes before it can be approved",
 	},
 	approved: {
 		color: "5319e7",
-		description: "The site submission has been approved for a pull request",
+		description: "Approved by a maintainer",
 	},
 	"pr-opened": {
 		color: "c5def5",
-		description: "A pull request has been opened for this submission",
+		description: "A pull request has been opened",
 	},
 };
 
@@ -156,7 +156,7 @@ function buildValidComment(wasEdited) {
 	const lines = ["### Site submission checks passed", "", "Everything needed to list this site is present. A maintainer will review the submission and apply the `approved` label if it is ready."];
 
 	if (wasEdited) {
-		lines.push("", "The issue was edited, so any previous approval has been reset. A maintainer will need to approve it again.");
+		lines.push("", "The issue was edited or reopened, so any previous approval has been reset. A maintainer will need to approve it again.");
 	}
 
 	lines.push("", "_This comment updates automatically when the issue is edited._");
@@ -436,7 +436,7 @@ async function main() {
 
 	if (result.errors.length > 0) {
 		await upsertComment(client, issueNumber, buildErrorComment(result.errors));
-		await addLabel(client, issueNumber, "needs-fix");
+		await addLabel(client, issueNumber, "needs-fixed");
 		await removeLabel(client, issueNumber, "validated");
 		await removeLabel(client, issueNumber, "approved");
 		setOutput("valid", "false");
@@ -465,7 +465,7 @@ async function main() {
 		}
 		await addLabel(client, issueNumber, "validated");
 		await addLabel(client, issueNumber, "pr-opened");
-		await removeLabel(client, issueNumber, "needs-fix");
+		await removeLabel(client, issueNumber, "needs-fixed");
 		await upsertComment(client, issueNumber, buildPublishComment(pr, previewUrl));
 		setOutput("valid", "true");
 		setOutput("pr_url", pr.url);
@@ -476,13 +476,14 @@ async function main() {
 	}
 
 	await addLabel(client, issueNumber, "validated");
-	await removeLabel(client, issueNumber, "needs-fix");
+	await removeLabel(client, issueNumber, "needs-fixed");
 
-	if (issueAction === "edited") {
+	const wasEdited = issueAction === "edited" || issueAction === "reopened";
+	if (wasEdited) {
 		await removeLabel(client, issueNumber, "approved");
 	}
 
-	await upsertComment(client, issueNumber, buildValidComment(issueAction === "edited"));
+	await upsertComment(client, issueNumber, buildValidComment(wasEdited));
 	setOutput("valid", "true");
 	setOutput("filename", result.filename);
 	writeStepSummary("Validation passed. Waiting for maintainer approval.");

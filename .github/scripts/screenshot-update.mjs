@@ -13,21 +13,17 @@ const LABELS = {
 		color: "c5def5",
 		description: "A screenshot update requested through the issue form",
 	},
-	"screenshot-validated": {
+	validated: {
 		color: "1d76db",
-		description: "The screenshot update request passed validation",
+		description: "The request passed validation",
 	},
-	"screenshot-needs-fix": {
+	"needs-fixed": {
 		color: "d93f0b",
-		description: "The screenshot update request needs changes before it can be approved",
+		description: "The request needs changes before it can be approved",
 	},
-	"screenshot-approved": {
+	approved: {
 		color: "5319e7",
-		description: "The screenshot update has been approved",
-	},
-	"screenshot-updated": {
-		color: "0e8a16",
-		description: "The screenshot has been updated on the CDN",
+		description: "Approved by a maintainer",
 	},
 };
 
@@ -137,11 +133,11 @@ function buildValidComment(result, wasEdited) {
 		"",
 		`I found **${result.site.data.title}** (<${result.site.data.url}>) in \`sites/${result.site.file}\`.`,
 		"",
-		"A maintainer will review this request and apply the `screenshot-approved` label to capture and upload the new screenshot.",
+		"A maintainer will review this request and apply the `approved` label to capture and upload the new screenshot.",
 	];
 
 	if (wasEdited) {
-		lines.push("", "The issue was edited, so any previous approval has been reset. A maintainer will need to approve it again.");
+		lines.push("", "The issue was edited or reopened, so any previous approval has been reset. A maintainer will need to approve it again.");
 	}
 
 	lines.push("", "_This comment updates automatically when the issue is edited._");
@@ -327,9 +323,9 @@ async function main() {
 
 	if (result.errors.length > 0) {
 		await upsertComment(client, issueNumber, buildErrorComment(result.errors));
-		await addLabel(client, issueNumber, "screenshot-needs-fix");
-		await removeLabel(client, issueNumber, "screenshot-validated");
-		await removeLabel(client, issueNumber, "screenshot-approved");
+		await addLabel(client, issueNumber, "needs-fixed");
+		await removeLabel(client, issueNumber, "validated");
+		await removeLabel(client, issueNumber, "approved");
 		setOutput("valid", "false");
 		setOutput("errors", result.errors.join("; "));
 		writeStepSummary(`Validation failed with ${result.errors.length} error(s).`);
@@ -344,8 +340,8 @@ async function main() {
 		} catch (error) {
 			console.error(error);
 			await upsertComment(client, issueNumber, buildFailureComment());
-			await addLabel(client, issueNumber, "screenshot-needs-fix");
-			await removeLabel(client, issueNumber, "screenshot-approved");
+			await addLabel(client, issueNumber, "needs-fixed");
+			await removeLabel(client, issueNumber, "approved");
 			setOutput("updated", "false");
 			writeStepSummary(`Screenshot update failed: ${error.message}`);
 			process.exitCode = 1;
@@ -353,10 +349,9 @@ async function main() {
 		}
 
 		try {
-			await addLabel(client, issueNumber, "screenshot-validated");
-			await addLabel(client, issueNumber, "screenshot-updated");
-			await removeLabel(client, issueNumber, "screenshot-needs-fix");
-			await removeLabel(client, issueNumber, "screenshot-approved");
+			await addLabel(client, issueNumber, "validated");
+			await removeLabel(client, issueNumber, "needs-fixed");
+			await removeLabel(client, issueNumber, "approved");
 			await upsertComment(client, issueNumber, buildUpdatedComment(result));
 			await closeIssue(client, issueNumber);
 		} catch (error) {
@@ -372,12 +367,12 @@ async function main() {
 		return;
 	}
 
-	await addLabel(client, issueNumber, "screenshot-validated");
-	await removeLabel(client, issueNumber, "screenshot-needs-fix");
+	await addLabel(client, issueNumber, "validated");
+	await removeLabel(client, issueNumber, "needs-fixed");
 
 	const wasEdited = issueAction === "edited" || issueAction === "reopened";
 	if (wasEdited) {
-		await removeLabel(client, issueNumber, "screenshot-approved");
+		await removeLabel(client, issueNumber, "approved");
 	}
 
 	await upsertComment(client, issueNumber, buildValidComment(result, wasEdited));
@@ -396,8 +391,8 @@ if (process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url) 
 				const client = createGithubClient();
 				await ensureLabels(client);
 				await upsertComment(client, process.env.ISSUE_NUMBER, buildFailureComment());
-				await addLabel(client, process.env.ISSUE_NUMBER, "screenshot-needs-fix");
-				await removeLabel(client, process.env.ISSUE_NUMBER, "screenshot-approved");
+				await addLabel(client, process.env.ISSUE_NUMBER, "needs-fixed");
+				await removeLabel(client, process.env.ISSUE_NUMBER, "approved");
 			} catch (commentError) {
 				console.error("Could not post the failure comment:", commentError);
 			}

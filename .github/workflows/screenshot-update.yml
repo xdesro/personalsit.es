@@ -45,7 +45,7 @@ jobs:
   update:
     if: |
       github.event.action == 'labeled' &&
-      github.event.label.name == 'screenshot-approved' &&
+      github.event.label.name == 'approved' &&
       (contains(github.event.issue.labels.*.name, 'screenshot-update') ||
        contains(github.event.issue.body, '### Site URL to update'))
     runs-on: ubuntu-latest

@@ -39,6 +39,10 @@ The required fields are `title`, `url`, and `tags`. `feed` is optional and point
 
 Use the [screenshot update form](https://github.com/xdesro/personalsit.es/issues/new?template=update-screenshot.yml) to request a fresh screenshot. A maintainer will review the request, and once it's approved the screenshot is captured and uploaded automatically.
 
+## 🗑️ Removing your site
+
+Use the [site removal form](https://github.com/xdesro/personalsit.es/issues/new?template=remove-site.yml) to request removal. A maintainer will review the request, and once it's approved a pull request removing the site entry will be opened.
+
 ## 📄 Contributions
 
 Got an idea for an enhancement? Awesome — don't be shy about [creating an issue](https://github.com/xdesro/personalsit.es/issues/new), or even [opening a pull request](https://github.com/xdesro/personalsit.es/pulls), if you're feeling ambitious. I'd welcome the assist!

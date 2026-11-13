@@ -87,3 +87,36 @@ if (missingUpdateLabels.length > 0) {
 }
 
 console.log("The screenshot update issue form is valid.");
+
+const removalFormPath = path.join(repoRoot, ".github", "ISSUE_TEMPLATE", "remove-site.yml");
+const removalForm = yaml.load(fs.readFileSync(removalFormPath, "utf-8"));
+const expectedRemovalLabels = ["Site URL to remove", "Reason for removal", "Notes for maintainers", "Confirmation"];
+const actualRemovalLabels = (removalForm?.body ?? []).map((field) => field.attributes?.label).filter(Boolean);
+const missingRemovalLabels = expectedRemovalLabels.filter((label) => !actualRemovalLabels.includes(label));
+
+if (typeof removalForm?.title !== "string" || removalForm.title.trim() === "") {
+	console.error("The site removal form must set a default title.");
+	process.exit(1);
+}
+
+if (!removalForm?.labels?.includes("site-removal")) {
+	console.error('The site removal form must apply the "site-removal" label.');
+	process.exit(1);
+}
+
+if (missingRemovalLabels.length > 0) {
+	console.error(`The site removal form is missing expected field(s): ${missingRemovalLabels.join(", ")}`);
+	process.exit(1);
+}
+
+const removalReasonField = (removalForm?.body ?? []).find((field) => field.id === "reason-type");
+if (
+	removalReasonField?.type !== "dropdown" ||
+	!Array.isArray(removalReasonField.attributes?.options) ||
+	removalReasonField.attributes.options.length < 2
+) {
+	console.error("The site removal form must include a reason dropdown.");
+	process.exit(1);
+}
+
+console.log("The site removal issue form is valid.");
