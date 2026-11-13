@@ -197,7 +197,9 @@ export function buildPrBody(site, issueNumber, notes, previewUrl) {
 
 function buildPublishComment(pr, previewUrl) {
 	if (pr.existing) {
-		return ["### Pull request already open", "", `A pull request for this submission is already open: ${pr.url}`].join("\n");
+		const lines = ["### Pull request already open", "", `A pull request for this submission is already open: ${pr.url}`];
+		if (previewUrl) lines.push("", `Screenshot preview: ${previewUrl}`);
+		return lines.join("\n");
 	}
 
 	const lines = [
@@ -453,6 +455,11 @@ async function main() {
 		}
 
 		const pr = await createPullRequest(client, result.site, result.filename, issueNumber, result.notes, previewUrl);
+		if (pr.existing && previewUrl) {
+			await client.request("POST", `/repos/${client.repo}/issues/${pr.number}/comments`, {
+				body: `### Screenshot preview\n\n![Screenshot preview](${previewUrl})`,
+			});
+		}
 		await addLabel(client, issueNumber, "validated");
 		await addLabel(client, issueNumber, "pr-opened");
 		await removeLabel(client, issueNumber, "needs-fix");
