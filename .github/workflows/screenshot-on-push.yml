@@ -1,0 +1,99 @@
+name: Capture merged screenshots
+on:
+  push:
+    branches: [main]
+    paths:
+      - "sites/*.yaml"
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Find changed site entries
+        id: changed
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            range="$AFTER^..$AFTER"
+          else
+            range="$BEFORE..$AFTER"
+          fi
+          files=$(git diff --name-only --diff-filter=AM "$range" -- 'sites/*.yaml' | tr '\n' ' ')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "26.13.0"
+          cache: npm
+
+      - name: Install dependencies
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
+        run: npm ci
+
+      - name: Validate site entries
+        run: npm run validate
+
+      - name: Configure Chromium
+        run: |
+          for candidate in google-chrome google-chrome-stable chromium chromium-browser; do
+            if command -v "$candidate" >/dev/null 2>&1; then
+              chrome=$(command -v "$candidate")
+              break
+            fi
+          done
+
+          if [ -n "${chrome:-}" ]; then
+            echo "Using system Chrome: $chrome"
+            echo "PUPPETEER_EXECUTABLE_PATH=$chrome" >> "$GITHUB_ENV"
+          else
+            echo "System Chrome not found; installing Puppeteer Chrome"
+            PUPPETEER_SKIP_DOWNLOAD=false \
+              PUPPETEER_CHROME_SKIP_DOWNLOAD=false \
+              PUPPETEER_SKIP_CHROME_DOWNLOAD=false \
+              ./node_modules/.bin/puppeteer browsers install chrome
+          fi
+
+      - name: Verify Chromium
+        run: |
+          node --input-type=module -e "import fs from 'node:fs'; import puppeteer from 'puppeteer'; const path = puppeteer.executablePath(); console.log(path); if (!fs.existsSync(path)) process.exit(1);"
+
+      - name: Capture screenshots
+        env:
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+          SCREENSHOT_OUTPUT_DIR: screenshots
+        run: node screenshot-new-site.js
+
+      - name: Upload screenshots artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: screenshots
+          path: screenshots/
+          retention-days: 1
+          if-no-files-found: error
+
+  trigger-upload:
+    needs: capture
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Trigger screenshot upload
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+        run: gh workflow run upload-screenshots.yml --repo "$GITHUB_REPOSITORY" --ref main -f run_id="$RUN_ID"

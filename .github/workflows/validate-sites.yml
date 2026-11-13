@@ -9,6 +9,7 @@ on:
       - ".github/scripts/*.mjs"
       - ".github/workflows/site-submission.yml"
       - ".github/workflows/screenshot-new-site.yml"
+      - ".github/workflows/screenshot-on-push.yml"
       - ".github/workflows/screenshot-update.yml"
       - ".github/workflows/upload-screenshots.yml"
       - "screenshot-new-site.js"
