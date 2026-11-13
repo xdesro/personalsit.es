@@ -64,6 +64,30 @@ jobs:
           PUPPETEER_SKIP_DOWNLOAD: "true"
         run: npm ci
 
+      - name: Configure Chromium
+        run: |
+          for candidate in google-chrome google-chrome-stable chromium chromium-browser; do
+            if command -v "$candidate" >/dev/null 2>&1; then
+              chrome=$(command -v "$candidate")
+              break
+            fi
+          done
+
+          if [ -n "${chrome:-}" ]; then
+            echo "Using system Chrome: $chrome"
+            echo "PUPPETEER_EXECUTABLE_PATH=$chrome" >> "$GITHUB_ENV"
+          else
+            echo "System Chrome not found; installing Puppeteer Chrome"
+            PUPPETEER_SKIP_DOWNLOAD=false \
+              PUPPETEER_CHROME_SKIP_DOWNLOAD=false \
+              PUPPETEER_SKIP_CHROME_DOWNLOAD=false \
+              ./node_modules/.bin/puppeteer browsers install chrome
+          fi
+
+      - name: Verify Chromium
+        run: |
+          node --input-type=module -e "import fs from 'node:fs'; import puppeteer from 'puppeteer'; const path = puppeteer.executablePath(); console.log(path); if (!fs.existsSync(path)) process.exit(1);"
+
       - name: Open pull request
         env:
           MODE: publish
@@ -71,4 +95,8 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           GITHUB_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          S3_USER_ACCESS_KEY: ${{ secrets.S3_USER_ACCESS_KEY }}
+          S3_USER_ACCESS_KEY_SECRET: ${{ secrets.S3_USER_ACCESS_KEY_SECRET }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          S3_REGION: ${{ secrets.S3_REGION }}
         run: node .github/scripts/site-submission.mjs

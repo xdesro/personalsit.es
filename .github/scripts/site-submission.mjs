@@ -1,7 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import * as yaml from "js-yaml";
+import filenamifyUrl from "filenamify-url";
 import { findDuplicateSite, formatValidationError, getPublicUrlError, getSiteHostname, loadAllSiteFiles, validateSiteData } from "../../validateSites.js";
 
 const repoRoot = fileURLToPath(new URL("../..", import.meta.url));
@@ -177,26 +179,40 @@ function buildFailureComment() {
 	return ["### Site submission error", "", "Something went wrong while processing this submission. A maintainer will take a look."].join("\n");
 }
 
-export function buildPrBody(site, issueNumber, notes) {
+export function buildPrBody(site, issueNumber, notes, previewUrl) {
 	const lines = [`Closes #${issueNumber}`, "", `- **Title:** ${site.title}`, `- **URL:** <${site.url}>`, `- **Tags:** ${site.tags.join(", ")}`];
 
 	if (site.feed) lines.push(`- **Feed:** <${site.feed}>`);
 	if (site.description) lines.push(`- **Description:** ${site.description}`);
 
+	if (previewUrl) {
+		lines.push("", "### Screenshot preview", "", `![Screenshot preview](${previewUrl})`);
+	} else {
+		lines.push("", "_Screenshot preview unavailable._");
+	}
+
 	lines.push("", "Submitted through the site submission issue form.");
 	return lines.join("\n");
 }
 
-function buildPublishComment(pr) {
+function buildPublishComment(pr, previewUrl) {
 	if (pr.existing) {
-		return ["### Pull request already open", "", `A pull request for this submission is already open: ${pr.url}`].join("\n");
+		const lines = ["### Pull request already open", "", `A pull request for this submission is already open: ${pr.url}`];
+		if (previewUrl) lines.push("", `Screenshot preview: ${previewUrl}`);
+		return lines.join("\n");
 	}
 
-	return [
+	const lines = [
 		"### Pull request opened",
 		"",
 		`I've opened ${pr.url} for review. A maintainer will merge it once everything looks good. This issue will close automatically once the pull request is merged.`,
-	].join("\n");
+	];
+
+	if (previewUrl) {
+		lines.push("", `Screenshot preview: ${previewUrl}`);
+	}
+
+	return lines.join("\n");
 }
 
 function setOutput(name, value) {
@@ -212,6 +228,46 @@ function writeStepSummary(markdown) {
 
 function refPath(ref) {
 	return ref.split("/").map(encodeURIComponent).join("/");
+}
+
+function runNodeScript(script, env) {
+	const result = spawnSync(process.execPath, [path.join(repoRoot, script)], {
+		cwd: repoRoot,
+		env: { ...process.env, ...env },
+		stdio: "inherit",
+	});
+
+	if (result.error) throw result.error;
+	if (result.status !== 0) {
+		throw new Error(`${script} exited with code ${result.status}`);
+	}
+}
+
+function capturePreview(site, filename) {
+	const previewPath = path.join(repoRoot, "sites", filename);
+	const outputDir = path.join(repoRoot, "screenshots");
+	fs.writeFileSync(previewPath, yaml.dump(site, {
+		lineWidth: -1,
+		noRefs: true,
+		quotingType: '"',
+	}));
+
+	try {
+		runNodeScript("screenshot-new-site.js", {
+			CHANGED_FILES: `sites/${filename}`,
+			SCREENSHOT_OUTPUT_DIR: outputDir,
+			SCREENSHOT_OVERWRITE: "true",
+		});
+		runNodeScript("upload-screenshots.js", {
+			SCREENSHOT_ARTIFACT_DIR: outputDir,
+		});
+
+		const screenshotFilename = `${filenamifyUrl(site.url, { replacement: "" })}.png`;
+		// Preview-only cache bust so the PR shows the image captured just now.
+		return `https://personalsites.b-cdn.net/${encodeURIComponent(screenshotFilename)}?width=600&v=${Date.now()}`;
+	} finally {
+		fs.rmSync(previewPath, { force: true });
+	}
 }
 
 function createGithubClient() {
@@ -290,7 +346,7 @@ async function upsertComment(client, issueNumber, body) {
 	}
 }
 
-async function createPullRequest(client, site, filename, issueNumber, notes) {
+async function createPullRequest(client, site, filename, issueNumber, notes, previewUrl) {
 	const owner = client.repo.split("/")[0];
 	const hostname = getSiteHostname(site.url).replace(/[^a-z0-9.-]+/g, "-");
 	const branch = `site-submission/${issueNumber}-${hostname}`;
@@ -345,7 +401,7 @@ async function createPullRequest(client, site, filename, issueNumber, notes) {
 		title: `Add ${site.title}`,
 		head: branch,
 		base,
-		body: buildPrBody(site, issueNumber, notes),
+		body: buildPrBody(site, issueNumber, notes, previewUrl),
 	});
 
 	await client.request("POST", `/repos/${client.repo}/issues/${pr.number}/labels`, { labels: ["site-submission"] });
@@ -391,13 +447,29 @@ async function main() {
 	}
 
 	if (mode === "publish") {
-		const pr = await createPullRequest(client, result.site, result.filename, issueNumber, result.notes);
+		let previewUrl = null;
+		try {
+			previewUrl = capturePreview(result.site, result.filename);
+		} catch (error) {
+			console.error(`Screenshot preview failed: ${error.message}`);
+		}
+
+		const pr = await createPullRequest(client, result.site, result.filename, issueNumber, result.notes, previewUrl);
+		if (pr.existing && previewUrl) {
+			await client.request("PATCH", `/repos/${client.repo}/pulls/${pr.number}`, {
+				body: buildPrBody(result.site, issueNumber, result.notes, previewUrl),
+			});
+			await client.request("POST", `/repos/${client.repo}/issues/${pr.number}/comments`, {
+				body: `### Screenshot preview\n\n![Screenshot preview](${previewUrl})`,
+			});
+		}
 		await addLabel(client, issueNumber, "validated");
 		await addLabel(client, issueNumber, "pr-opened");
 		await removeLabel(client, issueNumber, "needs-fix");
-		await upsertComment(client, issueNumber, buildPublishComment(pr));
+		await upsertComment(client, issueNumber, buildPublishComment(pr, previewUrl));
 		setOutput("valid", "true");
 		setOutput("pr_url", pr.url);
+		setOutput("preview_url", previewUrl ?? "");
 		writeStepSummary(`Pull request: ${pr.url}`);
 		console.log(`Pull request: ${pr.url}`);
 		return;

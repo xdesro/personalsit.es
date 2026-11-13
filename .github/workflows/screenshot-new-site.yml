@@ -1,6 +1,6 @@
 name: Capture screenshotties
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "sites/*.yaml"
@@ -10,7 +10,9 @@ permissions:
 
 jobs:
   capture:
-    if: github.event.pull_request.draft == false
+    if: |
+      github.event.pull_request.draft == false &&
+      github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -84,3 +86,20 @@ jobs:
           path: screenshots/
           retention-days: 1
           if-no-files-found: error
+
+  trigger-upload:
+    needs: capture
+    if: |
+      github.actor == 'github-actions[bot]' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Trigger screenshot upload
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+        run: gh workflow run upload-screenshots.yml --repo "$GITHUB_REPOSITORY" --ref main -f run_id="$RUN_ID"

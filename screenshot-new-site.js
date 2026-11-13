@@ -11,6 +11,8 @@ const maxChangedFiles = Number(process.env.MAX_CHANGED_FILES || 25);
 const overwriteExisting = process.env.SCREENSHOT_OVERWRITE === "true";
 const changedFiles = (process.env.CHANGED_FILES || "").split(/\s+/).filter(Boolean);
 const browserEnv = Object.fromEntries(["HOME", "PATH", "LANG", "LC_ALL", "TMPDIR", "TZ", "DISPLAY", "XDG_CONFIG_HOME", "XDG_CACHE_HOME", "XDG_DATA_HOME"].filter((key) => process.env[key] !== undefined).map((key) => [key, process.env[key]]));
+// Headless Chrome's default UA is blocked by some sites (Cloudflare/bot checks).
+const screenshotUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36";
 
 function getSafeFilename(url) {
 	const base = filenamifyUrl(url, { replacement: "" });
@@ -93,9 +95,18 @@ async function main() {
 			console.log(`Capturing screenshot for ${site.url}...`);
 			const screenshot = await captureWebsite.buffer(site.url, {
 				timeout: 30,
+				width: 1280,
+				height: 800,
+				scaleFactor: 1,
+				userAgent: screenshotUserAgent,
+				waitForNetworkIdle: true,
 				// This job deliberately has no repository or cloud secrets as the privileged upload happens in a separate workflow.
 				launchOptions: {
-					args: ["--no-sandbox", "--disable-setuid-sandbox"],
+					args: [
+						"--no-sandbox",
+						"--disable-setuid-sandbox",
+						"--disable-blink-features=AutomationControlled",
+					],
 					env: browserEnv,
 				},
 			});
