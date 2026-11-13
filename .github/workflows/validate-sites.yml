@@ -1,6 +1,6 @@
 name: Validate site entries
 on:
-  pull_request:
+  pull_request_target:
     paths:
       - "sites/*.yaml"
       - "sites.schema.json"
@@ -14,12 +14,25 @@ on:
       - "screenshot-new-site.js"
       - "upload-screenshots.js"
       - "test/*.mjs"
+
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Checkout
+      - name: Checkout trusted base
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Fetch pull request head
+        run: git fetch origin pull/${{ github.event.pull_request.number }}/head:pr_head
+
+      - name: Apply submitted site data
+        run: git checkout pr_head -- sites/ sites.schema.json .github/ISSUE_TEMPLATE/
 
       - name: Setup Node.js
         uses: actions/setup-node@v7
